@@ -12,3 +12,7 @@ __pycache__/
 Grimoire.vbs
 Grimoire.bat
 Stop Grimoire.bat
+
+# Internal design/context docs and agent config — keep out of the public repo
+.claude/
+*.md
