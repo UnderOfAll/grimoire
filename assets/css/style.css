@@ -269,6 +269,9 @@ h1 { font-family: var(--serif); font-weight: 600; margin: 0 0 1.25rem; }
   border: 6px solid transparent; border-top-color: var(--gold);
 }
 .tip-term:hover .term-tip { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+/* Tap-to-toggle open state (touch devices have no hover) — see app.js wireEvents. */
+.scaling-die.tip-open .scale-tip,
+.tip-term.tip-open .term-tip { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
 
 /* Key Numbers: headline mechanic stats up top of a class sheet */
 .key-stats-title { font-family: var(--serif); color: var(--gold); font-size: 1.05rem; margin: 0 0 0.6rem; }
@@ -336,6 +339,9 @@ code { background: var(--panel-2); padding: 0.1rem 0.4rem; border-radius: 4px; f
   /* Keep wide tables readable and prevent unbreakable text from overflowing. */
   .data-table { font-size: 0.82rem; }
   .data-table th, .data-table td { word-break: break-word; }
+
+  /* Bigger, clearer ⓘ so it reads as a tappable hint (tap toggles the tooltip). */
+  .tip-mark { font-size: 0.9em; margin-left: 0.25em; }
 
   /* Parry reference panel as a bottom sheet rather than a floating corner box. */
   .legend-panel {

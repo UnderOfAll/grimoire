@@ -113,6 +113,13 @@ function wireEvents() {
   $("#legend-panel").addEventListener("click", (e) => {
     if (e.target.id === "legend-close") $("#legend-panel").classList.add("hidden");
   });
+  // Tap-to-toggle tooltips: touchscreens can't hover, so a tap opens the formula /
+  // scaling-die box; tapping the same term again or anywhere else closes it.
+  document.addEventListener("click", (e) => {
+    const term = e.target.closest(".tip-term, .scaling-die");
+    document.querySelectorAll(".tip-open").forEach((n) => { if (n !== term) n.classList.remove("tip-open"); });
+    if (term) { term.classList.toggle("tip-open"); e.stopPropagation(); }
+  });
 }
 
 /* Short, always-available rules reference — summarizes the shared Parry
