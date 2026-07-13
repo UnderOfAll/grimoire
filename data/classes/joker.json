@@ -3,7 +3,7 @@
   "name": "Joker",
   "source": "Circus System",
   "flavor": "A chaos menace with a deck of razor cards and a grin that never quite fits the moment — he wins by making sure no one, least of all himself, knows what happens next.",
-  "hitDie": 8,
+  "hitDie": 10,
   "primaryAbility": "Charisma",
   "savingThrows": [
     "Charisma",
@@ -138,11 +138,11 @@
       "options": [
         {
           "name": "Switcheroo",
-          "effect": "Choose one creature within 30 feet of you and a second creature within 5 feet of the first; the two instantly swap positions, each moving into the other's space with no opportunity attacks provoked. If either creature is unwilling, it can void the swap entirely by succeeding on a Charisma saving throw against your gambit DC (on a success, neither creature moves)."
+          "effect": "Choose one creature you can see within 30 feet of you; you and it instantly swap positions, each appearing in the other's space, and neither of you provokes opportunity attacks from the move (each of you must be able to occupy the other's space). Close on a target, drag a dangerous foe off a fragile ally and take its place yourself, or trade spots with an ally to slip out of a bad one. A willing creature swaps automatically; an unwilling creature can refuse by succeeding on a Charisma saving throw against your gambit DC (on a success, neither of you moves)."
         },
         {
-          "name": "Rewrite the Draw",
-          "effect": "Choose one creature within 30 feet of you that has just made an attack roll or saving throw, before its result is applied. You or a willing ally simply rerolls it and uses the new result; a hostile creature must first succeed on a Charisma saving throw against your gambit DC or it, too, must reroll and use the new result."
+          "name": "Jinx",
+          "effect": "Choose one creature you can see within 30 feet of you and stack the deck against it. The first attack roll or saving throw it makes before the start of your next turn, it must roll twice and use the lower result. Unlike your other tricks, this also spoils a saving throw — set it up on your turn before an ally's spell or your own gambit lands. A hostile creature can shrug the jinx off by succeeding on a Charisma saving throw against your gambit DC when you declare it (on a success, the jinx has no effect)."
         },
         {
           "name": "Fortune's Favor",

@@ -24,6 +24,16 @@
         "action": "No action",
         "range": "Self"
       }
+    },
+    {
+      "level": 5,
+      "name": "Boneless Counter",
+      "description": "When a creature within 5 feet of you hits you with an attack — the moment your Contortion fold and your Parry have both failed and the blow has actually landed — you can use your reaction to pour your body along the line of the strike and snap back from an angle it can't cover. Make one melee weapon attack against that creature; on a hit, you immediately flow up to 10 feet without provoking opportunity attacks, leaving it striking at the space you just left. This draws on the same single reaction as Parry, so on most rounds it is the counter you take when your defense has already failed you. On a turn when Flowing Reflexes (4th level) hands your reaction back after a clean Parry, it becomes a second, offensive use of that same reaction against the next foe to land a hit. The reactive slip is off-turn movement and generates no Momentum.",
+      "meta": {
+        "action": "Reaction",
+        "uses": "1 / round",
+        "range": "Melee (5 ft)"
+      }
     }
   ]
 }

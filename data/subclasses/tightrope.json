@@ -20,6 +20,16 @@
       "meta": {
         "action": "Passive"
       }
+    },
+    {
+      "level": 5,
+      "name": "Wire-Walker's Riposte",
+      "description": "You have spent years making attackers commit to a strike that finds only wire and empty air. When a creature within 5 feet of you misses you with an attack roll, you can use your reaction to answer from perfect balance: make one melee weapon attack against it. Like all your weapon attacks (see Improved Critical), this scores a critical hit on a 19 or 20. Because your own footing is never in question, on a hit you throw the target off its line — it has disadvantage on the next attack roll it makes before the start of your next turn. This is distinct from your base Riposte, which triggers on a clean Full Dodge and spends Momentum at no reaction cost; Wire-Walker's Riposte instead punishes any miss and costs your reaction. It uses the same single reaction as Parry, so landing a Parry and a Riposte in the same round relies on Flowing Reflexes (4th level) returning your reaction after a successful Parry.",
+      "meta": {
+        "action": "Reaction",
+        "uses": "1 / round",
+        "range": "Melee (5 ft)"
+      }
     }
   ]
 }

@@ -550,7 +550,7 @@
       "name": "Joker",
       "source": "Circus System",
       "flavor": "A chaos menace with a deck of razor cards and a grin that never quite fits the moment — he wins by making sure no one, least of all himself, knows what happens next.",
-      "hitDie": 8,
+      "hitDie": 10,
       "primaryAbility": "Charisma",
       "savingThrows": [
         "Charisma",
@@ -685,11 +685,11 @@
           "options": [
             {
               "name": "Switcheroo",
-              "effect": "Choose one creature within 30 feet of you and a second creature within 5 feet of the first; the two instantly swap positions, each moving into the other's space with no opportunity attacks provoked. If either creature is unwilling, it can void the swap entirely by succeeding on a Charisma saving throw against your gambit DC (on a success, neither creature moves)."
+              "effect": "Choose one creature you can see within 30 feet of you; you and it instantly swap positions, each appearing in the other's space, and neither of you provokes opportunity attacks from the move (each of you must be able to occupy the other's space). Close on a target, drag a dangerous foe off a fragile ally and take its place yourself, or trade spots with an ally to slip out of a bad one. A willing creature swaps automatically; an unwilling creature can refuse by succeeding on a Charisma saving throw against your gambit DC (on a success, neither of you moves)."
             },
             {
-              "name": "Rewrite the Draw",
-              "effect": "Choose one creature within 30 feet of you that has just made an attack roll or saving throw, before its result is applied. You or a willing ally simply rerolls it and uses the new result; a hostile creature must first succeed on a Charisma saving throw against your gambit DC or it, too, must reroll and use the new result."
+              "name": "Jinx",
+              "effect": "Choose one creature you can see within 30 feet of you and stack the deck against it. The first attack roll or saving throw it makes before the start of your next turn, it must roll twice and use the lower result. Unlike your other tricks, this also spoils a saving throw — set it up on your turn before an ally's spell or your own gambit lands. A hostile creature can shrug the jinx off by succeeding on a Charisma saving throw against your gambit DC when you declare it (on a success, the jinx has no effect)."
             },
             {
               "name": "Fortune's Favor",
@@ -1373,6 +1373,16 @@
             "action": "No action",
             "range": "Self"
           }
+        },
+        {
+          "level": 5,
+          "name": "Boneless Counter",
+          "description": "When a creature within 5 feet of you hits you with an attack — the moment your Contortion fold and your Parry have both failed and the blow has actually landed — you can use your reaction to pour your body along the line of the strike and snap back from an angle it can't cover. Make one melee weapon attack against that creature; on a hit, you immediately flow up to 10 feet without provoking opportunity attacks, leaving it striking at the space you just left. This draws on the same single reaction as Parry, so on most rounds it is the counter you take when your defense has already failed you. On a turn when Flowing Reflexes (4th level) hands your reaction back after a clean Parry, it becomes a second, offensive use of that same reaction against the next foe to land a hit. The reactive slip is off-turn movement and generates no Momentum.",
+          "meta": {
+            "action": "Reaction",
+            "uses": "1 / round",
+            "range": "Melee (5 ft)"
+          }
         }
       ],
       "_file": "subclasses/contortionist.json"
@@ -1761,6 +1771,16 @@
           "meta": {
             "action": "Passive"
           }
+        },
+        {
+          "level": 5,
+          "name": "Wire-Walker's Riposte",
+          "description": "You have spent years making attackers commit to a strike that finds only wire and empty air. When a creature within 5 feet of you misses you with an attack roll, you can use your reaction to answer from perfect balance: make one melee weapon attack against it. Like all your weapon attacks (see Improved Critical), this scores a critical hit on a 19 or 20. Because your own footing is never in question, on a hit you throw the target off its line — it has disadvantage on the next attack roll it makes before the start of your next turn. This is distinct from your base Riposte, which triggers on a clean Full Dodge and spends Momentum at no reaction cost; Wire-Walker's Riposte instead punishes any miss and costs your reaction. It uses the same single reaction as Parry, so landing a Parry and a Riposte in the same round relies on Flowing Reflexes (4th level) returning your reaction after a successful Parry.",
+          "meta": {
+            "action": "Reaction",
+            "uses": "1 / round",
+            "range": "Melee (5 ft)"
+          }
         }
       ],
       "_file": "subclasses/tightrope.json"
@@ -1787,6 +1807,16 @@
           "meta": {
             "action": "Passive",
             "cost": "1 Momentum (land on feet)"
+          }
+        },
+        {
+          "level": 5,
+          "name": "Intercepting Swing",
+          "description": "Your lines reach anywhere you can see. When a creature you can see within 30 feet of you hits an ally with an attack, you can use your reaction to drop onto a line out of nowhere and swing to an unoccupied space within 5 feet of that attacker, then make one melee weapon attack against it — punishing the opening the instant it commits. As with Trapeze Swing, this aerial style is flashy, not safe: leaving a creature's reach as you swing provokes opportunity attacks as normal. This does not count as your Trapeze Swing for the turn and generates no Momentum. It uses the same single reaction as Parry, so on a turn when Flowing Reflexes (4th level) returns your reaction after a clean Parry, you can both defend yourself and swing to a struck ally's aid in the same round.",
+          "meta": {
+            "action": "Reaction",
+            "uses": "1 / round",
+            "range": "30 ft"
           }
         }
       ],

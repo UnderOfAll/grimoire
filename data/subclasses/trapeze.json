@@ -21,6 +21,16 @@
         "action": "Passive",
         "cost": "1 Momentum (land on feet)"
       }
+    },
+    {
+      "level": 5,
+      "name": "Intercepting Swing",
+      "description": "Your lines reach anywhere you can see. When a creature you can see within 30 feet of you hits an ally with an attack, you can use your reaction to drop onto a line out of nowhere and swing to an unoccupied space within 5 feet of that attacker, then make one melee weapon attack against it — punishing the opening the instant it commits. As with Trapeze Swing, this aerial style is flashy, not safe: leaving a creature's reach as you swing provokes opportunity attacks as normal. This does not count as your Trapeze Swing for the turn and generates no Momentum. It uses the same single reaction as Parry, so on a turn when Flowing Reflexes (4th level) returns your reaction after a clean Parry, you can both defend yourself and swing to a struck ally's aid in the same round.",
+      "meta": {
+        "action": "Reaction",
+        "uses": "1 / round",
+        "range": "30 ft"
+      }
     }
   ]
 }
