@@ -1,0 +1,10 @@
+{
+  "id": "beasthide-wrap",
+  "name": "Beasthide Wrap",
+  "source": "Circus System",
+  "flavor": "Layered hides from the menagerie's beasts, roughly cured — crude, warm, and surprisingly tough.",
+  "category": "medium",
+  "baseAC": 12,
+  "maxDexBonus": 2,
+  "stealthDisadvantage": false
+}

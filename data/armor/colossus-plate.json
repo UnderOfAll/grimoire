@@ -1,0 +1,11 @@
+{
+  "id": "colossus-plate",
+  "name": "Colossus Plate",
+  "source": "Circus System",
+  "flavor": "Full articulated plate built for the strongman act's grand finale — a walking fortress that only the mightiest can even carry.",
+  "category": "heavy",
+  "baseAC": 18,
+  "maxDexBonus": 0,
+  "strengthRequirement": 15,
+  "stealthDisadvantage": true
+}

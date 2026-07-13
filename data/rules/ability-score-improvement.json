@@ -1,0 +1,30 @@
+{
+  "id": "ability-score-improvement",
+  "name": "Ability Score Improvement",
+  "source": "Circus System",
+  "summary": "A universal level-up reward, not a class feature — every class gets it at the same levels.",
+  "sections": [
+    {
+      "heading": "What it is",
+      "paragraphs": [
+        "An Ability Score Improvement (ASI) lets you raise your ability scores as you level. It is the standard way a character's numbers climb over time: a higher primary ability means better attack and damage rolls, higher save DCs on the effects you force, and stronger saving throws of your own.",
+        "This is a base rule of the system. It applies identically to every class, so it lives here in the Rules rather than being printed as a feature on each class sheet."
+      ]
+    },
+    {
+      "heading": "When you gain one",
+      "paragraphs": [
+        "Every class gains an Ability Score Improvement at 4th level, and again at 8th, 12th, 16th, and 19th level. (Levels beyond 5 are outside the current build scope but the cadence is fixed here so it never has to be re-decided per class.)"
+      ]
+    },
+    {
+      "heading": "What you may do with it",
+      "list": [
+        "Increase one ability score by 2, or",
+        "Increase two ability scores by 1 each.",
+        "No ability score can go above 20 this way.",
+        "If your table uses feats, you may take a feat instead of the score increase."
+      ]
+    }
+  ]
+}

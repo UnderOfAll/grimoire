@@ -1,0 +1,25 @@
+{
+  "id": "harlequins-cane",
+  "name": "Harlequin's Cane",
+  "source": "Circus System",
+  "flavor": "A slim jester's cane, twirled and cracked with theatrical flourish — half prop, half bludgeon, wholly unpredictable.",
+  "category": "martial",
+  "damage": {
+    "die": "1d6",
+    "type": "bludgeoning"
+  },
+  "properties": [
+    "finesse",
+    "versatile"
+  ],
+  "versatileDamage": "1d8",
+  "parryProfile": {
+    "canParry": true,
+    "parryRange": "melee",
+    "note": "A twirling cane is a natural fending tool, sweeping blows aside with a showman's flourish."
+  },
+  "proficientClasses": [
+    "joker"
+  ],
+  "mastery": "Topple"
+}

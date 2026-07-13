@@ -1,0 +1,24 @@
+{
+  "id": "iron-chain",
+  "name": "Iron Chain",
+  "source": "Circus System",
+  "flavor": "A heavy length of tent chain swung in wide arcs — it reaches, it wraps, and it hurts.",
+  "category": "martial",
+  "damage": {
+    "die": "1d8",
+    "type": "bludgeoning"
+  },
+  "properties": [
+    "reach",
+    "two-handed"
+  ],
+  "parryProfile": {
+    "canParry": true,
+    "parryRange": "melee",
+    "note": "A whirling chain can catch and foul an incoming weapon at reach, so it fends a touch better than a rigid bludgeon."
+  },
+  "proficientClasses": [
+    "the-sandow"
+  ],
+  "mastery": "Topple"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "razor-cards",
+  "name": "Razor Cards",
+  "source": "Circus System",
+  "flavor": "A deck of steel-edged playing cards, flicked from the fingertips faster than the eye can follow — always a winning hand.",
+  "category": "signature",
+  "damage": {
+    "die": "1d4",
+    "type": "slashing"
+  },
+  "properties": [
+    "finesse",
+    "light",
+    "thrown"
+  ],
+  "range": {
+    "normal": 20,
+    "long": 60
+  },
+  "parryProfile": {
+    "canParry": false,
+    "note": "A thrown card is gone the instant it leaves the hand — nothing to fend with. Falls back to the unarmed case if you try. Signature to the Joker."
+  },
+  "proficientClasses": [
+    "joker"
+  ],
+  "mastery": "Vex"
+}

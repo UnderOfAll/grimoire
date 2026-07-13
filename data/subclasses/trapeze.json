@@ -1,0 +1,26 @@
+{
+  "id": "trapeze",
+  "name": "Trapeze",
+  "parentClass": "acrobat",
+  "source": "Circus System",
+  "flavor": "The purest expression of the Acrobat's aerial fantasy: a performer who treats open air as solid ground, closing distance, escaping danger, and pulling allies along for the ride on lines only they can see.",
+  "features": [
+    {
+      "level": 3,
+      "name": "Aerial Anchor",
+      "description": "Your mastery of the trapeze frees you from needing real rigging. You can use Trapeze Swing at any time, even when no rope, chandelier, banner, or similar structure is within reach, treating open air as your line. Additionally, when you use Trapeze Swing, you may bring one willing or incapacitated Medium or smaller creature within 5 feet of you along the swing; that creature moves with you at no cost to your own movement and does not provoke opportunity attacks during the swing. Trapeze Swing remains a signature move when used this way, so it still generates Momentum.",
+      "meta": {
+        "action": "Passive (enhances Trapeze Swing)"
+      }
+    },
+    {
+      "level": 3,
+      "name": "Featherweight Landing",
+      "description": "Your body has learned to always find purchase. You take no damage from a fall of 30 feet or less, and for any longer fall you calculate damage as though you had fallen 30 feet less than you actually did. In addition, whenever you fall or would be knocked prone as a result of your own fall or your own signature move (such as a failed Wall-Run or Trapeze Swing), you can spend 1 Momentum (no action required) to land on your feet instead, ending the fall without becoming prone, provided you end it in a space you could normally occupy. This does not apply to being knocked prone or forcibly moved by a hostile creature's attack, spell, or ability.",
+      "meta": {
+        "action": "Passive",
+        "cost": "1 Momentum (land on feet)"
+      }
+    }
+  ]
+}

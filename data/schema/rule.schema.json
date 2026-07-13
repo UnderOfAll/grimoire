@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Rule",
+  "type": "object",
+  "required": ["name", "sections"],
+  "properties": {
+    "id": { "type": "string", "description": "kebab-case unique id; defaults to slug of name" },
+    "name": { "type": "string", "description": "the rule/topic title" },
+    "source": { "type": "string", "default": "Circus System" },
+    "summary": { "type": "string", "description": "one-line summary, shown as the list subtitle" },
+    "sections": {
+      "type": "array",
+      "description": "ordered content blocks; each may have a heading, paragraphs, and/or a bulleted list",
+      "items": {
+        "type": "object",
+        "properties": {
+          "heading": { "type": "string" },
+          "paragraphs": { "type": "array", "items": { "type": "string" } },
+          "list": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    }
+  }
+}

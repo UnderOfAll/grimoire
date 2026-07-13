@@ -1,0 +1,25 @@
+{
+  "id": "tightrope",
+  "name": "Tightrope",
+  "parentClass": "acrobat",
+  "source": "Circus System",
+  "flavor": "The precision discipline: a performer who has spent so long balanced on a single strand of wire high above the crowd that solid ground feels generous, and every strike lands exactly where it was always going to.",
+  "features": [
+    {
+      "level": 3,
+      "name": "Perfect Balance",
+      "description": "You ignore the effects of narrow, unstable, or slippery surfaces: you can move across a tightrope, ledge, ice, rubble, or similar footing at your full speed, without needing an ability check, and you don't fall from such a surface. Additionally, you have advantage on saving throws and ability checks made to avoid being knocked prone or moved against your will.",
+      "meta": {
+        "action": "Passive"
+      }
+    },
+    {
+      "level": 3,
+      "name": "Improved Critical",
+      "description": "Your weapon attacks score a critical hit on a roll of 19 or 20. Whenever you score a critical hit, you regain 1 Momentum (no more than once per turn, and never above your current cap).",
+      "meta": {
+        "action": "Passive"
+      }
+    }
+  ]
+}

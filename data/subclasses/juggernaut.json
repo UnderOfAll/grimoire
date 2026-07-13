@@ -1,0 +1,28 @@
+{
+  "id": "juggernaut",
+  "name": "Juggernaut",
+  "parentClass": "the-sandow",
+  "source": "Circus System",
+  "flavor": "The offense discipline: a Sandow who never stops moving forward, turning every hit, shove, and thrown body into fuel for the next, bigger swing.",
+  "features": [
+    {
+      "level": 3,
+      "name": "Unstoppable Force",
+      "description": "You feed on the wreckage you cause. In addition to your baseline Grit generation, you gain 1 additional Grit the first time each turn you knock a creature prone (by a shove, a Heave throw, or any other means), and you gain 1 Grit the first time each turn you deal damage to a creature with a Heave throw — two separate sources, each capped at once per turn, exactly like your baseline Grit generation. The bigger the mess you make, the more you have left to make it worse.",
+      "meta": {
+        "action": "Passive"
+      }
+    },
+    {
+      "level": 3,
+      "name": "Bulldozer Charge",
+      "description": "When you move at least 15 feet in a straight line toward a creature and then hit it with a melee weapon attack before the end of the same turn, the attack deals an extra [[1d6]] bludgeoning damage, and the target must succeed on a Strength saving throw (DC = 8 + your proficiency bonus + your Strength modifier) or be knocked prone and pushed 5 feet directly away from you, your choice of direction. You can use Bulldozer Charge only once per turn.",
+      "meta": {
+        "action": "Part of Attack",
+        "uses": "1 / turn",
+        "range": "Melee",
+        "save": "Str save vs your DC"
+      }
+    }
+  ]
+}

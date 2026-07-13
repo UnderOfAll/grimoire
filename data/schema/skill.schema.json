@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Skill",
+  "definitions": {
+    "skill": {
+      "type": "object",
+      "required": ["name", "ability", "description"],
+      "properties": {
+        "id": { "type": "string", "description": "kebab-case unique id; defaults to slug of name" },
+        "name": { "type": "string" },
+        "ability": { "type": "string", "enum": ["Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma"] },
+        "source": { "type": "string", "default": "5e SRD" },
+        "description": { "type": "string" }
+      }
+    }
+  },
+  "oneOf": [
+    { "$ref": "#/definitions/skill" },
+    { "type": "array", "items": { "$ref": "#/definitions/skill" } }
+  ]
+}

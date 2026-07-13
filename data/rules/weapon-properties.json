@@ -1,0 +1,29 @@
+{
+  "id": "weapon-properties",
+  "name": "Weapon Properties",
+  "source": "circus-system",
+  "summary": "What the tags on a weapon (Finesse, Light, Reach, Thrown, Versatile...) actually mean.",
+  "sections": [
+    {
+      "heading": "Reading a weapon",
+      "paragraphs": [
+        "Every weapon lists a few properties that change how you attack with it. They appear on the weapon's page and in the Attacks table on each class sheet — hover any property name there to see its meaning."
+      ]
+    },
+    {
+      "heading": "The properties",
+      "list": [
+        "Finesse — Use Strength or Dexterity (your choice) for your attack and damage rolls with it. (A class feature may further change which ability you use — e.g. the Joker uses Charisma.)",
+        "Light — Small and easy to handle. Holding a Light weapon in each hand lets you use a bonus action to make one extra attack with the second weapon (two-weapon fighting).",
+        "Heavy — Large and unwieldy; Small creatures have disadvantage on attack rolls made with it.",
+        "Reach — Adds 5 feet to your reach when you attack with it, and for opportunity attacks.",
+        "Thrown — You can throw it to make a ranged attack, using the same ability modifier you would for a melee attack with it.",
+        "Two-handed — You need both hands to attack with it.",
+        "Versatile — You can use it one- or two-handed; used two-handed it deals the larger 'versatile' damage die shown on its page.",
+        "Ammunition — It needs ammunition to make a ranged attack; you draw a piece as part of the attack.",
+        "Loading — You can fire only one piece of ammunition when you attack with it, regardless of how many attacks you could normally make.",
+        "Special — It has unusual rules described in the weapon's own text."
+      ]
+    }
+  ]
+}

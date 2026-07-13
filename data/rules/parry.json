@@ -1,0 +1,42 @@
+{
+  "id": "parry",
+  "name": "Parry & Dodging",
+  "source": "Circus System",
+  "summary": "Active defense — roll to dodge, graze, or overcommit when you are hit.",
+  "sections": [
+    {
+      "heading": "How Parry works",
+      "paragraphs": [
+        "When an attack roll hits you (beats your AC) and you can see the attacker, you may spend your reaction to Parry. Roll a flat d20 — no modifier is added, because your bonuses are already baked into your Parry DC — and compare the result to your effective Parry DC."
+      ]
+    },
+    {
+      "heading": "The three outcomes",
+      "list": [
+        "Roll ABOVE your Parry DC: Full Dodge — you take no damage at all.",
+        "Roll EXACTLY your Parry DC: Grazing Parry — you take half damage.",
+        "Roll BELOW your Parry DC: Overcommitted — you take +50% damage (you committed to the dodge and got caught)."
+      ]
+    },
+    {
+      "heading": "Your Parry DC (lower is better)",
+      "paragraphs": [
+        "Each class has its own Parry Base DC, shown on its class page. Your effective DC for a given attack = class base DC + your weapon's parry modifier + situational modifiers, minus your proficiency bonus (only if you are proficient with the weapon in hand) minus half your defense-ability modifier, with a floor of 3.",
+        "So a weapon well-suited to defense, a higher character level, and a good defense ability all push the DC lower, meaning you Full Dodge more often. A ranged or improvised defense pushes it higher."
+      ]
+    },
+    {
+      "heading": "Cost and timing",
+      "paragraphs": [
+        "Parry costs your reaction, and you have only one reaction per round. A round you spend dodging is a round you cannot make an opportunity attack, and you can fully dodge only one attack per round.",
+        "You may Parry any attack you can see that hits you — including an opportunity attack, even one you provoke on your own turn by moving. You cannot Parry while stunned, incapacitated, paralyzed, unconscious, unable to see the attacker, or with no reaction left."
+      ]
+    },
+    {
+      "heading": "Riposte",
+      "paragraphs": [
+        "On a Full Dodge, some classes can strike back — a riposte. Each class's page describes its own riposte, if it has one."
+      ]
+    }
+  ]
+}

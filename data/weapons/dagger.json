@@ -1,0 +1,31 @@
+{
+  "id": "dagger",
+  "name": "Dagger",
+  "source": "Circus System",
+  "flavor": "A plain, quick blade — the universal backup, easy to hide and easy to throw.",
+  "category": "simple",
+  "damage": {
+    "die": "1d4",
+    "type": "piercing"
+  },
+  "properties": [
+    "finesse",
+    "light",
+    "thrown"
+  ],
+  "range": {
+    "normal": 20,
+    "long": 60
+  },
+  "parryProfile": {
+    "canParry": true,
+    "parryRange": "melee",
+    "note": "A small blade parries only passably — better than bare hands, worse than a dueling weapon. Once thrown it is gone, with nothing left in hand to parry with."
+  },
+  "proficientClasses": [
+    "puppeteer",
+    "doppelganger",
+    "joker"
+  ],
+  "mastery": "Nick"
+}

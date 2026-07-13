@@ -1,0 +1,24 @@
+{
+  "id": "strongmans-barbell",
+  "name": "Strongman's Barbell",
+  "source": "Circus System",
+  "flavor": "The classic loaded bar of the strongman act, swung as a two-handed bludgeon — absurd in anyone else's hands, natural in his.",
+  "category": "signature",
+  "damage": {
+    "die": "2d6",
+    "type": "bludgeoning"
+  },
+  "properties": [
+    "heavy",
+    "two-handed"
+  ],
+  "parryProfile": {
+    "canParry": true,
+    "parryRange": "melee",
+    "note": "A heavy bar is clumsy to fend with, but The Sandow simply braces it across an incoming blow — neutral, leaning on his class's brace rather than the weapon's finesse."
+  },
+  "proficientClasses": [
+    "the-sandow"
+  ],
+  "mastery": "Cleave"
+}

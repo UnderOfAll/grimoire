@@ -1,0 +1,24 @@
+{
+  "id": "shortsword",
+  "name": "Shortsword",
+  "source": "Circus System",
+  "flavor": "A short, straight blade — light and quick, easy to pair and easier to hide.",
+  "category": "martial",
+  "damage": {
+    "die": "1d6",
+    "type": "piercing"
+  },
+  "properties": [
+    "finesse",
+    "light"
+  ],
+  "parryProfile": {
+    "canParry": true,
+    "parryRange": "melee",
+    "note": "A balanced short blade parries competently — neutral, neither a dedicated dueling guard like a rapier nor an improvised tool."
+  },
+  "proficientClasses": [
+    "doppelganger"
+  ],
+  "mastery": "Vex"
+}

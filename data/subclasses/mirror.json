@@ -1,0 +1,29 @@
+{
+  "id": "mirror",
+  "name": "Mirror",
+  "parentClass": "doppelganger",
+  "source": "Circus System",
+  "flavor": "The discipline of the counter-strike: a Doppelganger who turns every shattered reflection and every last-second sidestep into consequence for the creature that struck first.",
+  "features": [
+    {
+      "level": 3,
+      "name": "Shattering Reflection",
+      "description": "Your Clones don't break quietly. Whenever a creature destroys one of your Clones with an attack roll (including a Clone destroyed by an attack redirected onto it via Mirror Image, but never a Clone you destroy yourself through one of your own features), that creature must make a Dexterity saving throw (DC = 8 + your proficiency bonus + your Constitution modifier). On a failed save, it takes [[1d6]] plus your Constitution modifier psychic damage as shards of the shattered illusion rake across it, and it has disadvantage on the next attack roll it makes before the end of its next turn. On a successful save, it takes half as much damage and suffers no other effect. This triggers at most once per turn (no matter how many Clones are destroyed that turn) and requires no action or reaction from you to resolve.",
+      "meta": {
+        "action": "Passive (auto)",
+        "uses": "1 / turn",
+        "save": "Dex save vs your DC"
+      }
+    },
+    {
+      "level": 3,
+      "name": "Vanishing Trick",
+      "description": "Your Swap doubles as a parting insult. Once per turn, when you use Swap, you may choose one creature within 5 feet of the space you just left that could see you there: that creature has disadvantage on the next attack roll it makes before the end of your next turn, having lunged for a reflection that was never really there. This requires no action or reaction beyond using Swap itself, and doesn't change how Swap otherwise works. In addition, once per combat you may Swap defensively: when a creature you can see hits you with an attack, before its damage is dealt, you can use your reaction to Swap with one of your Clones within Swap's range — you trade places, the blow lands on the Clone now standing in the space you left (destroying it), and you take no damage. This defensive use costs your reaction (unlike the disadvantage effect above) and needs a Clone available to Swap with.",
+      "meta": {
+        "action": "Free with Swap / Reaction (defensive)",
+        "uses": "Disadv 1 / turn; defensive Swap 1 / combat",
+        "range": "5 ft / Swap range"
+      }
+    }
+  ]
+}

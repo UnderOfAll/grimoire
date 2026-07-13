@@ -1,0 +1,27 @@
+{
+  "id": "cannonball",
+  "name": "Cannonball",
+  "source": "Circus System",
+  "flavor": "A solid iron sphere from the human-cannonball act, hurled by hand — it lands like a falling anvil.",
+  "category": "signature",
+  "damage": {
+    "die": "1d10",
+    "type": "bludgeoning"
+  },
+  "properties": [
+    "heavy",
+    "thrown"
+  ],
+  "range": {
+    "normal": 15,
+    "long": 30
+  },
+  "parryProfile": {
+    "canParry": false,
+    "note": "A cannonball is for throwing, not fending — there is nothing to parry with, and once hurled it is gone. Falls back to the brace (unarmed) case if held."
+  },
+  "proficientClasses": [
+    "the-sandow"
+  ],
+  "mastery": "Push"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "parade-shield",
+  "name": "Parade Shield",
+  "source": "Circus System",
+  "flavor": "A round, brightly painted shield twirled in the opening march — light enough to flourish, solid enough to turn a blade.",
+  "category": "shield",
+  "acBonus": 2,
+  "stealthDisadvantage": false
+}

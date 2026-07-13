@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Armor",
+  "type": "object",
+  "required": ["name", "category"],
+  "properties": {
+    "id": { "type": "string", "description": "kebab-case unique id; defaults to slug of name" },
+    "name": { "type": "string" },
+    "source": { "type": "string", "default": "Circus System" },
+    "flavor": { "type": "string", "description": "one-line evocative summary of the armor's look/feel/circus theme" },
+    "category": {
+      "type": "string",
+      "enum": ["light", "medium", "heavy", "shield"],
+      "description": "5e armor category. light = baseAC + full Dex; medium = baseAC + Dex (capped by maxDexBonus, usually 2); heavy = baseAC only, no Dex; shield = a flat acBonus added on top of worn armor."
+    },
+    "baseAC": {
+      "type": "integer",
+      "description": "Base Armor Class before Dexterity, for body armor (light/medium/heavy). Omit for shields (use acBonus instead)."
+    },
+    "maxDexBonus": {
+      "type": ["integer", "null"],
+      "description": "Dexterity cap added to baseAC. null = no cap (light armor adds full Dex mod); 2 = medium armor; 0 = heavy armor (no Dex). Omit for shields."
+    },
+    "acBonus": {
+      "type": "integer",
+      "description": "Shields only: the flat AC bonus a shield adds (e.g. 2). Omit for body armor."
+    },
+    "strengthRequirement": {
+      "type": "integer",
+      "description": "Minimum Strength score to wear without a speed penalty; omit if none. Heavy armors are typically 13-15."
+    },
+    "stealthDisadvantage": {
+      "type": "boolean",
+      "default": false,
+      "description": "true if wearing this armor imposes disadvantage on Dexterity (Stealth) checks."
+    }
+  }
+}

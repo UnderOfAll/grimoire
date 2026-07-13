@@ -1,0 +1,29 @@
+{
+  "id": "armor-and-ac",
+  "name": "Armor & AC",
+  "source": "Circus System",
+  "summary": "Armor sets your AC — the number an attack must beat before you even Parry.",
+  "sections": [
+    {
+      "heading": "AC comes first",
+      "paragraphs": [
+        "Armor Class (AC) is the number an attacker must meet or beat on its attack roll to hit you. Only a hit can be Parried, so armor helps by keeping attacks from reaching the Parry step at all. AC and Parry are two layers of defense, not the same one."
+      ]
+    },
+    {
+      "heading": "Armor categories",
+      "list": [
+        "Light: base AC + your full Dexterity modifier.",
+        "Medium: base AC + Dexterity modifier (maximum +2).",
+        "Heavy: a fixed base AC, no Dexterity; some require a minimum Strength or cost you speed.",
+        "Shield: +2 AC on top of whatever armor you wear."
+      ]
+    },
+    {
+      "heading": "Armor does not affect Parry",
+      "paragraphs": [
+        "Wearing heavy armor does not make you worse at Parrying. Some classes parry by bracing and absorbing rather than dodging, so armor is never a penalty to it. How good you are at Parrying is set by your class's Parry DC, not by what you wear."
+      ]
+    }
+  ]
+}

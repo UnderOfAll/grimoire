@@ -1,0 +1,34 @@
+{
+  "id": "attacks-and-damage",
+  "name": "Attacks & Damage",
+  "source": "Circus System",
+  "summary": "Your attacks are your weapons — how to hit and how damage is calculated.",
+  "sections": [
+    {
+      "heading": "Making an attack",
+      "paragraphs": [
+        "To attack, you take the Attack action and strike with a weapon you are proficient with. Roll a d20 and add your ability modifier and your proficiency bonus; if the total meets or beats the target's Armor Class (AC), you hit.",
+        "There is no separate list of 'attacks' for a class — a class attacks with the weapons it is proficient with. Each class page lists those under Attacks, and every weapon's full stats are in the Weapons tab."
+      ]
+    },
+    {
+      "heading": "Which ability?",
+      "paragraphs": [
+        "Melee weapons normally use Strength; finesse and ranged weapons use Dexterity. Some classes change this: the Puppeteer's Strings of Will lets his Control Wires use Charisma instead. A class feature always tells you when a different ability applies."
+      ]
+    },
+    {
+      "heading": "Damage on a hit",
+      "paragraphs": [
+        "A hit deals the weapon's damage die plus the same ability modifier you used to attack. A Rapier (1d8) with a +3 modifier deals 1d8 + 3.",
+        "Class features can add more. The Puppeteer's Puppet's Spite adds an extra Charisma modifier against a strung enemy, so a Control Wires hit — normally 1d4 + Charisma via Strings of Will — becomes 1d4 + Charisma + Charisma on a strung foe."
+      ]
+    },
+    {
+      "heading": "Where to find damage",
+      "paragraphs": [
+        "Every weapon's damage die, type, properties, and parry profile live on its page in the Weapons tab. Your class page's Attacks section shows the weapons that class actually uses."
+      ]
+    }
+  ]
+}

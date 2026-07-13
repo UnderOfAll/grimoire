@@ -1,0 +1,9 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+desktop.ini
+
+# Local Python cache
+__pycache__/
+*.pyc

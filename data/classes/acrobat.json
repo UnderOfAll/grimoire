@@ -1,0 +1,157 @@
+{
+  "id": "acrobat",
+  "name": "Acrobat",
+  "source": "Circus System",
+  "flavor": "An aerial rogue who turns falling, swinging, and sprinting into a weapon, never quite where the last swing landed.",
+  "hitDie": 8,
+  "primaryAbility": "Dexterity",
+  "savingThrows": [
+    "Dexterity",
+    "Strength"
+  ],
+  "subclassLevel": 3,
+  "proficiencies": {
+    "armor": [
+      "Light armor"
+    ],
+    "weapons": [
+      "Aerial Ribbons",
+      "Rapier",
+      "Whip"
+    ],
+    "tools": [
+      "Aerialist's rigging kit",
+      "Balancing pole"
+    ],
+    "skills": "Choose two from Acrobatics, Athletics, Performance, Persuasion, Sleight of Hand, and Stealth"
+  },
+  "spellcasting": null,
+  "parryBaseDC": 7,
+  "defenseAbility": "Dexterity",
+  "parryReskin": "You never block the hit at all — a twist of the spine, a mid-air redirect, a heel that was never fully planted turns solid contact into a near-miss.",
+  "riposte": "On a Full Dodge (your Parry d20 roll comes up strictly above your effective Parry DC), you may spend 1 Momentum to lash back at the triggering attacker for damage of your weapon's type (the lash-back hits automatically, no attack roll). The lash-back die grows as you level, on its own curve: 1d4 at 1st level, 1d6 at 3rd, 1d8 at 5th, 1d10 at 7th, 1d12 at 9th, and 1d20 at 12th. This is a small reward for a clean dodge, not a full attack.",
+  "engine": {
+    "name": "Momentum",
+    "resourceType": "pool",
+    "description": "A personal pool of kinetic flow built from constant motion — sprints, spins, swings, and falls turned into finesse. The Acrobat's sole resource.",
+    "generation": "You build Momentum through motion, and only through motion — no technique that spends Momentum ever also grants it. Gain 1 Momentum (at most once per turn from this movement source) when you move at least 10 feet toward, away from, or around a hostile creature on your turn, or when you take the Dash or Disengage action. You also gain 1 Momentum the first time each turn you use Wall-Run. Trapeze Swing, Strike-and-Vanish, Momentum Strike, Flow State, and Riposte only spend Momentum — they never generate it.",
+    "spend": "Spend Momentum in 1-point increments, at no action cost beyond the triggering action, to fuel your features (bonus damage, forced movement, extra mobility, or momentum-gated attacks). Unspent Momentum carries over between rounds but drains to 0 if you finish a short or long rest without spending it.",
+    "cap": "5 (6 at 4th level, see Momentum Reserve)"
+  },
+  "features": [
+    {
+      "level": 1,
+      "name": "Momentum",
+      "description": "You gain the Momentum pool, a resource built by moving with speed and spent to fuel your acrobatics and strikes. See your Momentum engine for how it is generated, spent, and capped.",
+      "meta": {
+        "action": "Passive"
+      }
+    },
+    {
+      "level": 1,
+      "name": "Counterflow",
+      "description": "Turning a blow aside leaves the attacker overextended, and you flow straight into the opening. When you successfully Parry an attack — a Full Dodge or a Grazing Parry, meaning your Parry d20 comes up at least equal to your effective Parry DC — the next attack roll you make before the end of your next turn has advantage. An Overcommitted Parry (a roll below your DC) grants nothing. Because you have only one reaction, this triggers at most once per round.",
+      "meta": {
+        "action": "No action",
+        "uses": "1 / round",
+        "range": "Self"
+      }
+    },
+    {
+      "level": 1,
+      "name": "Wall-Run",
+      "description": "As part of your movement, once per turn, you can run up to half your speed along a vertical surface or across something that couldn't normally support your weight (a wall, a taut rope, a row of chairs), provided you end that move on solid ground or something you can grab. This is a signature move: it generates Momentum.",
+      "meta": {
+        "action": "Movement",
+        "uses": "1 / turn",
+        "range": "Self"
+      }
+    },
+    {
+      "level": 2,
+      "name": "Trapeze Swing",
+      "description": "As a bonus action and a signature move, you conjure your own rigging from nowhere — a bar, rope, or ring that appears exactly where you need it — and swing up to 30 feet in any direction, ignoring difficult terrain, for 5 feet of movement and 1 Momentum. Your aerial style is flashy, not safe: leaving a creature's reach during the swing provokes opportunity attacks as normal. At the end of the swing you can make one melee weapon attack against a creature within 5 feet. As a flourish, you may spend 3 additional Momentum to make that attack against every hostile creature you pass within 5 feet during the swing instead of just one, each targeted once. You can use Trapeze Swing at most once per turn. (See Flow State at 5th level: on a turn where you use Trapeze Swing, you cannot also trigger Flow State's extra attack.)",
+      "meta": {
+        "action": "Bonus Action",
+        "cost": "1 Momentum (+3: hit all in path)",
+        "uses": "1 / turn",
+        "range": "30 ft"
+      }
+    },
+    {
+      "level": 2,
+      "name": "Momentum Strike",
+      "description": "When you hit a Large or smaller creature with a melee weapon attack, you can spend 1 Momentum to deal an extra [[1d6]] damage and force it to make a Strength saving throw (DC = 8 + your proficiency bonus + your Dexterity modifier). On a failed save, you shove it 5 feet or knock it prone (your choice).",
+      "meta": {
+        "action": "On a hit",
+        "cost": "1 Momentum",
+        "range": "Melee",
+        "save": "Str save vs your DC"
+      }
+    },
+    {
+      "level": 3,
+      "name": "Strike-and-Vanish",
+      "description": "After you hit a creature with a melee weapon attack, you can spend 2 Momentum to move up to half your speed without provoking opportunity attacks and attempt to Hide (per the normal Hide rules — you become hidden only if you end with total cover or out of the target's line of sight). As a flourish, you may spend 2 additional Momentum (4 total) to move your full speed instead of half — a clean disengage out of every enemy's reach (still no invisibility). You can use Strike-and-Vanish once per turn at 3rd level, twice per turn at 5th, three times at 9th, and four times at 12th. This is a signature move.",
+      "meta": {
+        "action": "After you hit",
+        "cost": "2 Momentum (+2: full move)",
+        "uses": "1 / turn (2 at L5, 3 at L9, 4 at L12)",
+        "range": "Self"
+      }
+    },
+    {
+      "level": 4,
+      "name": "Flowing Reflexes",
+      "description": "A clean parry doesn't end your turn's rhythm — it feeds it. Once per turn, when you successfully Parry an attack (a Full Dodge or a Grazing Parry), you immediately regain your reaction. This regained reaction cannot be spent to Parry again — use it for an opportunity attack or another reaction feature. If your Parry d20 came up a natural 20, you regain two reactions this way instead of one (still none able to Parry again). Any reaction regained this way lasts only until the start of your next turn; if you have not spent it by then, it is lost. Because a Parry still stops only one attack per round, this never makes you a surer dodger — it turns a clean deflection into extra tempo.",
+      "meta": {
+        "action": "Passive",
+        "uses": "1 / turn"
+      }
+    },
+    {
+      "level": 4,
+      "name": "Momentum Reserve",
+      "description": "Your Momentum cap increases to 6, and moving through a space occupied by an ally no longer costs extra movement.",
+      "meta": {
+        "action": "Passive"
+      }
+    },
+    {
+      "level": 5,
+      "name": "Aerial Evasion",
+      "description": "You are the one class whose dodging reaches beyond attack rolls. When you are subjected to an effect that allows you to make a Dexterity saving throw for half damage (a fireball, a trap, a breath weapon, or similar area effect), you instead take no damage on a success and only half damage on a failure. This is the sole exception to the rule that saving-throw and area effects can't be Parried.",
+      "meta": {
+        "action": "Passive"
+      }
+    },
+    {
+      "level": 5,
+      "name": "Flow State",
+      "description": "Once on each of your turns, if you have 3 or more Momentum and have not already gained an attack this turn from Trapeze Swing, you can spend 3 Momentum to make one additional weapon attack as part of the same action you used to make a melee weapon attack. Flow State's extra attack and Trapeze Swing's attack are mutually exclusive within a single turn — at most one of the two can add an attack on top of your normal action-attack, so no single creature can be struck by more than two of your attacks in a turn (your action attack plus one). Trapeze Swing's flourish can still spread additional single hits across several different creatures you pass within 5 feet — that is crowd damage, not focused damage, and it costs Momentum and provokes an opportunity attack from every creature you leave.",
+      "meta": {
+        "action": "Extra Attack",
+        "cost": "3 Momentum",
+        "uses": "1 / turn",
+        "range": "Melee"
+      }
+    }
+  ],
+  "keyStats": [
+    {
+      "label": "Maneuver Save DC",
+      "value": "8 + proficiency bonus + Dexterity modifier",
+      "note": "Save DC for effects your features force (e.g. Momentum Strike's shove or knock prone)."
+    },
+    {
+      "label": "Momentum Cap",
+      "value": "5 (6 at level 4)",
+      "note": "Most Momentum you can hold at once."
+    },
+    {
+      "label": "Parry Base DC",
+      "value": "7",
+      "note": "Best parrier in the roster; lower is better."
+    }
+  ]
+}

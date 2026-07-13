@@ -1,0 +1,29 @@
+{
+  "id": "contortionist",
+  "name": "Contortionist",
+  "parentClass": "acrobat",
+  "source": "Circus System",
+  "flavor": "The escape artist's discipline: a body trained to fold, slip, and pour itself through gaps that were never meant to admit a person, and to shrug off every rope, cage, or grip a captor thinks is secure.",
+  "features": [
+    {
+      "level": 3,
+      "name": "Contortion",
+      "description": "You gain a pool of 4 Contortion Dice (d6), which you regain when you finish a long rest. When a creature you can see hits you with an attack, before you decide whether to Parry, you can spend one Contortion Die — this costs no reaction and no action — and roll it. On a 4 or higher you fold your body around the strike: you take no damage from the attack, the attacker takes half of the damage it would have dealt you (rounded down, of the same type), and your reaction stays free. On a 3 or lower the fold fails and the die is spent — the hit is not turned aside, but you may still spend your reaction to Parry it as normal if you have a reaction available; if your reaction is already gone, the attack lands in full. Because Contortion is not itself a Parry, a successful fold does not trigger Counterflow, Flowing Reflexes, or Riposte, and it sits in front of your Parry as an extra, die-gated chance to avoid a hit.",
+      "meta": {
+        "action": "When hit",
+        "cost": "1 Contortion Die (roll 4+)",
+        "uses": "4 / long rest",
+        "range": "Self"
+      }
+    },
+    {
+      "level": 3,
+      "name": "Reversal",
+      "description": "A successful contortion doesn't just save you — it wrong-foots your attacker. Immediately after your Contortion succeeds (you roll 4 or higher on a Contortion Die and fold a hit away), you may move up to 10 feet without provoking opportunity attacks, and the next attack roll you make before the end of your next turn has advantage. The attacker overcommitted on a blow that found only empty air, and you take the opening.",
+      "meta": {
+        "action": "No action",
+        "range": "Self"
+      }
+    }
+  ]
+}

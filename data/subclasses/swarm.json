@@ -1,0 +1,29 @@
+{
+  "id": "swarm",
+  "name": "Swarm",
+  "parentClass": "doppelganger",
+  "source": "Circus System",
+  "flavor": "The discipline of overwhelming numbers: a Doppelganger who stops treating a Clone as one spare body and starts fielding a crowd, letting sheer duplication wear a target down from every angle at once.",
+  "features": [
+    {
+      "level": 3,
+      "name": "Overflowing Reflections",
+      "description": "Your reflections multiply more readily than most. Your Clone cap increases by 1 (this stacks with the increase Hall of Mirrors grants at 5th level). Additionally, once per combat, when you use your bonus action to create a Clone, you may create a second Clone at the same time, provided doing so would not exceed your (increased) Clone cap; both appear following the normal rules for Clone creation, in unoccupied spaces you can see within range.",
+      "meta": {
+        "action": "Passive",
+        "uses": "2nd Clone: 1 / combat"
+      }
+    },
+    {
+      "level": 3,
+      "name": "Overwhelming Numbers",
+      "description": "You press your numbers from every angle at once — and then take the legs out. Once per turn, when you hit a creature with a weapon attack while one of your Clones is within 5 feet of it, two things happen: you deal an extra [[1d4]] damage of the weapon's damage type as the creature flinches from a second angle it can't track, and the Clone sweeps in at the same instant, forcing the target to succeed on a Constitution saving throw against your save DC (8 + your proficiency bonus + your Constitution modifier) or be knocked prone. Both happen at most once per turn no matter how many Clones are adjacent, and this combines with the advantage granted by Flanking Reflection.",
+      "meta": {
+        "action": "Passive",
+        "uses": "1 / turn",
+        "range": "5 ft",
+        "save": "Con save vs your DC (or prone)"
+      }
+    }
+  ]
+}

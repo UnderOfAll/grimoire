@@ -1,0 +1,10 @@
+{
+  "id": "tumblers-leathers",
+  "name": "Tumbler's Leathers",
+  "source": "Circus System",
+  "flavor": "Supple, close-fitting leather that moves with the body — the acrobat's default, quiet and unrestrictive.",
+  "category": "light",
+  "baseAC": 11,
+  "maxDexBonus": null,
+  "stealthDisadvantage": false
+}

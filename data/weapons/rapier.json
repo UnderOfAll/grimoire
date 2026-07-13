@@ -1,0 +1,23 @@
+{
+  "id": "rapier",
+  "name": "Rapier",
+  "source": "Circus System",
+  "flavor": "A duelist's blade, thin and quick — as much a defensive tool as an offensive one in the right hands.",
+  "category": "martial",
+  "damage": {
+    "die": "1d8",
+    "type": "piercing"
+  },
+  "properties": [
+    "finesse"
+  ],
+  "parryProfile": {
+    "canParry": true,
+    "parryRange": "melee",
+    "note": "A rapier's guard and reach make it well-suited to parrying — slightly easier than a bare-fisted defense."
+  },
+  "proficientClasses": [
+    "acrobat"
+  ],
+  "mastery": "Vex"
+}

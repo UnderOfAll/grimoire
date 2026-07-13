@@ -1,0 +1,30 @@
+{
+  "id": "tangleweaver",
+  "name": "Tangleweaver",
+  "parentClass": "puppeteer",
+  "source": "Circus System",
+  "flavor": "The battlefield-control discipline of the wire: a Puppeteer who stops stringing up creatures one at a time and starts filling whole patches of ground with wire, so that walking into the show at all becomes the mistake.",
+  "features": [
+    {
+      "level": 3,
+      "name": "Snare Weave",
+      "description": "As an action, you weave loose wire across the ground in a 15-foot square within 60 feet of you, filling it with a low, near-invisible lattice that lasts for 1 minute or until you dismiss it (no action required). The area is difficult terrain to any creature without a String attached to you. Any creature other than you that enters the area for the first time on a turn or starts its turn there must succeed on a Charisma saving throw against your control DC or become restrained by the wire. A creature restrained this way can repeat the save at the end of each of its turns, ending the restrained condition on itself on a success, or use its action to make a Strength or Dexterity check (its choice) against your control DC to tear free instead. You can use Snare Weave a number of times equal to your Wisdom modifier (minimum once), regaining all expended uses when you finish a long rest.",
+      "meta": {
+        "action": "Action",
+        "uses": "Wis mod / long rest",
+        "range": "60 ft (15-ft square)",
+        "save": "Cha save vs Control DC"
+      }
+    },
+    {
+      "level": 3,
+      "name": "Binding Knots",
+      "description": "Your bindings compound on themselves. When you use Tangle, you can target one additional creature you have a String attached to within range, provided the two targets are within 15 feet of each other and you don't mix a willing target with an unwilling one in the same use. You can use this double-target option a number of times equal to your Wisdom modifier (minimum once), regaining all expended uses when you finish a long rest.",
+      "meta": {
+        "action": "Passive (with Tangle)",
+        "uses": "Wis mod / long rest",
+        "range": "15 ft between targets"
+      }
+    }
+  ]
+}

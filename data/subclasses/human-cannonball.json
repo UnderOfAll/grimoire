@@ -1,0 +1,29 @@
+{
+  "id": "human-cannonball",
+  "name": "Human Cannonball",
+  "parentClass": "the-sandow",
+  "source": "Circus System",
+  "flavor": "The mobility discipline: a Sandow who treats his own body as the act's headline stunt, hurling himself across the ring as a living projectile and slamming into whatever, or whoever, is waiting on the other side.",
+  "features": [
+    {
+      "level": 3,
+      "name": "Kinetic Buildup",
+      "description": "You build charge the way a cannon builds pressure, through speed and impact. In addition to your baseline Grit generation, you gain 1 additional Grit the first time each turn you move at least half your speed in a straight line and then hit a creature with a melee attack before the end of that turn, and you gain 1 Grit the first time each turn a creature or object you Heave collides with a solid surface, obstacle, or another creature and deals its collision damage — two separate sources, each capped at once per turn, exactly like your baseline Grit generation.",
+      "meta": {
+        "action": "Passive"
+      }
+    },
+    {
+      "level": 3,
+      "name": "Cannon Launch",
+      "description": "As a bonus action, spend 2 Grit to launch yourself up to 30 feet in a straight line to an unoccupied space you can see. This movement doesn't provoke opportunity attacks and never causes fall damage from the arc, however dramatic it looks. If you end that movement within 5 feet of a hostile creature, or pass through a hostile creature's space en route (stopping in the nearest available space when you do), that creature must succeed on a Strength saving throw (DC = 8 + your proficiency bonus + your Strength modifier) or take [[2d6]] bludgeoning damage and be knocked prone. You can use Cannon Launch only once per turn. Additionally, when you use Heave's fastball special to throw a willing ally, the throw's range increases to 20 feet per point of Grit spent, instead of the normal 10.",
+      "meta": {
+        "action": "Bonus Action",
+        "cost": "2 Grit",
+        "uses": "1 / turn",
+        "range": "30 ft",
+        "save": "Str save vs your DC"
+      }
+    }
+  ]
+}

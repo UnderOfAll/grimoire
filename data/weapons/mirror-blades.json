@@ -1,0 +1,24 @@
+{
+  "id": "mirror-blades",
+  "name": "Mirror Blades",
+  "source": "Circus System",
+  "flavor": "A matched pair of thin, silvered short blades — when the Doppelganger strikes, every one of its reflections seems to strike too.",
+  "category": "signature",
+  "damage": {
+    "die": "1d4",
+    "type": "slashing"
+  },
+  "properties": [
+    "finesse",
+    "light"
+  ],
+  "parryProfile": {
+    "canParry": true,
+    "parryRange": "melee",
+    "note": "Paired blades fend competently, and it's never quite clear which hand — or which of you — is holding them. Signature to the Doppelganger."
+  },
+  "proficientClasses": [
+    "doppelganger"
+  ],
+  "mastery": "Vex"
+}

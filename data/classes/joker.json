@@ -1,0 +1,220 @@
+{
+  "id": "joker",
+  "name": "Joker",
+  "source": "Circus System",
+  "flavor": "A chaos menace with a deck of razor cards and a grin that never quite fits the moment — he wins by making sure no one, least of all himself, knows what happens next.",
+  "hitDie": 8,
+  "primaryAbility": "Charisma",
+  "savingThrows": [
+    "Charisma",
+    "Dexterity"
+  ],
+  "subclassLevel": 3,
+  "proficiencies": {
+    "armor": [
+      "Light armor"
+    ],
+    "weapons": [
+      "Razor Cards",
+      "Harlequin's Cane",
+      "Dagger"
+    ],
+    "tools": [
+      "Playing card set",
+      "Forgery kit"
+    ],
+    "skills": "Choose two from Acrobatics, Deception, Intimidation, Performance, Persuasion, and Sleight of Hand"
+  },
+  "spellcasting": null,
+  "parryBaseDC": 11,
+  "defenseAbility": "Charisma",
+  "parryReskin": "A lunatic, last-second contortion — a mad twist of the spine or a limb bent the wrong way at the worst possible instant. He never dodges the sane way, and the crowd can never tell whether it was skill or dumb luck.",
+  "riposte": "On a Full Dodge (your Parry d20 roll comes up strictly above your effective Parry DC), the triggering attacker must succeed on a Charisma saving throw against your gambit DC or suffer a minor mishap: its next attack roll before the start of your next turn is made with disadvantage.",
+  "engine": {
+    "name": "Mayhem",
+    "resourceType": "pool",
+    "description": "A small pool of chaotic energy built from doing risky, unpredictable things in a fight and spent to draw Wild Cards and fuel Gambits. The Joker's sole resource — deliberately kept small so its swings stay bounded rather than build into a snowball.",
+    "generation": "Gain 1 Mayhem the first time each turn you deal damage to a creature, AND gain 1 Mayhem the first time each turn you take damage, AND gain 1 Mayhem the first time each turn you roll a natural 1 or a natural 20 on an attack roll, ability check, or saving throw — three separate sources, each capped at once per turn (all three triggering in the same turn grants 3 Mayhem total; a source that already triggered this turn grants no more). This works from 1st level.",
+    "spend": "Spend Mayhem in 1-point increments, at no action cost beyond the triggering feature, to draw Wild Cards, fuel your Gambits, and pay for your other Mayhem-keyed features. Unspent Mayhem carries over between rounds but drains to 0 if you finish a short or long rest without spending it.",
+    "cap": "proficiency bonus + Charisma modifier (minimum 3) — typically 4-5 at levels 1-4 (a +2 proficiency bonus plus a +2 to +3 Charisma modifier) and 5-6 at level 5, since it's the Joker's own force of personality that holds his Mayhem."
+  },
+  "features": [
+    {
+      "level": 1,
+      "name": "Mayhem",
+      "description": "You gain the Mayhem pool, a resource built from doing risky, chaotic things in a fight and spent to fuel your Wild Cards and Gambits. See your Mayhem engine for exactly how it is generated, spent, and capped.",
+      "meta": {
+        "action": "Passive"
+      }
+    },
+    {
+      "level": 1,
+      "name": "Wild Talent",
+      "description": "Your chaos answers your personality, not your hands: you use your Charisma modifier, instead of Strength or Dexterity, for attack and damage rolls you make with a finesse weapon you're proficient with (your Razor Cards, Harlequin's Cane, or Dagger). Any saving throw a Joker feature or Wild Card forces on a creature uses your gambit DC, equal to 8 + your proficiency bonus + your Charisma modifier.",
+      "meta": {
+        "action": "Passive"
+      }
+    },
+    {
+      "level": 1,
+      "name": "Wild Card",
+      "description": "As a bonus action, spend 1 Mayhem to draw a Wild Card: roll a d8 and immediately resolve the matching result below, with no further action needed. Any saving throw listed is a Charisma saving throw against your gambit DC. Drawing costs a bonus action and 1 Mayhem, so it happens at most once per turn.",
+      "options": [
+        {
+          "roll": 1,
+          "name": "Ace Up the Sleeve",
+          "effect": "You have advantage on the next attack roll or saving throw you make before the end of your next turn."
+        },
+        {
+          "roll": 2,
+          "name": "Marked Card",
+          "effect": "The next attack you hit with before the end of your next turn deals an extra [[1d6]] damage of that weapon's damage type."
+        },
+        {
+          "roll": 3,
+          "name": "Contagious Cackle",
+          "effect": "Choose one creature you can see within 30 feet; it must succeed on a saving throw or its next attack roll before the start of your next turn is made with disadvantage."
+        },
+        {
+          "roll": 4,
+          "name": "Quick Vanish",
+          "effect": "Until the end of your turn your speed increases by 10 feet, and you don't provoke opportunity attacks when you move away from a hostile creature this turn."
+        },
+        {
+          "roll": 5,
+          "name": "Second Wind",
+          "effect": "You regain [[1d4]] + your Charisma modifier hit points (minimum 1)."
+        },
+        {
+          "roll": 6,
+          "name": "Wild Swap",
+          "effect": "The deck turns on you for a moment — choose one hostile creature within 30 feet of you; it has advantage on the next attack roll it makes against you before the start of your next turn."
+        },
+        {
+          "roll": 7,
+          "name": "Static Shock",
+          "effect": "A spark of raw chaos jumps back through your own hand and you take [[1d4]] psychic damage."
+        },
+        {
+          "roll": 8,
+          "name": "Encore",
+          "effect": "If you have at least 1 Mayhem remaining, you may immediately spend it to draw again, rerolling on this table and resolving only the new result (this draw itself does nothing); if you have no Mayhem left, this draw has no further effect."
+        }
+      ],
+      "meta": {
+        "action": "Bonus Action",
+        "cost": "1 Mayhem",
+        "uses": "1 / turn",
+        "range": "Self / 30 ft",
+        "save": "Cha save vs Gambit DC (some results)"
+      }
+    },
+    {
+      "level": 1,
+      "name": "Chaotic Parry",
+      "description": "Once per turn when you Parry, after seeing the result, you may spend 1 Mayhem to reroll your Parry d20 — you must use the new roll, even if it is worse. Every Parry of yours narrates as a lunatic, last-second contortion rather than a clean block; the crowd can never tell whether it was skill or dumb luck.",
+      "meta": {
+        "action": "When you Parry",
+        "cost": "1 Mayhem",
+        "uses": "1 / turn",
+        "range": "Self"
+      }
+    },
+    {
+      "level": 1,
+      "name": "Trickster's Luck",
+      "description": "The deck looks after its own. A number of times equal to your Charisma modifier (minimum 1), which you regain when you finish a long rest, when you roll below your effective Parry DC (an Overcommitted result), you can treat that Parry as a Grazing Parry instead — taking half damage rather than +50%. You decide after seeing the roll. This doesn't change your Parry DC, only how badly a failed one lands.",
+      "meta": {
+        "action": "Free",
+        "uses": "Cha mod / long rest",
+        "range": "Self"
+      }
+    },
+    {
+      "level": 2,
+      "name": "Gambit",
+      "description": "As a bonus action, spend 1 Mayhem to attempt a Gambit — a small, rule-bending trick. Choose one:",
+      "options": [
+        {
+          "name": "Switcheroo",
+          "effect": "Choose one creature within 30 feet of you and a second creature within 5 feet of the first; the two instantly swap positions, each moving into the other's space with no opportunity attacks provoked. If either creature is unwilling, it can void the swap entirely by succeeding on a Charisma saving throw against your gambit DC (on a success, neither creature moves)."
+        },
+        {
+          "name": "Rewrite the Draw",
+          "effect": "Choose one creature within 30 feet of you that has just made an attack roll or saving throw, before its result is applied. You or a willing ally simply rerolls it and uses the new result; a hostile creature must first succeed on a Charisma saving throw against your gambit DC or it, too, must reroll and use the new result."
+        },
+        {
+          "name": "Fortune's Favor",
+          "effect": "Choose one ally within 30 feet of you; the next attack roll or saving throw it makes before the start of your next turn is made with advantage."
+        }
+      ],
+      "meta": {
+        "action": "Bonus Action",
+        "cost": "1 Mayhem",
+        "uses": "1 / turn",
+        "range": "30 ft",
+        "save": "Cha save vs Gambit DC"
+      }
+    },
+    {
+      "level": 2,
+      "name": "Loaded Deck",
+      "description": "The first time each turn you hit a creature with a finesse weapon you're proficient with, you can spend 1 Mayhem to deal an extra [[1d6]] damage of that weapon's damage type. If the attack roll that hit was a natural 20, you deal this extra damage without spending Mayhem, and its dice are doubled along with the attack's other damage dice, as normal for a critical hit.",
+      "meta": {
+        "action": "Part of Attack",
+        "cost": "1 Mayhem",
+        "uses": "1 / turn",
+        "range": "Weapon"
+      }
+    },
+    {
+      "level": 3,
+      "name": "Contagious Panic",
+      "description": "As an action, spend 2 Mayhem to unravel the nerve of up to two creatures you can see within 30 feet of you and within 10 feet of each other. Each must succeed on a Charisma saving throw against your gambit DC or have disadvantage on the next attack roll it makes before the start of your next turn. This deals no damage and imposes no condition beyond that single disadvantage — a moment of dread, not a stun.",
+      "meta": {
+        "action": "Action",
+        "cost": "2 Mayhem",
+        "range": "30 ft (2 targets)",
+        "save": "Cha save vs Gambit DC"
+      }
+    },
+    {
+      "level": 5,
+      "name": "Full House",
+      "description": "When you spend Mayhem to draw a Wild Card, you may spend 1 additional Mayhem (2 total) to draw two cards instead of one. If you do, resolve only one of the two results — your choice — and discard the other; you never resolve both at once.",
+      "meta": {
+        "action": "Special",
+        "cost": "+1 Mayhem (2 total)",
+        "range": "Self"
+      }
+    },
+    {
+      "level": 5,
+      "name": "Ace in the Hole",
+      "description": "Once per turn, when you hit a creature with an attack using a finesse weapon you're proficient with, you can spend 2 Mayhem to treat the attack as a critical hit, doubling its damage dice as normal for a critical hit. This doesn't stack with an attack that was already a natural-20 critical hit — Ace in the Hole turns an ordinary hit into a showstopper, it doesn't make an already-crit hit bigger. Forcing the deck this hard leaves you exposed: until the start of your next turn, attack rolls against you have advantage.",
+      "meta": {
+        "action": "Part of Attack",
+        "cost": "2 Mayhem",
+        "uses": "1 / turn",
+        "range": "Weapon"
+      }
+    }
+  ],
+  "keyStats": [
+    {
+      "label": "Gambit DC",
+      "value": "8 + proficiency bonus + Charisma modifier",
+      "note": "Save DC for Wild Cards, Gambits, and every other Joker effect that forces a save."
+    },
+    {
+      "label": "Mayhem Cap",
+      "value": "proficiency bonus + Charisma modifier (minimum 3)",
+      "note": "Most Mayhem you can hold at once."
+    },
+    {
+      "label": "Parry Base DC",
+      "value": "11",
+      "note": "Dead centre of the roster; lower is better."
+    }
+  ]
+}

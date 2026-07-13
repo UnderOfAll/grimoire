@@ -1,0 +1,28 @@
+{
+  "id": "bulwark",
+  "name": "Bulwark",
+  "parentClass": "the-sandow",
+  "source": "Circus System",
+  "flavor": "The tank's discipline: a Sandow who plants himself between the crowd and the danger and simply refuses to move, soaking up every blow the show throws at him and daring anything to get past.",
+  "features": [
+    {
+      "level": 3,
+      "name": "Iron Resolve",
+      "description": "Your body is trained to feed off punishment, your own and the punishment aimed at those you're shielding. In addition to your baseline Grit generation, you gain 1 additional Grit the first time each turn you take damage from an attack, and you gain 1 Grit the first time each turn a hostile creature's attack hits an ally within 5 feet of you (hits on yourself are already covered by the first clause) — two separate sources, each capped at once per turn, exactly like your baseline Grit generation. Standing at the front and eating blows, yours or an ally's, is how a Bulwark keeps his Grit topped up.",
+      "meta": {
+        "action": "Passive"
+      }
+    },
+    {
+      "level": 3,
+      "name": "Guardian's Wall",
+      "description": "You make yourself the obstacle nothing gets past. When a hostile creature within 5 feet of you makes an attack roll against a creature other than you, you can use your reaction and spend 1 Grit to impose disadvantage on that attack roll, shoving a shoulder, a shield edge, or your own bulk into the line of the blow at the last instant. This uses your reaction — the same one Parry and Hold the Line draw from — so you get only one such response per round. Additionally, while you have at least 1 Grit in your pool, you have advantage on saving throws made to avoid being knocked prone or forcibly moved.",
+      "meta": {
+        "action": "Reaction",
+        "cost": "1 Grit",
+        "uses": "1 / round",
+        "range": "5 ft"
+      }
+    }
+  ]
+}

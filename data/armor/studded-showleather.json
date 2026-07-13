@@ -1,0 +1,10 @@
+{
+  "id": "studded-showleather",
+  "name": "Studded Showleather",
+  "source": "Circus System",
+  "flavor": "Polished leather set with gleaming rivets — as much showpiece as protection, and the best light armor a nimble performer can wear.",
+  "category": "light",
+  "baseAC": 12,
+  "maxDexBonus": null,
+  "stealthDisadvantage": false
+}

@@ -1,0 +1,30 @@
+{
+  "id": "puppet-master",
+  "name": "Puppet Master",
+  "parentClass": "puppeteer",
+  "source": "Circus System",
+  "flavor": "The offensive discipline of the wire: a Puppeteer who stops treating strung enemies as mere targets and starts treating them as weapons, turning a foe's own momentum, and its own allies, against it.",
+  "features": [
+    {
+      "level": 3,
+      "name": "Turncoat Strings",
+      "description": "When a hostile creature you have a String attached to hits a target with an attack roll, you can use your reaction to wrench its wire mid-swing, forcing it to make a Charisma saving throw against your control DC. On a failure, you redirect the attack toward a different creature of your choice: a creature within the attacker's reach (for a melee attack) or within its range and your line of sight (for a ranged attack). Compare the triggering attack roll to the new target's AC — if it hits, the attack strikes the new target instead (roll its damage against them); if it would miss the new target, the attack misses entirely. On a success, the attack resolves against its original target as normal. You can use Turncoat Strings only once per turn, and it draws on the same reaction as Parry, Disrupting Pull, Guiding Pull, and opportunity attacks — you still get only one reaction per round. This is a single, save-gated redirection of one attack, not a seizure of the creature's turn: it grants you no movement or additional actions from the target the way Grand Marionette does.",
+      "meta": {
+        "action": "Reaction",
+        "uses": "1 / turn",
+        "range": "Attacker's reach/range",
+        "save": "Cha save vs Control DC"
+      }
+    },
+    {
+      "level": 3,
+      "name": "Puppet's Spite",
+      "description": "Your Control Wires cut deeper into a foe already caught in your web. When you hit a creature you have a String attached to with a Control Wires attack, it takes extra damage equal to your Wisdom modifier (minimum 1). You can deal this extra damage only once per turn. This extra damage applies only to unwilling creatures — it never triggers against a willing creature, such as an ally you've strung for support rather than control.",
+      "meta": {
+        "action": "Passive",
+        "uses": "1 / turn",
+        "range": "Melee"
+      }
+    }
+  ]
+}

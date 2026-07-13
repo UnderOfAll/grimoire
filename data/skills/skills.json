@@ -1,0 +1,24 @@
+[
+  { "id": "athletics", "name": "Athletics", "ability": "Strength", "source": "5e SRD", "description": "Covers difficult situations while climbing, jumping, or swimming, and physical feats like grappling." },
+
+  { "id": "acrobatics", "name": "Acrobatics", "ability": "Dexterity", "source": "5e SRD", "description": "Staying on your feet in tricky situations, balancing, and performing acrobatic stunts." },
+  { "id": "sleight-of-hand", "name": "Sleight of Hand", "ability": "Dexterity", "source": "5e SRD", "description": "Perform manual trickery like planting an item, palming an object, or picking a pocket or lock without being noticed." },
+  { "id": "stealth", "name": "Stealth", "ability": "Dexterity", "source": "5e SRD", "description": "Conceal yourself from enemies, slip past guards, or move silently without being seen or heard." },
+
+  { "id": "arcana", "name": "Arcana", "ability": "Intelligence", "source": "5e SRD", "description": "Recall lore about spells, magic items, eldritch symbols, and the planes of existence." },
+  { "id": "history", "name": "History", "ability": "Intelligence", "source": "5e SRD", "description": "Recall lore about historical events, legendary people, ancient kingdoms, and past disputes." },
+  { "id": "investigation", "name": "Investigation", "ability": "Intelligence", "source": "5e SRD", "description": "Deduce clues, spot hidden details, and draw conclusions from evidence at a scene." },
+  { "id": "nature", "name": "Nature", "ability": "Intelligence", "source": "5e SRD", "description": "Recall lore about terrain, plants, animals, weather, and natural cycles." },
+  { "id": "religion", "name": "Religion", "ability": "Intelligence", "source": "5e SRD", "description": "Recall lore about deities, rites, prayers, religious hierarchies, and holy symbols." },
+
+  { "id": "animal-handling", "name": "Animal Handling", "ability": "Wisdom", "source": "5e SRD", "description": "Calm a domesticated animal, keep a mount from bolting, or intuit an animal's intentions." },
+  { "id": "insight", "name": "Insight", "ability": "Wisdom", "source": "5e SRD", "description": "Determine the true intentions of a creature, such as spotting a lie or predicting its next move." },
+  { "id": "medicine", "name": "Medicine", "ability": "Wisdom", "source": "5e SRD", "description": "Stabilize a dying companion, diagnose an illness, or identify what kind of ailment afflicts someone." },
+  { "id": "perception", "name": "Perception", "ability": "Wisdom", "source": "5e SRD", "description": "Spot, hear, or otherwise detect the presence of something using your senses." },
+  { "id": "survival", "name": "Survival", "ability": "Wisdom", "source": "5e SRD", "description": "Follow tracks, hunt, navigate the wilderness, identify natural hazards, and predict the weather." },
+
+  { "id": "deception", "name": "Deception", "ability": "Charisma", "source": "5e SRD", "description": "Convincingly hide the truth, either verbally or through actions, such as bluffing or disguising intent." },
+  { "id": "intimidation", "name": "Intimidation", "ability": "Charisma", "source": "5e SRD", "description": "Influence someone through overt threats, hostile actions, or physical violence." },
+  { "id": "performance", "name": "Performance", "ability": "Charisma", "source": "5e SRD", "description": "Delight an audience with music, dance, acting, storytelling, or other forms of entertainment." },
+  { "id": "persuasion", "name": "Persuasion", "ability": "Charisma", "source": "5e SRD", "description": "Influence someone with tact, social grace, or good nature." }
+]

@@ -1,0 +1,25 @@
+{
+  "id": "whip",
+  "name": "Whip",
+  "source": "Circus System",
+  "flavor": "A long braided lash that cracks like a gunshot and keeps enemies at arm's length.",
+  "category": "martial",
+  "damage": {
+    "die": "1d4",
+    "type": "slashing"
+  },
+  "properties": [
+    "finesse",
+    "reach"
+  ],
+  "parryProfile": {
+    "canParry": true,
+    "parryRange": "melee",
+    "note": "At reach a whip can snap aside or tangle an incoming weapon — a neutral parry, with the added advantage of keeping the attacker a step away."
+  },
+  "proficientClasses": [
+    "acrobat",
+    "puppeteer"
+  ],
+  "mastery": "Sap"
+}

@@ -1,0 +1,114 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Class",
+  "type": "object",
+  "required": ["name", "hitDie", "primaryAbility", "savingThrows"],
+  "properties": {
+    "id": { "type": "string", "description": "kebab-case unique id; defaults to slug of name" },
+    "name": { "type": "string" },
+    "source": { "type": "string", "default": "5e SRD" },
+    "flavor": { "type": "string", "description": "one-line evocative summary" },
+    "hitDie": { "type": "integer", "enum": [6, 8, 10, 12] },
+    "primaryAbility": { "type": "string" },
+    "savingThrows": { "type": "array", "items": { "type": "string" }, "minItems": 2, "maxItems": 2 },
+    "subclassLevel": { "type": "integer", "minimum": 1 },
+    "proficiencies": {
+      "type": "object",
+      "properties": {
+        "armor": { "type": "array", "items": { "type": "string" } },
+        "weapons": { "type": "array", "items": { "type": "string" } },
+        "tools": { "type": "array", "items": { "type": "string" } },
+        "skills": { "type": "string" }
+      }
+    },
+    "spellcasting": { "type": ["object", "null"] },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["level", "name", "description"],
+        "properties": {
+          "level": { "type": "integer", "minimum": 1, "maximum": 20 },
+          "name": { "type": "string" },
+          "description": { "type": "string" },
+          "meta": {
+            "type": "object",
+            "description": "At-a-glance combat fields shown as labelled chips below the feature (D&D Beyond style). All optional; author what applies. Every actionable feature should at least set `action`.",
+            "properties": {
+              "action": { "type": "string", "description": "Action economy: Action / Bonus Action / Reaction / Free / Passive / Movement / Part of Attack / Special." },
+              "cost": { "type": "string", "description": "Resource spent, e.g. '1 Mayhem', '1-3 Grit', '1 Clone'." },
+              "uses": { "type": "string", "description": "Usage limit, e.g. '1 / turn', 'Cha mod / long rest', '1 / round'." },
+              "range": { "type": "string", "description": "Range or area, e.g. '30 ft', 'Self', '5 ft', '10-ft radius'." },
+              "save": { "type": "string", "description": "Save it forces, e.g. 'Dex save vs your DC'." }
+            }
+          },
+          "options": {
+            "type": "array",
+            "description": "For a feature that offers a menu of choices or a random table (e.g. the Joker's Gambit or Wild Card). The renderer shows these as a table so the choices are scannable; `description` holds the intro text. Author any multi-option feature this way rather than cramming the options into prose.",
+            "items": {
+              "type": "object",
+              "required": ["name", "effect"],
+              "properties": {
+                "roll": { "type": ["integer", "string"], "description": "Optional die result for a random table (e.g. 1-8 for a d8). Omit for a pick-one menu." },
+                "name": { "type": "string", "description": "Short name of the option/result." },
+                "effect": { "type": "string", "description": "What it does. May contain [[XdY]] scaling-die tokens." }
+              }
+            }
+          }
+        }
+      }
+    },
+    "parryBaseDC": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 20,
+      "description": "Circus-system Parry v2: this class's base Parry DC (lower = easier to parry / better parrier). Feeds the effective Parry DC formula (proficiency + half defense-ability modifier subtracted, situational modifiers added, floor of 3). See data/schema/MECHANICS.md §1.5-1.6. Roster spread is 7 (Acrobat, best) to 15 (Puppeteer, worst). Optional/omit for non-circus (e.g. 5e SRD) classes that don't use the rebuilt Parry reaction. REPLACES the removed v1 'parryAffinity' tier field — do not reintroduce parryAffinity."
+    },
+    "defenseAbility": {
+      "type": "string",
+      "enum": ["Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma"],
+      "default": "Dexterity",
+      "description": "Ability score whose modifier feeds any Riposte/feature that makes an ATTACK ROLL, at full value (data/schema/MECHANICS.md §1.9-1.10). NOTE (v4): this NO LONGER affects the Parry DC — the DC is fixed and does not scale with ability (§1.5). Currently vestigial: none of the shipped Ripostes roll to hit, so the field has no active effect yet — it is reserved for future roll-to-hit content. CONVENTION: still set it to the class's own primaryAbility. Defaults to Dexterity if omitted."
+    },
+    "parryReskin": {
+      "type": "string",
+      "description": "Flavor text for how this class's Parry outcome narrates (e.g. 'a clone phases in to eat the hit'). See data/schema/MECHANICS.md §1.4."
+    },
+    "riposte": {
+      "type": ["string", "null"],
+      "description": "Free text describing a Full-Dodge-only (d20 roll strictly above the effective Parry DC) counterattack effect, if this class has one. Null/omit if the class has no riposte. See data/schema/MECHANICS.md §1.9."
+    },
+    "keyStats": {
+      "type": "array",
+      "description": "Derived at-a-glance numbers for this class's own mechanic — its save/effect DC (e.g. 'Gambit DC', 'Control DC'), resource cap, base Parry DC, and any other headline value a player needs up front. The renderer shows these in a stat block at the top of the class sheet (like a Monk's Ki save DC / Martial Arts die). Author one entry per headline number; every class with a mechanic should have this so its numbers are visible without reading the feature prose.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": { "type": "string", "description": "Short name of the stat, e.g. 'Gambit DC', 'Momentum Cap', 'Parry Base DC'." },
+          "value": { "type": "string", "description": "The value or formula, e.g. '8 + proficiency bonus + Charisma modifier'. A string so formulas render as-is (no character level is selected in the compendium)." },
+          "note": { "type": "string", "description": "Optional one-line explanation of what the stat governs." }
+        },
+        "required": ["label", "value"]
+      }
+    },
+    "engine": {
+      "type": "object",
+      "description": "This class's own resource/engine (Momentum, Grit, Chaos deck, clone tokens, etc.) — its sole resource. See data/schema/MECHANICS.md.",
+      "properties": {
+        "name": { "type": "string", "description": "In-fiction name of the resource, e.g. 'Momentum', 'Grit', 'Chaos Deck'." },
+        "resourceType": {
+          "type": "string",
+          "enum": ["pool", "stack", "tokens", "deck", "charges", "other"],
+          "description": "Shape of the resource for renderer/UI purposes."
+        },
+        "description": { "type": "string", "description": "What the resource represents and how it behaves in general." },
+        "generation": { "type": "string", "description": "How the resource is earned/refreshed." },
+        "spend": { "type": "string", "description": "How the resource is spent and what it buys." },
+        "cap": {
+          "type": ["integer", "string"],
+          "description": "Max resource value. Either a flat integer or a formula string (e.g. 'proficiency bonus', 'character level') if it scales."
+        }
+      }
+    }
+  }
+}

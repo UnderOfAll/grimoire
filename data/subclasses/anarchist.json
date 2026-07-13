@@ -1,0 +1,31 @@
+{
+  "id": "anarchist",
+  "name": "Anarchist",
+  "parentClass": "joker",
+  "source": "Circus System",
+  "flavor": "The demolition act of the deck: a Joker who trades sleight of hand for lit fuses, packing his cards with flash powder and treating the whole crowd, friend or foe, as fair game for the blast radius.",
+  "features": [
+    {
+      "level": 3,
+      "name": "Powder Burst",
+      "description": "As an action, spend 2 Mayhem to hurl a spray of flash-powder cards that detonate in a 10-foot-radius sphere centered on a point you can see within 60 feet. Each creature in that area must make a Dexterity saving throw against your gambit DC, taking [[2d6]] fire damage on a failed save, or half as much damage on a successful one. You can use Powder Burst only once per turn, and only when you have Mayhem to spend on it — it draws on the same small pool as everything else you do, so it is bounded by how much chaos you've actually generated this fight, not something you can chain turn after turn.",
+      "meta": {
+        "action": "Action",
+        "cost": "2 Mayhem",
+        "uses": "1 / turn",
+        "range": "60 ft (10-ft radius)",
+        "save": "Dex save vs Gambit DC"
+      }
+    },
+    {
+      "level": 3,
+      "name": "Collateral Chaos",
+      "description": "Your chaos never stays contained to one target. The first time each turn you resolve a Wild Card result or a Gambit option that targets a single creature, and a second valid target for that same effect (an additional hostile creature if the original target was hostile, or an additional willing ally if the original was an ally) is within 5 feet of the original target, you may extend the effect to that second creature as well. The second creature is affected exactly as the first, including making its own saving throw if the effect calls for one. This costs no additional Mayhem, happens as part of the Wild Card or Gambit you're already resolving (not a separate action or reaction), and can happen only once per turn.",
+      "meta": {
+        "action": "Passive",
+        "uses": "1 / turn",
+        "range": "5 ft"
+      }
+    }
+  ]
+}

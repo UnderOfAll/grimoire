@@ -1,0 +1,21 @@
+{
+  "id": "reaction-economy",
+  "name": "Reaction & Opportunity Attacks",
+  "source": "Circus System",
+  "summary": "One reaction per round — Parry OR opportunity attack, never both.",
+  "sections": [
+    {
+      "heading": "One reaction",
+      "paragraphs": [
+        "Every creature — you and monsters alike — has exactly one reaction per round, which refreshes at the start of its own turn. Parrying, making an opportunity attack, and any other reaction all draw from that single reaction."
+      ]
+    },
+    {
+      "heading": "The tank-or-parry choice",
+      "paragraphs": [
+        "Because you only get one reaction, being hit forces a choice: spend it to Parry now, or take the hit and save your reaction for a bigger threat later in the round.",
+        "If several enemies get to attack you in a round — for example, when flashy movement provokes multiple opportunity attacks — you can only Parry one of them. The rest land in full. That exposure is the price of moving boldly around the battlefield."
+      ]
+    }
+  ]
+}

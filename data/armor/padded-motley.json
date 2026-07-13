@@ -1,0 +1,10 @@
+{
+  "id": "padded-motley",
+  "name": "Padded Motley",
+  "source": "Circus System",
+  "flavor": "A quilted patchwork performer's costume — soft protection under bright colors, but it rustles with every step.",
+  "category": "light",
+  "baseAC": 11,
+  "maxDexBonus": null,
+  "stealthDisadvantage": true
+}

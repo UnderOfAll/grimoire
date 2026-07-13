@@ -1,0 +1,24 @@
+{
+  "id": "aerial-ribbons",
+  "name": "Aerial Ribbons",
+  "source": "Circus System",
+  "flavor": "Weighted silk streamers the Acrobat conjures and whirls — equal parts spectacle, weapon, and safety line.",
+  "category": "signature",
+  "damage": {
+    "die": "1d4",
+    "type": "slashing"
+  },
+  "properties": [
+    "finesse",
+    "reach"
+  ],
+  "parryProfile": {
+    "canParry": true,
+    "parryRange": "melee",
+    "note": "Flowing silk wraps and redirects an incoming blow beautifully — one of the best defensive weapons in the roster, matching the Acrobat's dodge-first identity. Its low damage (1d4, the same reach-tax the whip pays) is the deliberate tradeoff: the ribbons are a deflection and a safety line, not a killing weapon. Signature to the Acrobat."
+  },
+  "proficientClasses": [
+    "acrobat"
+  ],
+  "mastery": "Slow"
+}

@@ -1,0 +1,140 @@
+{
+  "id": "the-sandow",
+  "name": "The Sandow",
+  "source": "Circus System",
+  "flavor": "The circus strongman: feats of raw strength turned into a wall nothing gets past — plant your feet, brace the blow, and throw whatever's left standing.",
+  "hitDie": 12,
+  "primaryAbility": "Strength",
+  "savingThrows": [
+    "Strength",
+    "Constitution"
+  ],
+  "subclassLevel": 3,
+  "proficiencies": {
+    "armor": [
+      "Light armor",
+      "Medium armor",
+      "Heavy armor",
+      "Shields"
+    ],
+    "weapons": [
+      "Strongman's Barbell",
+      "Cannonball",
+      "Iron Chain"
+    ],
+    "tools": [
+      "Dice set",
+      "Carpenter's tools"
+    ],
+    "skills": "Choose two from Athletics, Intimidation, Perception, Performance, and Survival"
+  },
+  "spellcasting": null,
+  "parryBaseDC": 8,
+  "defenseAbility": "Strength",
+  "parryReskin": "You don't dodge a hit at all — you plant your feet, turn your shoulder or weapon into the line of the blow, and let your frame do what a lesser body couldn't. A Sandow's Parry is a brace, never a step back.",
+  "riposte": "On a Full Dodge (your Parry d20 roll comes up strictly above your effective Parry DC), the braced impact drives the triggering attacker back: it is pushed 5 feet directly away from you, no save required, at no cost beyond the Parry itself. A minor payoff for a clean brace — a shove, not a counterattack.",
+  "engine": {
+    "name": "Grit",
+    "resourceType": "pool",
+    "description": "A pool of raw physical fortitude and adrenaline built from being in the thick of a fight — trading blows, absorbing them, hurling anything not nailed down. The Sandow's sole resource. This baseline generation is shared by every Sandow from 1st level; your Strongman's Act (chosen at 3rd level) layers its own primary Grit stream on top of it — a defensive Act builds more from taking hits, an offensive Act more from dealing them, and Human Cannonball from impacts and forced movement.",
+    "generation": "Gain 1 Grit the first time each turn you hit a creature with a melee attack, AND gain 1 Grit the first time each turn you are hit by an attack — two separate sources, each capped at once per turn (landing a hit and being hit in the same turn grants 2 Grit total; a third hit landed or taken that same turn grants no further Grit from that source). This works from 1st level, before any subclass is chosen.",
+    "spend": "Spend Grit in 1-point increments to fuel Heave, Brace, and the other feats of strength described in your features. Unspent Grit carries over between rounds but drains to 0 if you finish a short or long rest without spending it.",
+    "cap": "Constitution modifier + proficiency bonus (minimum 3) — typically 4 at levels 1-4 (a +2 Constitution modifier plus +2 proficiency) and 5-6 at level 5, since it's the Sandow's own toughness that holds his Grit."
+  },
+  "features": [
+    {
+      "level": 1,
+      "name": "Grit",
+      "description": "You gain the Grit pool, a resource built from being in the fray — landing blows and taking them — and spent to fuel your feats of strength. See your Grit engine for exactly how it is generated, spent, and capped.",
+      "meta": {
+        "action": "Passive"
+      }
+    },
+    {
+      "level": 1,
+      "name": "Plant Your Feet",
+      "description": "Your Parry uses a base Parry DC of 8, second-best in the roster. This DC is fixed: it does not go down as you gain levels or raise your ability scores — only your weapon's own parry modifier and situational modifiers adjust it, and it never drops below 3. You roll a flat d20 against your effective Parry DC — no bonus is ever added to the die itself. Parrying costs your reaction, so a round you spend bracing is a round you cannot make an opportunity attack or use Hold the Line — with only one reaction, you can fully brace against just one attack per round. See your Riposte for what a Full Dodge grants you.",
+      "meta": {
+        "action": "Reaction",
+        "uses": "1 / round",
+        "range": "Self"
+      }
+    },
+    {
+      "level": 1,
+      "name": "Mighty Build",
+      "description": "You count as one size larger than your actual size for the purpose of carrying capacity, and for determining whether you can grapple, shove, or throw a creature — treat a Large creature as though it were Medium, a Huge creature as though it were Large, and so on. This extends to Heave below: you can grapple and throw creatures up to one size larger than the normal rules would otherwise allow.",
+      "meta": {
+        "action": "Passive"
+      }
+    },
+    {
+      "level": 1,
+      "name": "Heave",
+      "description": "While you have a creature grappled, or are holding a suitable heavy object (a bench, a barrel, a cage bar) or a willing ally, you can spend Grit, as part of an attack action, to hurl it. Throwing a creature (Large or smaller, per Mighty Build): spend 1 to 3 Grit. It flies up to 10 feet per point of Grit spent in a direction of your choice and lands in the nearest unoccupied space, taking [[1d6]] bludgeoning damage per point of Grit spent and falling prone; if it is thrown into a space occupied by another creature, that creature must succeed on a Strength saving throw (DC = 8 + your proficiency bonus + your Strength modifier) or take the same damage and be knocked prone. An unwilling creature resists with a Strength saving throw (DC = 8 + your proficiency bonus + your Strength modifier) — on a success it isn't moved and takes no damage, though the Grit is still spent. A willing ally can instead be thrown as a 'fastball special': no save, no damage, no falling prone — you simply place it in an unoccupied space you can see within range that has a clear path from you (not through walls or closed doors), ready to act. Throwing an improvised heavy object (not your Cannonball, which is simply a normal thrown weapon attack and needs no Grit) resolves as an improvised thrown weapon attack, using the same Grit-to-range scale if you want extra reach or force.",
+      "meta": {
+        "action": "Part of Attack",
+        "cost": "1-3 Grit",
+        "range": "10 ft / Grit",
+        "save": "Str save vs your DC (unwilling)"
+      }
+    },
+    {
+      "level": 2,
+      "name": "Hold the Line",
+      "description": "When a hostile creature within your reach makes a melee attack against a creature other than you, you can use your reaction to make one melee weapon attack against the attacker. Additionally, whenever a hostile creature within your reach moves in a way that provokes an opportunity attack from you and you hit it with that opportunity attack, its speed becomes 0 for the rest of the current turn — it's stopped where it stands instead of completing its move. Hold the Line draws on the same single reaction as Parry and any other reaction-costed feature you have: punish an attacker or a fleeing creature, or hold your reaction in reserve to Parry — never both on the same round. This is not mind control: a creature is never forced to act against its will, only stopped or made to pay for what it already chose to do.",
+      "meta": {
+        "action": "Reaction",
+        "uses": "1 / round",
+        "range": "Reach"
+      }
+    },
+    {
+      "level": 2,
+      "name": "Brace",
+      "description": "When you take damage from an attack — including one you failed to Parry, or one you had no reaction available to Parry — you can spend Grit, in 1-point increments and at no action cost, to reduce that damage by 3 per point of Grit spent, applied after any Parry multiplier and before the damage is otherwise resolved. Because Brace costs no action or reaction, it stacks with whatever reaction-costed response (or lack of one) you used for the same hit, including a round where your reaction already went to Hold the Line or a Parry. You can spend at most 2 Grit against a single instance of damage (reducing it by at most 6), and Brace cannot reduce damage below 0.",
+      "meta": {
+        "action": "Free",
+        "cost": "1-2 Grit",
+        "range": "Self"
+      }
+    },
+    {
+      "level": 5,
+      "name": "Extra Attack",
+      "description": "You can attack twice, instead of once, whenever you take the Attack action on your turn.",
+      "meta": {
+        "action": "Passive"
+      }
+    },
+    {
+      "level": 5,
+      "name": "Earthshaker",
+      "description": "As an action, spend 3 Grit to slam a weapon, fist, or heavy object into the ground and send a shockwave through every creature of your choice within 10 feet of you. Each must succeed on a Strength saving throw (DC = 8 + your proficiency bonus + your Strength modifier) or be pushed 5 feet directly away from you and knocked prone. Earthshaker deals no damage on its own — it's forced movement and control, a battlefield reset, not another source of hurt. You can use Earthshaker once per turn.",
+      "meta": {
+        "action": "Action",
+        "cost": "3 Grit",
+        "uses": "1 / turn",
+        "range": "10-ft radius",
+        "save": "Str save vs your DC"
+      }
+    }
+  ],
+  "keyStats": [
+    {
+      "label": "Save DC",
+      "value": "8 + proficiency bonus + Strength modifier",
+      "note": "Save DC for effects your features force (e.g. Heave, Earthshaker)."
+    },
+    {
+      "label": "Grit Cap",
+      "value": "Constitution modifier + proficiency bonus (minimum 3)",
+      "note": "Most Grit you can hold at once."
+    },
+    {
+      "label": "Parry Base DC",
+      "value": "8",
+      "note": "Second-best parrier; lower is better."
+    }
+  ]
+}

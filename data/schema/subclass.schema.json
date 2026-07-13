@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Subclass",
+  "type": "object",
+  "required": ["name", "parentClass", "features"],
+  "properties": {
+    "id": { "type": "string" },
+    "name": { "type": "string" },
+    "parentClass": { "type": "string", "description": "must match a class name/id" },
+    "source": { "type": "string", "default": "5e SRD" },
+    "flavor": { "type": "string" },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["level", "name", "description"],
+        "properties": {
+          "level": { "type": "integer", "minimum": 1, "maximum": 20 },
+          "name": { "type": "string" },
+          "description": { "type": "string" },
+          "meta": {
+            "type": "object",
+            "description": "At-a-glance combat fields shown as labelled chips below the feature (D&D Beyond style). All optional.",
+            "properties": {
+              "action": { "type": "string" },
+              "cost": { "type": "string" },
+              "uses": { "type": "string" },
+              "range": { "type": "string" },
+              "save": { "type": "string" }
+            }
+          },
+          "options": {
+            "type": "array",
+            "description": "For a feature that offers a menu of choices or a random table. The renderer shows these as a table; `description` holds the intro text. Author any multi-option feature this way rather than cramming the options into prose.",
+            "items": {
+              "type": "object",
+              "required": ["name", "effect"],
+              "properties": {
+                "roll": { "type": ["integer", "string"], "description": "Optional die result for a random table. Omit for a pick-one menu." },
+                "name": { "type": "string", "description": "Short name of the option/result." },
+                "effect": { "type": "string", "description": "What it does. May contain [[XdY]] scaling-die tokens." }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

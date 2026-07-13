@@ -1,0 +1,25 @@
+{
+  "id": "control-wires",
+  "name": "Control Wires",
+  "source": "Circus System",
+  "flavor": "Near-invisible monofilament strung from the fingertips — it cuts, it binds, and it answers the puppeteer's will as readily as it answers his hand.",
+  "category": "signature",
+  "damage": {
+    "die": "1d4",
+    "type": "slashing"
+  },
+  "properties": [
+    "finesse",
+    "reach",
+    "light"
+  ],
+  "parryProfile": {
+    "canParry": true,
+    "parryRange": "ranged",
+    "note": "The one weapon that can parry ranged attacks as well as melee — a curtain of wire snaps up to turn aside blade or bolt alike. The Puppeteer's only real defense, though his very high Parry DC means even this rarely lands a Full Dodge. Signature to the Puppeteer."
+  },
+  "proficientClasses": [
+    "puppeteer"
+  ],
+  "mastery": "Slow"
+}

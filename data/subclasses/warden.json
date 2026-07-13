@@ -1,0 +1,28 @@
+{
+  "id": "warden",
+  "name": "Warden",
+  "parentClass": "puppeteer",
+  "source": "Circus System",
+  "flavor": "The protective discipline of the wire: a Puppeteer who strings up allies not to move them like pieces on a board, but to hold a line back to them, ready to snap taut the instant one is struck.",
+  "features": [
+    {
+      "level": 3,
+      "name": "Warding Pull",
+      "description": "When a creature you have a String attached to is hit by an attack, you can use your reaction to snap its wire taut, guiding it half a step aside at the last instant and granting it resistance to the damage from that attack. This draws on the same reaction as Parry, Disrupting Pull, and Guiding Pull — you still get only one reaction per round, so protecting an ally this way costs the same reaction you'd otherwise spend defending yourself or disrupting a foe.",
+      "meta": {
+        "action": "Reaction",
+        "uses": "1 / round",
+        "range": "Leash"
+      }
+    },
+    {
+      "level": 3,
+      "name": "Steadfast Line",
+      "description": "A willing creature you have a String attached to has advantage on saving throws made to avoid being knocked prone or forcibly moved, as long as it remains within your leash range — your wire keeps it steady on its feet. Additionally, if such a creature is knocked prone anyway, it can spend only 5 feet of movement (instead of half its speed) to stand back up, guided upright by the string.",
+      "meta": {
+        "action": "Passive",
+        "range": "Leash"
+      }
+    }
+  ]
+}

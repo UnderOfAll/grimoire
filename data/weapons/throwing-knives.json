@@ -1,0 +1,29 @@
+{
+  "id": "throwing-knives",
+  "name": "Throwing Knives",
+  "source": "Circus System",
+  "flavor": "A matched set of balanced blades, drawn and released in the same motion — the baseline knife every circus performer learns to spin before they learn anything flashier.",
+  "category": "simple",
+  "damage": {
+    "die": "1d4",
+    "type": "piercing"
+  },
+  "properties": [
+    "finesse",
+    "light",
+    "thrown"
+  ],
+  "range": {
+    "normal": 20,
+    "long": 60
+  },
+  "parryProfile": {
+    "canParry": true,
+    "parryRange": "melee",
+    "note": "A knife held in hand can parry modestly — better than bare fists, worse than a dueling blade. Once thrown it has left your hand, so you simply have nothing in that hand to parry with (the empty-hands case). How many knives a Juggler still holds is governed by the Juggler's engine."
+  },
+  "proficientClasses": [
+    "juggler"
+  ],
+  "mastery": "Nick"
+}

@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Weapon",
+  "type": "object",
+  "required": ["name", "category", "damage", "parryProfile"],
+  "properties": {
+    "id": { "type": "string", "description": "kebab-case unique id; defaults to slug of name" },
+    "name": { "type": "string" },
+    "source": { "type": "string", "default": "5e SRD" },
+    "flavor": { "type": "string", "description": "one-line evocative summary of the weapon's look/feel/circus theme" },
+    "category": {
+      "type": "string",
+      "enum": ["simple", "martial", "signature"],
+      "description": "5e-style simple/martial split, plus 'signature': a class-defining circus weapon (e.g. Puppeteer's control wires, Juggler's flaming orbs). Signature weapons are still proficiency-gated informationally like any other, not hard-locked (see data/schema/MECHANICS.md)."
+    },
+    "damage": {
+      "type": "object",
+      "required": ["die", "type"],
+      "properties": {
+        "die": { "type": "string", "description": "damage dice expression, e.g. '1d6', '2d4'" },
+        "type": {
+          "type": "string",
+          "enum": ["slashing", "piercing", "bludgeoning", "fire", "psychic"],
+          "description": "locked damage-type list per DESIGN.md 'Weapons' section: physical (slashing/piercing/bludgeoning) + fire + psychic only. Fire/psychic are reserved for specific thematic weapons, not the norm."
+        }
+      }
+    },
+    "properties": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["finesse", "light", "heavy", "reach", "thrown", "two-handed", "versatile", "ammunition", "loading", "special"]
+      },
+      "description": "5e weapon-property chassis. 'thrown' weapons should generally set canParry=false once thrown (see parryProfile); 'versatile' weapons should set versatileDamage."
+    },
+    "versatileDamage": {
+      "type": "string",
+      "description": "Damage die when wielded two-handed. Only meaningful if 'versatile' is present in properties."
+    },
+    "mastery": {
+      "type": "string",
+      "enum": ["Cleave", "Graze", "Nick", "Push", "Sap", "Slow", "Topple", "Vex"],
+      "description": "Weapon Mastery property (2024-style): the default combat maneuver any proficient wielder can use with this weapon, independent of class features. Gives every class baseline tactical options (topple, cleave, push, etc.). Definitions live in data/rules/weapon-mastery.json and MASTERIES in app.js. One per weapon."
+    },
+    "range": {
+      "type": "object",
+      "description": "Present for thrown/ammunition weapons; omit for pure melee weapons with no thrown/ranged use.",
+      "properties": {
+        "normal": { "type": "integer", "minimum": 1, "description": "normal range in feet" },
+        "long": { "type": "integer", "minimum": 1, "description": "long range in feet (disadvantage band)" }
+      }
+    },
+    "parryProfile": {
+      "type": "object",
+      "required": ["canParry"],
+      "description": "Whether and how this weapon can parry. NOTE (v5): the per-weapon dcMod is REMOVED — a weapon no longer changes the Parry DC. The effective Parry DC is base + situational only (see MECHANICS.md §1.5). parryProfile now just says whether a weapon can parry (canParry) and against what (parryRange).",
+      "properties": {
+        "canParry": {
+          "type": "boolean",
+          "description": "Whether this weapon can be used to parry at all. false for weapons that are spent/committed once used (e.g. a thrown knife after release, a loaded/fired crossbow bolt) or that are pure ranged weapons with nothing to intercept a blow with."
+        },
+        "parryRange": {
+          "type": "string",
+          "enum": ["melee", "ranged"],
+          "description": "What kind of incoming attack this weapon can parry. 'melee' = intercepts melee attacks (the common case). 'ranged' = can also deflect projectiles/ranged attacks (rare — e.g. wire-based or bladed weapons built for it). Omit if canParry is false."
+        },
+        "note": {
+          "type": "string",
+          "description": "Free text flavor/clarification, e.g. 'deflects projectiles', 'spent once thrown'."
+        }
+      }
+    },
+    "proficientClasses": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "INFORMATIONAL ONLY — class ids proficient with this weapon by theme. Does NOT hard-lock who may wield it; any class may pick up any weapon. Proficiency (being in this list, per-character) governs whether proficiency bonus is added to attack rolls and to the parry effective-DC calculation, and is required to benefit from a signature weapon's special parry bonus, if any. See data/schema/MECHANICS.md."
+    }
+  }
+}

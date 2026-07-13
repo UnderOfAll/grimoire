@@ -1,0 +1,30 @@
+{
+  "id": "impersonator",
+  "name": "Impersonator",
+  "parentClass": "doppelganger",
+  "source": "Circus System",
+  "flavor": "The discipline of the mimic: a Doppelganger who spends less time studying combat forms and more time studying people — their faces, their voices, their little tells — until borrowing a life, or a single trick from one, is second nature.",
+  "features": [
+    {
+      "level": 3,
+      "name": "Perfect Mimicry",
+      "description": "You have practiced copying more than a silhouette. As an action, you can assume the exact physical appearance — clothing, minor scars, voice, and posture included — of any Medium or Small humanoid you have observed for at least 1 minute, for up to 1 hour or until you end it early (no action required) or use this feature again. This changes only your outward appearance, not your game statistics, and any equipment you're wearing or carrying isn't transformed along with you. While disguised this way, you have advantage on Charisma (Deception) checks made to pass yourself off as that specific individual, and a creature without a particular reason to be suspicious can't tell you're a fake without succeeding on a Wisdom (Insight) check contested by your Deception check (or other means, such as true seeing). You can use this feature a number of times equal to your proficiency bonus, regaining all expended uses when you finish a long rest.",
+      "meta": {
+        "action": "Action",
+        "uses": "Prof bonus / long rest",
+        "range": "Self"
+      }
+    },
+    {
+      "level": 3,
+      "name": "Borrowed Trick",
+      "description": "You pick up more than a face — you pick up a trick. Whenever a creature hits you with an attack, or whenever you spend your action studying a creature within 30 feet of you, you memorize one simple trait of that creature: a natural or basic weapon attack that deals no more than one damage die (a claw, bite, sting, or similar strike). You keep a memorized trick until the end of the current combat, or until you replace it: you can hold only one at a time, and memorizing a new simple attack (again, by being hit by it or by studying its owner) swaps out the old one. Any memorized trick fades once the fight ends. As a bonus action, you may destroy one of your Clones within 5 feet of you to have it deliver your memorized trick against a target within 5 feet of the Clone: make an attack roll using your proficiency bonus plus your Dexterity modifier, dealing [[1d6]] plus your Constitution modifier damage of a type appropriate to the trick on a hit (a Clone-delivered blow draws on your vitality, not your Dexterity). You can use this Clone-delivered attack a number of times equal to your proficiency bonus, regaining all expended uses when you finish a long rest. This doesn't require the spent Clone to have been created this turn, and is separate from Mirror Assault's own Clone-consuming attack.",
+      "meta": {
+        "action": "Bonus Action",
+        "cost": "1 Clone",
+        "uses": "Prof bonus / long rest",
+        "range": "5 ft"
+      }
+    }
+  ]
+}

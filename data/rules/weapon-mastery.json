@@ -1,0 +1,34 @@
+{
+  "id": "weapon-mastery",
+  "name": "Weapon Mastery",
+  "source": "circus-system",
+  "summary": "Every weapon carries a default combat maneuver any proficient wielder can use — your baseline 'topple / cleave / vex' options, no class feature required.",
+  "sections": [
+    {
+      "heading": "What it is",
+      "paragraphs": [
+        "Beyond a class's own features, each weapon has a Mastery property: a small maneuver that triggers on your ordinary weapon attacks. Any character proficient with the weapon can use its Mastery — it is the shared combat vocabulary every class has, on top of its engine and features.",
+        "A Mastery triggers as part of the attack that sets it off (on a hit, or a miss for Graze), costs no action or resource, and — unless the Mastery says otherwise — applies each time you hit. Where a Mastery forces a save, the DC is 8 + your proficiency bonus + the ability modifier you attacked with."
+      ]
+    },
+    {
+      "heading": "The masteries",
+      "list": [
+        "Cleave — On a melee hit, make one attack against a second creature within 5 feet of the first and within your reach; on that hit deal the weapon's damage but not your ability modifier. Once per turn.",
+        "Graze — On a miss, still deal damage equal to the ability modifier you attacked with (the weapon's damage type).",
+        "Nick — When you make the extra attack granted by the Light property, you can make it as part of your Attack action instead of as a bonus action (once per turn).",
+        "Push — On a hit, if the target is Large or smaller you can push it up to 10 feet straight away from you.",
+        "Sap — On a hit, the target has disadvantage on its next attack roll before the start of your next turn.",
+        "Slow — On a hit that deals damage, reduce the target's speed by 10 feet until the start of your next turn.",
+        "Topple — On a hit, the target must succeed on a Constitution saving throw (DC = 8 + your proficiency bonus + your attacking ability modifier) or be knocked prone.",
+        "Vex — On a hit that deals damage, you have advantage on your next attack roll against that same target before the end of your next turn."
+      ]
+    },
+    {
+      "heading": "Where to find it",
+      "paragraphs": [
+        "Each weapon lists its Mastery on its own page and in the Attacks table on every class sheet, so you can see at a glance what maneuver your weapon grants."
+      ]
+    }
+  ]
+}

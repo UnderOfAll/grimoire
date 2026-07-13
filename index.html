@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grimoire — D&D 5e Compendium</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">&#x2694;</span>
+      <span class="brand-name">Grimoire</span>
+      <span class="brand-sub">5e Compendium</span>
+    </div>
+    <input id="search" class="search" type="search" placeholder="Search everything&hellip;" autocomplete="off" />
+    <button id="legend-btn" class="legend-btn" type="button">Parry</button>
+  </header>
+
+  <div id="legend-panel" class="legend-panel hidden"></div>
+
+  <div class="layout">
+    <nav id="sidebar" class="sidebar">
+      <!-- category buttons injected by app.js -->
+    </nav>
+
+    <main class="content">
+      <section id="list-view" class="list-view">
+        <h1 id="list-title">Classes</h1>
+        <div id="list" class="cards"></div>
+      </section>
+
+      <section id="detail-view" class="detail-view hidden">
+        <button id="back" class="back">&larr; Back</button>
+        <div id="detail"></div>
+      </section>
+
+      <div id="empty" class="empty hidden">
+        <p>No content loaded yet.</p>
+        <p class="muted">Add JSON files under <code>data/</code>, run
+          <code>python3 scripts/build_manifest.py</code>, then refresh.</p>
+      </div>
+    </main>
+  </div>
+
+  <footer class="statusbar">
+    <span id="status">Loading&hellip;</span>
+  </footer>
+
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>
