@@ -335,7 +335,9 @@ code { background: var(--panel-2); padding: 0.1rem 0.4rem; border-radius: 4px; f
     padding: 0.45rem 0.7rem; gap: 0.4rem;
   }
 
-  .content { padding: 1rem; }
+  /* Extra bottom clearance + safe-area so the last card isn't hidden behind a
+     mobile browser's bottom toolbar (Brave) or the home indicator. */
+  .content { padding: 1rem 1rem calc(3.5rem + env(safe-area-inset-bottom, 0px)); }
   .detail-view { max-width: 100%; }
 
   /* Keep wide tables readable and prevent unbreakable text from overflowing. */
