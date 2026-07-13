@@ -39,7 +39,8 @@
     "description": "A pool of raw physical fortitude and adrenaline built from being in the thick of a fight — trading blows, absorbing them, hurling anything not nailed down. The Sandow's sole resource. This baseline generation is shared by every Sandow from 1st level; your Strongman's Act (chosen at 3rd level) layers its own primary Grit stream on top of it — a defensive Act builds more from taking hits, an offensive Act more from dealing them, and Human Cannonball from impacts and forced movement.",
     "generation": "Gain 1 Grit the first time each turn you hit a creature with a melee attack, AND gain 1 Grit the first time each turn you are hit by an attack — two separate sources, each capped at once per turn (landing a hit and being hit in the same turn grants 2 Grit total; a third hit landed or taken that same turn grants no further Grit from that source). This works from 1st level, before any subclass is chosen.",
     "spend": "Spend Grit in 1-point increments to fuel Heave, Brace, and the other feats of strength described in your features. Unspent Grit carries over between rounds but drains to 0 if you finish a short or long rest without spending it.",
-    "cap": "Constitution modifier + proficiency bonus (minimum 3) — typically 4 at levels 1-4 (a +2 Constitution modifier plus +2 proficiency) and 5-6 at level 5, since it's the Sandow's own toughness that holds his Grit."
+    "cap": "≈4 (L1–4) · 5–6 (L5+)",
+    "capFormula": "Constitution modifier + proficiency bonus (minimum 3)"
   },
   "features": [
     {

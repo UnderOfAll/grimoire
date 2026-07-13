@@ -36,7 +36,8 @@
     "description": "A small pool of chaotic energy built from doing risky, unpredictable things in a fight and spent to draw Wild Cards and fuel Gambits. The Joker's sole resource — deliberately kept small so its swings stay bounded rather than build into a snowball.",
     "generation": "Gain 1 Mayhem the first time each turn you deal damage to a creature, AND gain 1 Mayhem the first time each turn you take damage, AND gain 1 Mayhem the first time each turn you roll a natural 1 or a natural 20 on an attack roll, ability check, or saving throw — three separate sources, each capped at once per turn (all three triggering in the same turn grants 3 Mayhem total; a source that already triggered this turn grants no more). This works from 1st level.",
     "spend": "Spend Mayhem in 1-point increments, at no action cost beyond the triggering feature, to draw Wild Cards, fuel your Gambits, and pay for your other Mayhem-keyed features. Unspent Mayhem carries over between rounds but drains to 0 if you finish a short or long rest without spending it.",
-    "cap": "proficiency bonus + Charisma modifier (minimum 3) — typically 4-5 at levels 1-4 (a +2 proficiency bonus plus a +2 to +3 Charisma modifier) and 5-6 at level 5, since it's the Joker's own force of personality that holds his Mayhem."
+    "cap": "≈4–5 (L1–4) · 6+ (L5+)",
+    "capFormula": "proficiency bonus + Charisma modifier (minimum 3)"
   },
   "features": [
     {

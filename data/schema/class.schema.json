@@ -107,7 +107,11 @@
         "spend": { "type": "string", "description": "How the resource is spent and what it buys." },
         "cap": {
           "type": ["integer", "string"],
-          "description": "Max resource value. Either a flat integer or a formula string (e.g. 'proficiency bonus', 'character level') if it scales."
+          "description": "Max resource value, as an at-a-glance typical progression (e.g. '≈4 (L1–4) · 5–6 (L5+)'). Keep the raw formula out of here — put it in `capFormula` so it shows on hover instead. A flat integer is fine for a non-scaling cap."
+        },
+        "capFormula": {
+          "type": "string",
+          "description": "Optional exact cap calculation shown in a hover/tap tooltip on the Cap value (mirrors keyStats.formula), e.g. 'Constitution modifier + proficiency bonus (minimum 3)'."
         }
       }
     }

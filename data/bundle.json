@@ -425,7 +425,8 @@
         "description": "Semi-real mirror-duplicates of yourself, each occupying its own space, wearing your face and frozen in the pose you struck the moment it was made. A Clone is not a combat pet — it never takes actions of its own — it's a body double for a blade, an eye, or your own attacks to work through. A Clone is a snapshot: it copies every benefit affecting you at the instant it is created (advantage, damage riders, a temporary weapon enchantment, and the like) and keeps them for its whole life even if yours end, but it never gains anything applied to you afterward; its AC equals yours and it has no hit points. Clones do not move on their own once placed — you reshape the picture by spawning new Clones where you want them or by using Swap. Because a Clone is a sliver of your own living body rather than an illusion, it is your Constitution — your raw vitality — that powers your duplicates: your Constitution modifier sets their save DCs and is added to any damage a Clone deals — a Mirror Barrage swing, a Mirror Assault strike, a Decoy Detonation burst — in place of the Dexterity your own strikes use, even as your own blades still strike with a duelist’s Dexterity.",
         "generation": "Create one Clone, as a bonus action, in an unoccupied space you can see within 30 feet of you; it appears already mimicking your exact appearance and current pose. You also gain a Clone at no action cost via Riposte, and via any other feature that says so. You may never have more Clones active at once than your Clone cap; creating a new one beyond your cap requires an existing Clone to drop first.",
         "spend": "Clones aren't spent from one fixed pool all at once — specific features use them in specific ways. Swap teleports you into a Clone's space without destroying it. Mirror Barrage has every Clone in reach make one half-damage attack, without destroying them. Mirror Image destroys a Clone within 5 feet to fully absorb a hit that would otherwise land on you. Decoy Detonation destroys a Clone to burst it for damage and knockback. Mirror Assault (5th level) consumes a Clone to deliver an extra attack from its space. A Clone also drops on its own, destroying no other resource, the moment it ends up more than 30 feet from you, the instant you become incapacitated (all your Clones drop at once), or the first time any attack roll succeeds against it — it shares your AC but has no hit points of its own, so one confirmed hit and it's gone.",
-        "cap": "proficiency bonus (2 at levels 1-4, 3 at level 5; Hall of Mirrors adds 1 more starting at 5th level)"
+        "cap": "2 (L1–4) · 3 (L5–8) · 4 (L9+) — Hall of Mirrors adds +1 from L5",
+        "capFormula": "equal to your proficiency bonus"
       },
       "features": [
         {
@@ -582,7 +583,8 @@
         "description": "A small pool of chaotic energy built from doing risky, unpredictable things in a fight and spent to draw Wild Cards and fuel Gambits. The Joker's sole resource — deliberately kept small so its swings stay bounded rather than build into a snowball.",
         "generation": "Gain 1 Mayhem the first time each turn you deal damage to a creature, AND gain 1 Mayhem the first time each turn you take damage, AND gain 1 Mayhem the first time each turn you roll a natural 1 or a natural 20 on an attack roll, ability check, or saving throw — three separate sources, each capped at once per turn (all three triggering in the same turn grants 3 Mayhem total; a source that already triggered this turn grants no more). This works from 1st level.",
         "spend": "Spend Mayhem in 1-point increments, at no action cost beyond the triggering feature, to draw Wild Cards, fuel your Gambits, and pay for your other Mayhem-keyed features. Unspent Mayhem carries over between rounds but drains to 0 if you finish a short or long rest without spending it.",
-        "cap": "proficiency bonus + Charisma modifier (minimum 3) — typically 4-5 at levels 1-4 (a +2 proficiency bonus plus a +2 to +3 Charisma modifier) and 5-6 at level 5, since it's the Joker's own force of personality that holds his Mayhem."
+        "cap": "≈4–5 (L1–4) · 6+ (L5+)",
+        "capFormula": "proficiency bonus + Charisma modifier (minimum 3)"
       },
       "features": [
         {
@@ -805,7 +807,8 @@
         "description": "Lengths of near-invisible wire you fix to creatures around you. A String is not spent like currency — it is an attachment that stays in place, keying your control features to whatever it's tied to, until you choose to let go of it or something forces you to.",
         "generation": "Attach a String to a creature you can see within 60 feet as a bonus action, or automatically at no action cost when you hit a creature with your Control Wires. You may never have more Strings attached at once than your String cap; attaching a new one beyond your cap requires detaching an existing String first (no action).",
         "spend": "Strings aren't consumed to use your control features — they are the prerequisite for them. Manipulate, Tangle, Disrupting Pull, Guiding Pull, and Grand Marionette all require a String already attached to the target; using them doesn't remove the String. A String stays attached until you detach it (no action), the creature moves beyond your 60-foot leash range, or you become incapacitated, in which case all of your Strings snap at once.",
-        "cap": "proficiency bonus (2 at levels 1-4, 3 at level 5; Web of Strings adds 1 more starting at 5th level)"
+        "cap": "2 (L1–4) · 3 (L5–8) · 4 (L9+) — Web of Strings adds +1 from L5",
+        "capFormula": "equal to your proficiency bonus"
       },
       "features": [
         {
@@ -959,7 +962,8 @@
         "description": "A pool of raw physical fortitude and adrenaline built from being in the thick of a fight — trading blows, absorbing them, hurling anything not nailed down. The Sandow's sole resource. This baseline generation is shared by every Sandow from 1st level; your Strongman's Act (chosen at 3rd level) layers its own primary Grit stream on top of it — a defensive Act builds more from taking hits, an offensive Act more from dealing them, and Human Cannonball from impacts and forced movement.",
         "generation": "Gain 1 Grit the first time each turn you hit a creature with a melee attack, AND gain 1 Grit the first time each turn you are hit by an attack — two separate sources, each capped at once per turn (landing a hit and being hit in the same turn grants 2 Grit total; a third hit landed or taken that same turn grants no further Grit from that source). This works from 1st level, before any subclass is chosen.",
         "spend": "Spend Grit in 1-point increments to fuel Heave, Brace, and the other feats of strength described in your features. Unspent Grit carries over between rounds but drains to 0 if you finish a short or long rest without spending it.",
-        "cap": "Constitution modifier + proficiency bonus (minimum 3) — typically 4 at levels 1-4 (a +2 Constitution modifier plus +2 proficiency) and 5-6 at level 5, since it's the Sandow's own toughness that holds his Grit."
+        "cap": "≈4 (L1–4) · 5–6 (L5+)",
+        "capFormula": "Constitution modifier + proficiency bonus (minimum 3)"
       },
       "features": [
         {

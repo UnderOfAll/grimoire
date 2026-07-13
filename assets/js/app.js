@@ -636,7 +636,11 @@ function engineSection(e) {
       <div class="detail-grid">
         ${e.generation ? stat("Generation", e.generation) : ""}
         ${e.spend ? stat("Spend", e.spend) : ""}
-        ${e.cap != null ? stat("Cap", e.cap) : ""}
+        ${e.cap != null
+          ? (e.capFormula
+              ? statHTML("Cap", `<span class="tip-term">${esc(e.cap)}<sup class="tip-mark">&#9432;</sup><span class="term-tip">${esc(e.capFormula)}</span></span>`)
+              : stat("Cap", e.cap))
+          : ""}
       </div>
     </div>`;
 }
