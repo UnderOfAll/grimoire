@@ -232,6 +232,7 @@ h1 { font-family: var(--serif); font-weight: 600; margin: 0 0 1.25rem; }
 /* Scaling Die marker (MECHANICS.md §3): base die + a cue, progression in a styled tooltip box */
 .scaling-die {
   position: relative; color: var(--gold); border-bottom: 1px dotted var(--gold); white-space: nowrap;
+  cursor: pointer;
 }
 .scaling-die .scale-mark { font-size: 0.6em; margin-left: 0.05em; vertical-align: super; }
 .scale-tip {
@@ -253,7 +254,7 @@ h1 { font-family: var(--serif); font-weight: 600; margin: 0 0 1.25rem; }
 .scaling-die:hover .scale-tip { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
 
 /* Reusable hover-term tooltip (weapon mastery, and any glossary term) */
-.tip-term { position: relative; color: var(--gold); border-bottom: 1px dotted var(--gold); cursor: help; }
+.tip-term { position: relative; color: var(--gold); border-bottom: 1px dotted var(--gold); cursor: pointer; }
 .tip-mark { font-size: 0.6em; margin-left: 0.15em; vertical-align: super; color: var(--gold); }
 .term-tip {
   position: absolute; left: 50%; bottom: 145%; transform: translateX(-50%) translateY(4px);
