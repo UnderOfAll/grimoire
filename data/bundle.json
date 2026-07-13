@@ -1212,7 +1212,7 @@
         {
           "level": 2,
           "name": "Brace",
-          "description": "When you take damage from an attack — including one you failed to Parry, or one you had no reaction available to Parry — you can spend Grit, in 1-point increments and at no action cost, to reduce that damage by your {{Brace Soak|proficiency bonus + 1}} per point of Grit spent, applied after any Parry multiplier and before the damage is otherwise resolved. Because your frame only gets harder to move as you grow, this soak scales with your proficiency bonus rather than sitting at a flat number that big hits outpace. Because Brace costs no action or reaction, it stacks with whatever reaction-costed response (or lack of one) you used for the same hit, including a round where your reaction already went to Hold the Line or a Parry. You can spend at most 2 Grit against a single instance of damage, and Brace cannot reduce damage below 0.",
+          "description": "When you take damage from an attack — including one you failed to Parry, or one you had no reaction available to Parry — you can spend Grit, in 1-point increments and at no action cost, to reduce that damage by your {{Brace Soak|2 + your Sandow level}} per point of Grit spent, applied after any Parry multiplier and before the damage is otherwise resolved. The soak climbs with every Sandow level rather than sitting at a flat number that bigger hits quickly outpace, so a point of Grit spent on Brace stays worth it at high levels. Because Brace costs no action or reaction, it stacks with whatever reaction-costed response (or lack of one) you used for the same hit, including a round where your reaction already went to Hold the Line or a Parry. You can spend at most 2 Grit against a single instance of damage, and Brace cannot reduce damage below 0.",
           "meta": {
             "action": "Free",
             "cost": "1-2 Grit",
@@ -1241,12 +1241,12 @@
         {
           "level": 5,
           "name": "Earthshaker",
-          "description": "As an action, spend 3 Grit to slam a weapon, fist, or heavy object into the ground and send a shockwave through every creature of your choice within 10 feet of you. Each must succeed on a Strength saving throw (DC = 8 + your proficiency bonus + your Strength modifier) or be pushed 5 feet directly away from you and knocked prone. Earthshaker deals no damage on its own — it's forced movement and control, a battlefield reset, not another source of hurt. You can use Earthshaker once per turn.",
+          "description": "As an action, spend 3 Grit to slam a weapon, fist, or heavy object into the ground and send a shockwave through every creature of your choice within 15 feet of you. Each must succeed on a Strength saving throw (DC = 8 + your proficiency bonus + your Strength modifier) or be pushed 5 feet directly away from you and knocked prone. Earthshaker deals no damage on its own — it's forced movement and control, a battlefield reset, not another source of hurt. You can use Earthshaker once per turn.",
           "meta": {
             "action": "Action",
             "cost": "3 Grit",
             "uses": "1 / turn",
-            "range": "10-ft radius",
+            "range": "15-ft radius",
             "save": "Str save vs your DC"
           }
         }
@@ -1266,8 +1266,8 @@
         },
         {
           "label": "Brace Soak",
-          "value": "3 / Grit (L1–4) · 4 (L5+)",
-          "formula": "proficiency bonus + 1, per point of Grit spent (max 2 Grit)",
+          "value": "3 / Grit (L1) · 6 (L4) · 7 (L5)",
+          "formula": "2 + your Sandow level, per point of Grit spent (max 2 Grit)",
           "note": "Damage Brace removes, after any Parry multiplier."
         },
         {
