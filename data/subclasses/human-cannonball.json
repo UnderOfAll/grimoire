@@ -8,7 +8,7 @@
     {
       "level": 3,
       "name": "Kinetic Buildup",
-      "description": "You build charge the way a cannon builds pressure, through speed and impact. In addition to your baseline Grit generation, you gain 1 additional Grit the first time each turn you move at least half your speed in a straight line and then hit a creature with a melee attack before the end of that turn, and you gain 1 Grit the first time each turn a creature or object you Heave collides with a solid surface, obstacle, or another creature and deals its collision damage — two separate sources, each capped at once per turn, exactly like your baseline Grit generation.",
+      "description": "You build charge the way a cannon builds pressure, through speed and impact. In addition to your baseline Grit generation, you gain 1 additional Grit the first time each turn you move at least half your speed in a straight line and then hit a creature with a melee attack before the end of that turn, and you gain 1 Grit the first time each turn a creature takes damage from your Cannon Launch — the impact of a landing slam feeding your next charge. Two separate sources, each capped at once per turn, exactly like your baseline Grit generation.",
       "meta": {
         "action": "Passive"
       }

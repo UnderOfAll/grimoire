@@ -16,12 +16,25 @@
     {
       "level": 3,
       "name": "Guardian's Wall",
-      "description": "You make yourself the obstacle nothing gets past. When a hostile creature within 5 feet of you makes an attack roll against a creature other than you, you can use your reaction and spend 1 Grit to impose disadvantage on that attack roll, shoving a shoulder, a shield edge, or your own bulk into the line of the blow at the last instant. This uses your reaction — the same one Parry and Hold the Line draw from — so you get only one such response per round. Additionally, while you have at least 1 Grit in your pool, you have advantage on saving throws made to avoid being knocked prone or forcibly moved.",
+      "description": "You make yourself the obstacle nothing gets past. Its protection works three ways:",
+      "options": [
+        {
+          "name": "Challenge (taunt)",
+          "effect": "While you have at least 1 Grit, every enemy within 10 feet of you has disadvantage on any attack roll that does not include you as a target — swing at your allies and your bulk is always in the line. An enemy can still act freely by targeting you instead, or by stepping out of your 10-foot reach."
+        },
+        {
+          "name": "Intercept",
+          "effect": "Once per turn, when a creature you can see within 5 feet of you is hit by an attack, you can throw yourself into the blow — the attack's damage is dealt to you instead of the original target. This costs you nothing and does not use your reaction, so it never competes with Parry or Hold the Line. You may reduce the damage with Brace as normal, but you cannot Parry a hit you Intercept — it has already landed."
+        },
+        {
+          "name": "Braced Footing",
+          "effect": "While you have at least 1 Grit, you have advantage on saving throws to avoid being knocked prone or forcibly moved."
+        }
+      ],
       "meta": {
-        "action": "Reaction",
-        "cost": "1 Grit",
-        "uses": "1 / round",
-        "range": "5 ft"
+        "action": "Passive / Free",
+        "uses": "Intercept 1 / turn",
+        "range": "10 ft taunt · 5 ft intercept"
       }
     }
   ]

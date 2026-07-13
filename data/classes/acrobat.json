@@ -140,7 +140,8 @@
   "keyStats": [
     {
       "label": "Maneuver Save DC",
-      "value": "8 + proficiency bonus + Dexterity modifier",
+      "value": "≈13 (L1) · 16 (L8) · 19 (L17)",
+      "formula": "8 + proficiency bonus + Dexterity modifier",
       "note": "Save DC for effects your features force (e.g. Momentum Strike's shove or knock prone)."
     },
     {

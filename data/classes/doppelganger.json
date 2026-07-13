@@ -26,7 +26,7 @@
     "skills": "Choose two from Acrobatics, Deception, Insight, Perception, Sleight of Hand, and Stealth"
   },
   "spellcasting": null,
-  "parryBaseDC": 9,
+  "parryBaseDC": 10,
   "defenseAbility": "Constitution",
   "parryReskin": "A Clone lurches into the blow's path at the last possible instant and takes the hit for you — you were never quite where the blade landed, only where you left an afterimage standing. This is pure narration: it does not change the Parry math already resolved (a Grazing Parry or Overcommitted result still deals whatever damage it deals). For a Clone that absorbs a hit entirely, see Mirror Image.",
   "riposte": "On a Full Dodge (your Parry d20 roll comes up strictly above your effective Parry DC), you may create one Clone (see your Clone engine) in an unoccupied space within 5 feet of you, at no action cost and without spending your bonus action. This follows your normal Clone cap — if you are already at your cap, you must let an existing Clone drop first. A small, thematic reward for turning aside a hit clean, not a counterattack.",
@@ -132,17 +132,19 @@
   "keyStats": [
     {
       "label": "Save DC",
-      "value": "8 + proficiency bonus + Constitution modifier",
+      "value": "≈13 (L1) · 16 (L8) · 19 (L17)",
+      "formula": "8 + proficiency bonus + Constitution modifier",
       "note": "Save DC for effects your features force (e.g. Decoy Detonation)."
     },
     {
       "label": "Clones Cap",
-      "value": "proficiency bonus (2 at levels 1-4, 3 at level 5)",
+      "value": "2 (L1–4) · 3 (L5–8) · 4 (L9+)",
+      "formula": "equal to your proficiency bonus",
       "note": "Most active Clone tokens you can have."
     },
     {
       "label": "Parry Base DC",
-      "value": "9",
+      "value": "10",
       "note": "Lower is better."
     },
     {

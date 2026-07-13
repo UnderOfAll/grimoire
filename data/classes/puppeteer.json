@@ -131,12 +131,14 @@
   "keyStats": [
     {
       "label": "Control DC",
-      "value": "8 + proficiency bonus + Wisdom modifier",
+      "value": "≈13 (L1) · 16 (L8) · 19 (L17)",
+      "formula": "8 + proficiency bonus + Wisdom modifier",
       "note": "Save DC for your String control effects (Manipulate, Tangle, Grand Marionette, etc.)."
     },
     {
       "label": "Strings Cap",
-      "value": "proficiency bonus (2 at levels 1-4, 3 at level 5)",
+      "value": "2 (L1–4) · 3 (L5–8) · 4 (L9+)",
+      "formula": "equal to your proficiency bonus",
       "note": "Most active Strings you can maintain."
     },
     {

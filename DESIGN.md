@@ -27,7 +27,7 @@ Replaces passive defense with an active choice. Universal to all classes.
   - Roll **exactly** the DC -> **half damage**.
   - Roll **below** the DC -> **+50% damage** (x1.5, round down).
 - **Parry DC by class** (lower = easier to parry): martial/melee classes have a low base
-  DC (The Sandow ~8), ranged-casters a high one (Puppeteer ~15), mixed in between. Acrobat
+  DC (The Sandow ~9), ranged-casters a high one (Puppeteer ~15), mixed in between. Acrobat
   is the best parrier (lowest DC). Oghma places all 8 classes on the scale.
 - **Situational modifiers raise the DC (harder):** no weapon in hand (unarmed), defending
   while wielding a ranged weapon, a tougher/higher-bonus attacker. The Parry DC is FIXED per
@@ -65,8 +65,8 @@ ranged (Juggler).
 1. **Acrobat** — aerial rogue. Affinity: melee/mixed. Engine: Momentum from movement.
    Signature: wall-run, trapeze, strike-and-vanish; owns AoE evasion. Parry: pure
    dodge/tumble (best full-dodge band). Subclasses: Trapeze / Contortionist / Tightrope.
-2. **Doppelganger** — duplicator. Mixed affinity. HitDie d8. **Dexterity** primary
-   (defenseAbility Dex); parryBaseDC 9. No spell slots. Engine: **Clones** (tokens — semi-real
+2. **Doppelganger** — duplicator. Mixed affinity. HitDie d8. **Constitution** primary
+   (defenseAbility Con); parryBaseDC 10. No spell slots. Engine: **Clones** (tokens — semi-real
    mirror-image duplicates; create/maintain a small number; cap scales). Signature: swap-place
    with a clone, decoy detonation (Dex save), mirror-miss defense (attacks may strike a clone),
    guess-the-real-one. Parry: swap with a clone that eats the hit. Riposte: on a Full Dodge,
@@ -98,7 +98,7 @@ ranged (Juggler).
    = biggest payoff (TBD). Signature weapons: throwing knives, flaming orbs (fire
    skin), clubs. Subclasses: Blades / Firebrand / Chainmaster.
 7. **The Sandow** (strongman archetype) — feats of strength, tank. HitDie d12. **Strength**
-   primary; parry via BRACE (parryBaseDC 8, 2nd-best; defenseAbility Strength). Heavy armor.
+   primary; parry via BRACE (parryBaseDC 9, 2nd-best; defenseAbility Strength). Heavy armor.
    No spell slots. Extra Attack at L5 (pure martial). Engine: **Grit** — baseline generation
    from being in the fray (the first time each turn you hit OR are hit); each SUBCLASS defines
    its primary Grit stream (tank = take hits, offense = deal hits, Human Cannonball =

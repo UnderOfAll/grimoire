@@ -903,3 +903,108 @@ filler feature. Every feature has Cost/Uses/Range/Save chips. Scaling Die + Weap
 Properties glossary live. **Search is now GLOBAL full-text** (all categories, all fields, snippet
 highlight). **Sidebar is sticky** (only content scrolls). Launchers: Grimoire.vbs (no window) /
 Grimoire.bat, no-cache server scripts/serve.py, stop with "Stop Grimoire.bat".
+
+---
+
+## 2026-07-13 — LIVE DEPLOYMENT (GitHub Pages) + fast single-request load
+
+**The app is now hosted publicly. Live URL: https://underofall.github.io/grimoire/**
+- Permanent link, opens on any device anywhere, exposes nothing on Kayki's PC (GitHub
+  hosts a copy). Bookmark it — no more needing to remember localhost:8777 or reopening
+  the .vbs just to get the link.
+- Repo: https://github.com/UnderOfAll/grimoire (PUBLIC — required for free Pages, so all
+  files here are publicly visible). Pages source = branch `main` / `(root)`.
+- Repo was first named `Grimoire` (capital G) → Pages paths are case-SENSITIVE so
+  `/grimoire/` 404'd. Renamed to lowercase via the two-step trick (case-only renames
+  no-op on GitHub: rename to a different name, then to `grimoire`). Local remote updated
+  to the lowercase URL.
+- Verified live: index.html 200, data/bundle.json 200 + valid JSON with all categories.
+
+**PERFORMANCE FIX — the 5–10s "top bar only" startup delay is GONE.**
+- Cause: boot() fetched ~60 JSON files ONE AT A TIME (serial await waterfall) against the
+  single-threaded Python server; nothing rendered until all finished.
+- Fix: `scripts/build_manifest.py` now ALSO writes `data/bundle.json` (every entry inlined,
+  each tagged with `_file`). `app.js` boot() fetches that ONE file and renders. Falls back
+  to per-file loading (now parallel via Promise.all) if the bundle is missing. New helper
+  `prepareEntries()` attaches `_search` + sorts; `loadCategory()` reuses it.
+
+**THE UPDATE-AND-PUBLISH WORKFLOW (do this whenever content changes, NOT every session):**
+```
+python3 scripts/build_manifest.py     # MUST run first — rebuilds manifest + bundle
+git add -A && git commit -m "..."
+git push                              # Pages redeploys in ~1 min
+```
+- Forgetting build_manifest.py before pushing = live site stays stale (bundle won't hold
+  the new content). No content change = nothing to push.
+- Browsers cache Pages hard: hard-refresh (Ctrl+Shift+R) after an update to see changes.
+
+**.vbs / .bat launchers — STILL NEEDED, but only for LOCAL work.** Daily reading = the live
+link. Building/testing new content = still run Grimoire.vbs to preview locally BEFORE
+pushing (editing needs the local http server — the app fetches JSON, blocked on file://).
+
+---
+
+## 2026-07-13 — THE SANDOW full rework + Key-Numbers tooltip system + mobile + Savras pass
+
+**Parry DC ladder changed:** Sandow 8→**9**, Doppelganger 9→**10**. New ladder = Acrobat 7 ·
+Sandow 9 · Doppelganger 10 · Joker 11 · Puppeteer 15. Sandow still "second-best." Synced in
+the class JSONs + keyStats + DESIGN.md (also fixed DESIGN's stale Doppelganger "Dex primary"
+→ Constitution). MECHANICS.md §1.6 8-class ladder re-anchor ROUTED TO OGHMA (bumping two
+classes collided the reserved unbuilt-class slots Juggler/Jester/Illusionist + needs the
+probability table recomputed; docs conform to code, not vice-versa).
+
+**Sandow base class — final L1–L5 ladder:**
+- **L1:** Grit (engine) · Mighty Build · **Iron Grip** (NEW) · **Heave** (rewritten).
+- **L2:** Hold the Line · Brace. **L3:** **Crushing Grip** (NEW). **L4:** ASI only (universal
+  rule — deliberate quiet level; Acrobat's L4 pair is the sanctioned exception). **L5:** Extra
+  Attack · Earthshaker.
+- **Plant Your Feet DELETED** — it just re-explained Parry. Its fixed-DC rule already lives in
+  the universal parry rule; its temp-HP payoff moved to the Riposte.
+- **Riposte** now a real choice: Full Dodge = free 5-ft shove, AND optional **Brace Up** =
+  spend 1 Grit for temp HP = **proficiency bonus + Con modifier** until start of next turn
+  (doesn't stack). Intended tank outlier (richer than other classes' ripostes) — WAI.
+- **Iron Grip (L1):** on a melee hit, target Str-save-vs-DC or grabbed — speed 0 + **disadvantage
+  on attacks _against the Sandow only_** (not all its attacks — nerfed per Savras). Maintained
+  hold (no timer, NO maintain-cost per Kayki), ends on Crush/Heave/release/incapacitate or the
+  target's escape (its action, Athletics/Acrobatics vs DC). A creature that ESCAPES can't be
+  re-grabbed until end of its next turn (anti-chain-grab); Crush/Heave release grants no reprieve.
+  One creature at a time. Your own forced movement (e.g. Bulldozer Charge) doesn't break the grip.
+- **Crushing Grip (L3):** while holding a creature — drag it when you move + it has disadvantage
+  on escape checks; and in place of one attack, spend 1 Grit to deal [[1d6]]+Str auto-damage (no
+  roll). Crushing ENDS the grab (must re-catch). L5 Extra Attack = crush + re-grab same turn.
+- **Heave** simplified to a structured `options` list (Unwilling creature/object vs Willing ally
+  fastball); dropped the collision-into-another-creature save and the unwilling-resist save; meta
+  reads "In place of 1 attack."
+
+**Subclasses (the three Strongman's Acts):**
+- **Bulwark** (tank) reworked: kept Iron Resolve (Grit stream); rebuilt **Guardian's Wall** as an
+  `options` list → **Challenge** (≥1 Grit → enemies within 10 ft have disadvantage attacking
+  anyone but him — kept as-is, Kayki's positioning argument), **Intercept** (FREE, 1/turn, does
+  NOT cost a reaction — take an adjacent ally's hit onto yourself + Brace it; can't Parry it),
+  **Braced Footing** (advantage vs prone/forced-move while ≥1 Grit). Intercept is now a SANCTIONED
+  exception in MECHANICS.md §1.2a alongside Acrobat Flowing Reflexes.
+- **Juggernaut** (offense): unchanged except **Unstoppable Force** nerfed — a Heave feeds only ONE
+  Grit source now (was netting +2 from one throw).
+- **Human Cannonball** (mobility): Cannon Launch = bonus action, 2 Grit, 30-ft straight launch, no
+  OA/no fall dmg, stop at first creature OR end within 5 ft → Str save or [[2d6]]+prone, 1/turn.
+  **Kinetic Buildup** dead "Heave collision damage" source re-pointed to Cannon-Launch impact
+  (collision was removed when Heave was simplified).
+
+**KEY-NUMBERS TOOLTIP SYSTEM (new, all 5 classes):** keyStats now show a clean typical
+progression up front with the exact formula on hover (ⓘ), mirroring the [[XdY]] scaling-die
+tooltip. New optional `formula` field on keyStats (schema updated). Renderer: `keyStatsSection`
+wraps the value in `.tip-term` when `formula` is present; CSS added `.tip-mark`. Flat values
+(Parry DC, Momentum/Reactions) stay plain. Applied to every DC + resource-cap across the roster.
+
+**MOBILE responsive fix (style.css @media ≤640px):** replaced the old cramped 64-px icon rail.
+Now: topbar wraps (brand+Parry row 1, search full-width row 2); sidebar becomes a horizontal
+scrollable category strip above the content; content full-width; tables shrink + word-break;
+Parry panel becomes a bottom sheet.
+
+**Savras balance pass done** (subagent). Fixed: Intercept doc-contradiction, Iron Grip lockdown
+(disadvantage vs-Sandow-only + grapple-break rule), Kinetic Buildup dead ref, Unstoppable Force
+double-dip. Kept by Kayki's call: Guardian's Wall aura, Sandow riposte richness. Still on the
+Savras watch-list (not blocking): overall Bulwark EHP/durability stack; Iron Grip escape-DC math.
+
+**The Sandow is now feature-complete L1–L5 with all three Acts reviewed.** Remaining unbuilt
+Sandow-adjacent: nothing. Roster classes still unbuilt: Illusionist, Jester, Juggler.

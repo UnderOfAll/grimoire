@@ -7,3 +7,8 @@ desktop.ini
 # Local Python cache
 __pycache__/
 *.pyc
+
+# Local Windows launchers (dev-only, not part of the hosted site)
+Grimoire.vbs
+Grimoire.bat
+Stop Grimoire.bat

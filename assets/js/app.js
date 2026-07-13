@@ -513,12 +513,18 @@ function renderClass(c) {
 function keyStatsSection(list) {
   if (!Array.isArray(list) || !list.length) return "";
   return `<h2 class="key-stats-title">Key Numbers</h2>
-    <div class="key-stats">` + list.map((s) =>
-      `<div class="key-stat">
+    <div class="key-stats">` + list.map((s) => {
+      // A `formula` turns the value into a hover term: the at-a-glance progression stays
+      // visible, the exact calculation lives in the tooltip (like the [[XdY]] scaling die).
+      const val = s.formula
+        ? `<span class="tip-term">${esc(s.value || "")}<sup class="tip-mark">&#9432;</sup><span class="term-tip">${esc(s.formula)}</span></span>`
+        : esc(s.value || "");
+      return `<div class="key-stat">
          <div class="label">${esc(s.label || "")}</div>
-         <div class="value">${esc(s.value || "")}</div>
+         <div class="value">${val}</div>
          ${s.note ? `<div class="note">${esc(s.note)}</div>` : ""}
-       </div>`).join("") + `</div>`;
+       </div>`;
+    }).join("") + `</div>`;
 }
 
 /* A class's weapon attacks, with damage pulled from the loaded weapons data so the

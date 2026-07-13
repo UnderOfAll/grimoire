@@ -85,7 +85,8 @@
         "type": "object",
         "properties": {
           "label": { "type": "string", "description": "Short name of the stat, e.g. 'Gambit DC', 'Momentum Cap', 'Parry Base DC'." },
-          "value": { "type": "string", "description": "The value or formula, e.g. '8 + proficiency bonus + Charisma modifier'. A string so formulas render as-is (no character level is selected in the compendium)." },
+          "value": { "type": "string", "description": "The at-a-glance display: a short typical progression a player can read instantly, e.g. '≈4 (L1) · 6 (L9+)'. Keep the raw formula out of here — put it in `formula` so it shows on hover instead. If there is no formula (a flat number like a Parry DC), this can just be that number." },
+          "formula": { "type": "string", "description": "Optional exact calculation shown in a hover tooltip on the value (mirrors the [[XdY]] scaling-die tooltip), e.g. 'Constitution modifier + proficiency bonus (minimum 3)'. Use this for any value derived from ability modifiers or proficiency so the confusing math is available on demand but not cluttering the at-a-glance number." },
           "note": { "type": "string", "description": "Optional one-line explanation of what the stat governs." }
         },
         "required": ["label", "value"]

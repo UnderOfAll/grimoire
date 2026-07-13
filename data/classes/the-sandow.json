@@ -29,10 +29,10 @@
     "skills": "Choose two from Athletics, Intimidation, Perception, Performance, and Survival"
   },
   "spellcasting": null,
-  "parryBaseDC": 8,
+  "parryBaseDC": 9,
   "defenseAbility": "Strength",
   "parryReskin": "You don't dodge a hit at all — you plant your feet, turn your shoulder or weapon into the line of the blow, and let your frame do what a lesser body couldn't. A Sandow's Parry is a brace, never a step back.",
-  "riposte": "On a Full Dodge (your Parry d20 roll comes up strictly above your effective Parry DC), the braced impact drives the triggering attacker back: it is pushed 5 feet directly away from you, no save required, at no cost beyond the Parry itself. A minor payoff for a clean brace — a shove, not a counterattack.",
+  "riposte": "On a Full Dodge (your Parry d20 roll comes up strictly above your effective Parry DC), the braced impact drives the triggering attacker back: it is pushed 5 feet directly away from you, no save required, at no cost beyond the Parry itself — a shove, not a counterattack. On that same clean brace you may also spend 1 Grit to Brace Up: gain temporary hit points equal to your proficiency bonus + your Constitution modifier, lasting until the start of your next turn (like all temporary hit points these don't stack — a new Brace Up replaces any you already have). The shove is free; the Brace Up is the paid option.",
   "engine": {
     "name": "Grit",
     "resourceType": "pool",
@@ -52,16 +52,6 @@
     },
     {
       "level": 1,
-      "name": "Plant Your Feet",
-      "description": "Your Parry uses a base Parry DC of 8, second-best in the roster. This DC is fixed: it does not go down as you gain levels or raise your ability scores — only your weapon's own parry modifier and situational modifiers adjust it, and it never drops below 3. You roll a flat d20 against your effective Parry DC — no bonus is ever added to the die itself. Parrying costs your reaction, so a round you spend bracing is a round you cannot make an opportunity attack or use Hold the Line — with only one reaction, you can fully brace against just one attack per round. See your Riposte for what a Full Dodge grants you.",
-      "meta": {
-        "action": "Reaction",
-        "uses": "1 / round",
-        "range": "Self"
-      }
-    },
-    {
-      "level": 1,
       "name": "Mighty Build",
       "description": "You count as one size larger than your actual size for the purpose of carrying capacity, and for determining whether you can grapple, shove, or throw a creature — treat a Large creature as though it were Medium, a Huge creature as though it were Large, and so on. This extends to Heave below: you can grapple and throw creatures up to one size larger than the normal rules would otherwise allow.",
       "meta": {
@@ -70,13 +60,33 @@
     },
     {
       "level": 1,
-      "name": "Heave",
-      "description": "While you have a creature grappled, or are holding a suitable heavy object (a bench, a barrel, a cage bar) or a willing ally, you can spend Grit, as part of an attack action, to hurl it. Throwing a creature (Large or smaller, per Mighty Build): spend 1 to 3 Grit. It flies up to 10 feet per point of Grit spent in a direction of your choice and lands in the nearest unoccupied space, taking [[1d6]] bludgeoning damage per point of Grit spent and falling prone; if it is thrown into a space occupied by another creature, that creature must succeed on a Strength saving throw (DC = 8 + your proficiency bonus + your Strength modifier) or take the same damage and be knocked prone. An unwilling creature resists with a Strength saving throw (DC = 8 + your proficiency bonus + your Strength modifier) — on a success it isn't moved and takes no damage, though the Grit is still spent. A willing ally can instead be thrown as a 'fastball special': no save, no damage, no falling prone — you simply place it in an unoccupied space you can see within range that has a clear path from you (not through walls or closed doors), ready to act. Throwing an improvised heavy object (not your Cannonball, which is simply a normal thrown weapon attack and needs no Grit) resolves as an improvised thrown weapon attack, using the same Grit-to-range scale if you want extra reach or force.",
+      "name": "Iron Grip",
+      "description": "When you hit a creature no larger than Mighty Build allows with a melee attack, you can immediately try to grab it — no extra action or attack, it rides the same hit. The target must succeed on a Strength saving throw against your save DC (8 + your proficiency bonus + your Strength modifier) or be caught: while held it is grappled by you (its speed becomes 0) and has disadvantage on attack rolls it makes against you — pinned against your own frame, its swings at you go wide (its attacks against other creatures are unaffected). The hold has no time limit — the creature does not slip free on its own. It stays grabbed until you cash the hold in by Crushing it (see Crushing Grip) or Heaving it, until you let go or are incapacitated, or until it escapes on its turn by using its action to make a Strength (Athletics) or Dexterity (Acrobatics) check against your save DC. When a creature escapes this way it shakes free entirely and can't be caught by your Iron Grip again until the end of its next turn — so you can't chain-grab the same target, though you're free to set your hands on a different one in the meantime. (Ending the hold yourself by Crushing or Heaving the creature does not grant it this reprieve.) You can hold only one creature in your Iron Grip at a time — catching a new target releases the last. A creature held this way counts as grappled by you, so it is a valid target for Heave. Forced movement you cause with your own features (such as a Juggernaut's Bulldozer Charge) never breaks this hold — the creature is dragged with you rather than shoved free.",
       "meta": {
-        "action": "Part of Attack",
+        "action": "Free (on a melee hit)",
+        "uses": "One creature at a time",
+        "range": "Reach",
+        "save": "Str save vs your DC"
+      }
+    },
+    {
+      "level": 1,
+      "name": "Heave",
+      "description": "You grab something heavy — a creature you have grappled, or an object you're holding like a bench, a barrel, or a cage bar — and hurl it. This is used in place of one of your attacks when you take the Attack action (so at 1st level it replaces your single attack; with Extra Attack you can Heave and still swing). Spend 1 to 3 Grit: the thrown target flies 10 feet per point of Grit spent in a direction of your choice and lands in the nearest unoccupied space. What happens on landing depends on the target:",
+      "options": [
+        {
+          "name": "Unwilling creature or object",
+          "effect": "A creature you already have grappled (Large or smaller, per Mighty Build), or a heavy object. It takes [[1d6]] bludgeoning damage per point of Grit spent and is knocked prone. No save — you already won the grapple to be holding it, so the throw simply happens."
+        },
+        {
+          "name": "Willing ally (\"fastball special\")",
+          "effect": "No damage and no prone. You place the ally in an unoccupied space within range that has a clear path from you (not through walls or closed doors), ready to act — a launch, not an attack."
+        }
+      ],
+      "meta": {
+        "action": "In place of 1 attack",
         "cost": "1-3 Grit",
-        "range": "10 ft / Grit",
-        "save": "Str save vs your DC (unwilling)"
+        "range": "10 ft / Grit"
       }
     },
     {
@@ -97,6 +107,16 @@
         "action": "Free",
         "cost": "1-2 Grit",
         "range": "Self"
+      }
+    },
+    {
+      "level": 3,
+      "name": "Crushing Grip",
+      "description": "Your hold is a weapon in its own right. While you have a creature caught in your Iron Grip, two things become true. First, the grip turns mobile and sticky: you can drag the held creature with you when you move (it moves with you at no extra cost, staying grappled), and it has disadvantage on any check it makes to escape your grip. Second, you can crush it: in place of one attack when you take the Attack action, spend 1 Grit to deal [[1d6]] bludgeoning damage plus your Strength modifier to the held creature — no attack roll, the grip crushes down and the damage simply lands. Crushing spends the hold: once you Crush a creature it is no longer grabbed (you wring it out and shove it down), so to lock it again you must catch it fresh with a new hit. With Extra Attack you can Crush with one attack and make a normal attack with the other to re-catch it, so a target barely leaves your hands.",
+      "meta": {
+        "action": "In place of 1 attack",
+        "cost": "1 Grit",
+        "range": "Reach (held creature)"
       }
     },
     {
@@ -123,17 +143,19 @@
   "keyStats": [
     {
       "label": "Save DC",
-      "value": "8 + proficiency bonus + Strength modifier",
+      "value": "≈13 (L1) · 16 (L8) · 19 (L17)",
+      "formula": "8 + proficiency bonus + Strength modifier",
       "note": "Save DC for effects your features force (e.g. Heave, Earthshaker)."
     },
     {
       "label": "Grit Cap",
-      "value": "Constitution modifier + proficiency bonus (minimum 3)",
+      "value": "≈4 (L1–4) · 5–6 (L5+)",
+      "formula": "Constitution modifier + proficiency bonus (minimum 3)",
       "note": "Most Grit you can hold at once."
     },
     {
       "label": "Parry Base DC",
-      "value": "8",
+      "value": "9",
       "note": "Second-best parrier; lower is better."
     }
   ]

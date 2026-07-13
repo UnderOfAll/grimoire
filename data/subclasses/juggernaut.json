@@ -8,7 +8,7 @@
     {
       "level": 3,
       "name": "Unstoppable Force",
-      "description": "You feed on the wreckage you cause. In addition to your baseline Grit generation, you gain 1 additional Grit the first time each turn you knock a creature prone (by a shove, a Heave throw, or any other means), and you gain 1 Grit the first time each turn you deal damage to a creature with a Heave throw — two separate sources, each capped at once per turn, exactly like your baseline Grit generation. The bigger the mess you make, the more you have left to make it worse.",
+      "description": "You feed on the wreckage you cause. In addition to your baseline Grit generation, you gain 1 additional Grit the first time each turn you deal damage to a creature with a Heave throw, and you gain 1 Grit the first time each turn you knock a creature prone by some means OTHER than a Heave (a shove, Bulldozer Charge, Earthshaker, and the like) — two separate sources, each capped at once per turn, exactly like your baseline Grit generation. A Heave already pays out through the first source, so the prone it also causes never grants a second Grit off the same throw. The bigger the mess you make, the more you have left to make it worse.",
       "meta": {
         "action": "Passive"
       }

@@ -203,12 +203,14 @@
   "keyStats": [
     {
       "label": "Gambit DC",
-      "value": "8 + proficiency bonus + Charisma modifier",
+      "value": "≈13 (L1) · 16 (L8) · 19 (L17)",
+      "formula": "8 + proficiency bonus + Charisma modifier",
       "note": "Save DC for Wild Cards, Gambits, and every other Joker effect that forces a save."
     },
     {
       "label": "Mayhem Cap",
-      "value": "proficiency bonus + Charisma modifier (minimum 3)",
+      "value": "≈4–5 (L1–4) · 6+ (L5+)",
+      "formula": "proficiency bonus + Charisma modifier (minimum 3)",
       "note": "Most Mayhem you can hold at once."
     },
     {
