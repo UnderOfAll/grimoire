@@ -1,0 +1,31 @@
+{
+  "id": "ringmaster",
+  "name": "Ringmaster",
+  "parentClass": "juggler",
+  "source": "Circus System",
+  "flavor": "The showman: a juggler who works the whole ring, turning heavy clubs and sheer spectacle into crowd control — every eye on him, whether they like it or not.",
+  "features": [
+    {
+      "level": 3,
+      "name": "All Eyes On Me",
+      "description": "You command attention like a spotlight. Once on each of your turns, when you hit a creature with an implement, you can forgo that implement's damage to instead rivet its attention on you: it must succeed on a Wisdom saving throw against your {{Trick Shot DC|6 + proficiency bonus + Intelligence modifier}} or have disadvantage on any attack roll that doesn't include you as a target, until the start of your next turn. You can hold only one creature's attention this way at a time.",
+      "meta": {
+        "action": "Part of your Barrage",
+        "uses": "1 / turn",
+        "range": "Thrown",
+        "save": "Wis vs Trick Shot DC"
+      }
+    },
+    {
+      "level": 3,
+      "name": "Grand Finale",
+      "description": "Once per short or long rest, you can turn a Barrage into a showstopping set piece. Take the Attack action and throw implements as normal, then put on the show: each ally who can see you gains temporary hit points equal to your Juggler level, and each enemy within 15 feet of you must succeed on a Wisdom saving throw against your {{Trick Shot DC|6 + proficiency bonus + Intelligence modifier}} or be frightened of you until the end of its next turn. The crowd is yours.",
+      "meta": {
+        "action": "Part of Attack action",
+        "uses": "1 / rest",
+        "range": "15 ft",
+        "save": "Wis vs Trick Shot DC"
+      }
+    }
+  ]
+}

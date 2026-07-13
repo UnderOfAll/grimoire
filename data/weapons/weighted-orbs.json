@@ -1,0 +1,29 @@
+{
+  "id": "weighted-orbs",
+  "name": "Weighted Orbs",
+  "source": "Circus System",
+  "flavor": "Palm-sized iron spheres kept endlessly aloft. A Firebrand sets them alight, but even cold they land like a dropped anvil.",
+  "category": "signature",
+  "damage": {
+    "die": "1d4",
+    "type": "bludgeoning"
+  },
+  "properties": [
+    "finesse",
+    "light",
+    "thrown"
+  ],
+  "range": {
+    "normal": 20,
+    "long": 60
+  },
+  "parryProfile": {
+    "canParry": true,
+    "parryRange": "melee",
+    "note": "An orb still in hand can knock a blow aside, though its round face is a clumsier guard than a club. Once thrown it is gone. How many orbs a Juggler still holds is governed by the Juggler's engine (Deflect)."
+  },
+  "proficientClasses": [
+    "juggler"
+  ],
+  "mastery": "Slow"
+}

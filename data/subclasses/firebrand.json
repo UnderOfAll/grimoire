@@ -1,0 +1,28 @@
+{
+  "id": "firebrand",
+  "name": "Firebrand",
+  "parentClass": "juggler",
+  "source": "Circus System",
+  "flavor": "The fire act: a juggler whose cascade is a ring of burning orbs, trading the clean kill for spreading flame and scorched ground nobody wants to cross.",
+  "features": [
+    {
+      "level": 3,
+      "name": "Ignite",
+      "description": "Your implements trail fire. A creature hit by at least one of your implements on your turn is set alight and takes [[1d4]] fire damage at the start of its next turn — this is added on top of the implement's normal damage, not a replacement for it, and the die scales as your implements do. The flames flare at the start of the creature's turn and then gutter out, so there is no window for it to smother them first; hit it again and it simply burns again the following turn.",
+      "meta": {
+        "action": "Passive"
+      }
+    },
+    {
+      "level": 3,
+      "name": "Wildfire",
+      "description": "Once on each of your turns, one implement you throw can burst on impact instead of ricocheting: each creature within 10 feet of the space it strikes must make a Dexterity saving throw against your {{Trick Shot DC|6 + proficiency bonus + Intelligence modifier}}, taking [[2d4]] fire damage on a failure or half as much on a success. That space then burns until the start of your next turn — the first time a creature enters it on a turn, or ends its turn there, it takes [[1d4]] fire damage.",
+      "meta": {
+        "action": "Part of your Barrage",
+        "uses": "1 / turn",
+        "range": "10 ft burst",
+        "save": "Dex vs Trick Shot DC"
+      }
+    }
+  ]
+}

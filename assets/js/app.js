@@ -414,14 +414,24 @@ const DIE_CHAIN = [4, 6, 8, 10, 12];
 function fmtDesc(s) {
   if (s == null) return "";
   const str = String(s);
-  const re = /\[\[\s*(\d+)d(\d+)\s*\]\]/g;
+  // Two inline tokens: [[XdY]] scaling die, and {{Label|formula}} a hover/tap formula tooltip
+  // (use the latter for any derived number like a save DC instead of spelling out the math).
+  const re = /\[\[\s*(\d+)d(\d+)\s*\]\]|\{\{\s*([^|{}]+?)\s*\|\s*([^{}]+?)\s*\}\}/g;
   let out = "", last = 0, m;
   while ((m = re.exec(str)) !== null) {
     out += esc(str.slice(last, m.index));
-    out += scalingDieHTML(parseInt(m[1], 10), parseInt(m[2], 10));
+    if (m[1]) out += scalingDieHTML(parseInt(m[1], 10), parseInt(m[2], 10));
+    else out += tipTermHTML(m[3], m[4]);
     last = re.lastIndex;
   }
   return out + esc(str.slice(last));
+}
+
+// A hover/tap tooltip term for an inline derived number (e.g. a save DC): shows the label + ⓘ,
+// reveals the formula on hover/tap. Mirrors the keyStats formula tooltip so descriptions stay clean.
+function tipTermHTML(label, formula) {
+  return `<span class="tip-term" title="${esc(formula)}">${esc(label)}<sup class="tip-mark">&#9432;</sup>` +
+    `<span class="term-tip">${esc(formula)}</span></span>`;
 }
 
 /* Weapon Mastery (data/rules/weapon-mastery.json): the default maneuver any proficient wielder
@@ -611,8 +621,8 @@ function parrySection(c) {
       ${c.parryBaseDC != null ? `<span class="badge badge-dc">Parry Base DC ${esc(c.parryBaseDC)}</span>` : ""}
       ${c.defenseAbility ? `<p class="muted">Defense Ability: <strong>${esc(c.defenseAbility)}</strong></p>` : ""}
       ${parryFormula(c)}
-      ${c.parryReskin ? `<p class="parry-reskin">${esc(c.parryReskin)}</p>` : ""}
-      ${c.riposte ? `<p><strong>Riposte</strong> <span class="muted">(on Full Dodge)</span>: ${esc(c.riposte)}</p>` : ""}
+      ${c.parryReskin ? `<p class="parry-reskin">${fmtDesc(c.parryReskin)}</p>` : ""}
+      ${c.riposte ? `<p><strong>Riposte</strong> <span class="muted">(on Full Dodge)</span>: ${fmtDesc(c.riposte)}</p>` : ""}
       <p class="muted">Roll a d20 vs your effective DC: <strong>above</strong> = no damage, <strong>equal</strong> = half, <strong>below</strong> = +50%. See the Rules tab (Parry &amp; Dodging) for the full rule.</p>
     </div>`;
 }

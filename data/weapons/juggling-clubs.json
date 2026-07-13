@@ -1,0 +1,29 @@
+{
+  "id": "juggling-clubs",
+  "name": "Juggling Clubs",
+  "source": "Circus System",
+  "flavor": "Weighted performance clubs spun in a blur and hurled end over end — a juggler's bread and butter, as happy to crack a skull as to catch the light.",
+  "category": "signature",
+  "damage": {
+    "die": "1d4",
+    "type": "bludgeoning"
+  },
+  "properties": [
+    "finesse",
+    "light",
+    "thrown"
+  ],
+  "range": {
+    "normal": 20,
+    "long": 60
+  },
+  "parryProfile": {
+    "canParry": true,
+    "parryRange": "melee",
+    "note": "A club still in hand parries modestly, batting a blow aside with its weighted head. Once thrown it has left your hand — nothing to guard with. How many clubs a Juggler still holds is governed by the Juggler's engine (Deflect)."
+  },
+  "proficientClasses": [
+    "juggler"
+  ],
+  "mastery": "Topple"
+}

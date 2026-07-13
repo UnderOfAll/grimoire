@@ -1,0 +1,27 @@
+{
+  "id": "impalement",
+  "name": "Impalement",
+  "parentClass": "juggler",
+  "source": "Circus System",
+  "flavor": "The impalement act: a juggler who doesn't spray steel but places it — one studied target, every blade finding the same fatal seam.",
+  "features": [
+    {
+      "level": 3,
+      "name": "Mark",
+      "description": "As a bonus action, you can Mark one creature you can see — a cold read of its guard and rhythm. Until the end of your next turn, your thrown implements score a critical hit against the Marked creature on a roll of 19 or 20, and the first of your implements to hit it each turn deals extra damage equal to your Intelligence modifier. You can have only one creature Marked at a time; Marking a new one ends the old.",
+      "meta": {
+        "action": "Bonus Action",
+        "uses": "1 creature at a time",
+        "range": "Sight"
+      }
+    },
+    {
+      "level": 3,
+      "name": "Impossible Shot",
+      "description": "Your calculations beat the battlefield. Your thrown implements ignore half and three-quarters cover, and they suffer no disadvantage anywhere within their full range: a normal throw reaches 20 feet, and you simply ignore the long-range penalty that would otherwise apply on throws from 20 out to 60 feet. Every angle is a clean angle.",
+      "meta": {
+        "action": "Passive"
+      }
+    }
+  ]
+}
