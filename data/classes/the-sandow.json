@@ -103,7 +103,7 @@
     {
       "level": 2,
       "name": "Brace",
-      "description": "When you take damage from an attack — including one you failed to Parry, or one you had no reaction available to Parry — you can spend Grit, in 1-point increments and at no action cost, to reduce that damage by 3 per point of Grit spent, applied after any Parry multiplier and before the damage is otherwise resolved. Because Brace costs no action or reaction, it stacks with whatever reaction-costed response (or lack of one) you used for the same hit, including a round where your reaction already went to Hold the Line or a Parry. You can spend at most 2 Grit against a single instance of damage (reducing it by at most 6), and Brace cannot reduce damage below 0.",
+      "description": "When you take damage from an attack — including one you failed to Parry, or one you had no reaction available to Parry — you can spend Grit, in 1-point increments and at no action cost, to reduce that damage by your {{Brace Soak|proficiency bonus + 1}} per point of Grit spent, applied after any Parry multiplier and before the damage is otherwise resolved. Because your frame only gets harder to move as you grow, this soak scales with your proficiency bonus rather than sitting at a flat number that big hits outpace. Because Brace costs no action or reaction, it stacks with whatever reaction-costed response (or lack of one) you used for the same hit, including a round where your reaction already went to Hold the Line or a Parry. You can spend at most 2 Grit against a single instance of damage, and Brace cannot reduce damage below 0.",
       "meta": {
         "action": "Free",
         "cost": "1-2 Grit",
@@ -113,11 +113,12 @@
     {
       "level": 3,
       "name": "Crushing Grip",
-      "description": "Your hold is a weapon in its own right. While you have a creature caught in your Iron Grip, two things become true. First, the grip turns mobile and sticky: you can drag the held creature with you when you move (it moves with you at no extra cost, staying grappled), and it has disadvantage on any check it makes to escape your grip. Second, you can crush it: in place of one attack when you take the Attack action, spend 1 Grit to deal [[1d6]] bludgeoning damage plus your Strength modifier to the held creature — no attack roll, the grip crushes down and the damage simply lands. Crushing spends the hold: once you Crush a creature it is no longer grabbed (you wring it out and shove it down), so to lock it again you must catch it fresh with a new hit. With Extra Attack you can Crush with one attack and make a normal attack with the other to re-catch it, so a target barely leaves your hands.",
+      "description": "Your hold is a weapon in its own right. While you have a creature caught in your Iron Grip, two things become true. First, the grip turns mobile and sticky: you can drag the held creature with you when you move (it moves with you at no extra cost, staying grappled), and it has disadvantage on any check it makes to escape your grip. Second, you can crush it: in place of one attack when you take the Attack action, spend 1 Grit to deal [[1d6]] bludgeoning damage plus your Strength modifier to the held creature — no attack roll, the grip crushes down and the damage simply lands. You then slam the wrung-out body to the ground: the crushed creature is knocked prone, and the impact ripples outward as a shockwave — each other creature within 5 feet of it must succeed on a Strength saving throw against your save DC or be knocked prone as well. Crushing spends the hold: once you Crush a creature it is no longer grabbed, so to lock it again you must catch it fresh with a new hit. With Extra Attack you can Crush with one attack and make a normal attack with the other to re-catch it (or catch a different target), so a target barely leaves your hands. Unlike Heave, Crushing Grip moves no one — it's a stationary finisher that flattens the held creature and staggers everything pressed in around it.",
       "meta": {
         "action": "In place of 1 attack",
         "cost": "1 Grit",
-        "range": "Reach (held creature)"
+        "range": "Reach (held creature)",
+        "save": "Str save vs your DC (shockwave, nearby creatures)"
       }
     },
     {
@@ -153,6 +154,12 @@
       "value": "≈4 (L1–4) · 5–6 (L5+)",
       "formula": "Constitution modifier + proficiency bonus (minimum 3)",
       "note": "Most Grit you can hold at once."
+    },
+    {
+      "label": "Brace Soak",
+      "value": "3 / Grit (L1–4) · 4 (L5+)",
+      "formula": "proficiency bonus + 1, per point of Grit spent (max 2 Grit)",
+      "note": "Damage Brace removes, after any Parry multiplier."
     },
     {
       "label": "Parry Base DC",
