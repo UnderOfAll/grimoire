@@ -470,7 +470,7 @@ function scalingDieHTML(count, size) {
   const base = `${count}d${size}`;
   if (i < 0) return esc(base); // not a standard die — render plainly, no scaling
   const seq = [0, 1, 2, 3].map((k) => count + "d" + DIE_CHAIN[Math.min(i + k, DIE_CHAIN.length - 1)]);
-  return `<span class="scaling-die">${esc(base)}<sup class="scale-mark">▲</sup>` +
+  return `<span class="scaling-die" title="Scaling die: ${esc(seq.join(" · "))} (at levels 1 · 5 · 11 · 17)">${esc(base)}<sup class="scale-mark">▲</sup>` +
     `<span class="scale-tip" role="tooltip">
        <span class="scale-tip-title">Scaling die</span>
        <span class="scale-tip-row">${esc(seq.join(" · "))}</span>
@@ -524,7 +524,7 @@ function keyStatsSection(list) {
       // A `formula` turns the value into a hover term: the at-a-glance progression stays
       // visible, the exact calculation lives in the tooltip (like the [[XdY]] scaling die).
       const val = s.formula
-        ? `<span class="tip-term">${esc(s.value || "")}<sup class="tip-mark">&#9432;</sup><span class="term-tip">${esc(s.formula)}</span></span>`
+        ? `<span class="tip-term" title="${esc(s.formula)}">${esc(s.value || "")}<sup class="tip-mark">&#9432;</sup><span class="term-tip">${esc(s.formula)}</span></span>`
         : esc(s.value || "");
       return `<div class="key-stat">
          <div class="label">${esc(s.label || "")}</div>
@@ -638,7 +638,7 @@ function engineSection(e) {
         ${e.spend ? stat("Spend", e.spend) : ""}
         ${e.cap != null
           ? (e.capFormula
-              ? statHTML("Cap", `<span class="tip-term">${esc(e.cap)}<sup class="tip-mark">&#9432;</sup><span class="term-tip">${esc(e.capFormula)}</span></span>`)
+              ? statHTML("Cap", `<span class="tip-term" title="${esc(e.capFormula)}">${esc(e.cap)}<sup class="tip-mark">&#9432;</sup><span class="term-tip">${esc(e.capFormula)}</span></span>`)
               : stat("Cap", e.cap))
           : ""}
       </div>
