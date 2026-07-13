@@ -24,6 +24,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  height: 100dvh; /* dvh = visible viewport, so mobile browser toolbars don't hide the footer */
   overflow: hidden;
 }
 
