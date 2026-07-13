@@ -88,8 +88,15 @@ trigger a Parry (see §1.1).
   reaction — two reactions on a natural-20 Parry. The regained reaction(s) **can never be
   spent on another Parry** (so this never raises his one-Parry-per-round ceiling and never
   makes him a surer dodger; it only lets a clean parry buy back an OA or another
-  reaction-costed feature) and **expire at the start of his next turn**. No other class
-  gets a second reaction from any source.
+  reaction-costed feature) and **expire at the start of his next turn**.
+- **Authorized exception — Bulwark "Intercept" (L3, subclass).** Once per turn, when an
+  attack hits an ally within 5 feet of the Bulwark, he may redirect that hit onto himself.
+  This is a **free** intervention that does **not** spend a reaction (so it never competes
+  with Parry or Hold the Line), capped at once per turn. It cannot negate the hit — the
+  attack has already landed, so the Bulwark simply takes the damage in the ally's place (and
+  may Brace it); it never grants or counts as a Parry. Together with Flowing Reflexes, this
+  is one of only two sanctioned exceptions to the one-reaction rule; no other class or
+  subclass gets extra reaction-timed actions from any source.
 
 ### 1.3 Cannot Parry at all
 
@@ -227,16 +234,25 @@ effective Parry DC = parryBaseDC (class, §1.6)
 All 8 classes, base DC only (before proficiency/ability/situational adjustments — see
 §1.5 for the full formula and §1.9 for how per-class features may adjust this further):
 
+**v6 (2026-07-13): re-spaced for shipped data.** Acrobat, The Sandow, Doppelganger, Joker,
+and Puppeteer are now shipped classes (`data/classes/*.json`) with fixed `parryBaseDC`
+values that this table must match exactly — those five values are no longer Oghma's to
+tune, only to document. The three still-unbuilt classes (Juggler, Jester, Illusionist)
+were pushed off their old slots by two of the shipped values moving (The Sandow 8->9,
+Doppelganger 9->10) and are re-seated below at the nearest open integers that preserve the
+melee/brace-low -> mixed-middle -> ranged-caster-high ordering; DC 8 is intentionally left
+open between Acrobat and The Sandow (no unbuilt class needs a slot there).
+
 | Class | `parryBaseDC` | Why here on the scale |
 |---|---:|---|
 | **Acrobat** | **7** | Best parrier in the roster (locked by design; set to 7 rather than 6 so he isn't literally untouchable from level 1 — see the math note below). Parrying *is* its class fantasy — dedicated dodge/tumble, and it owns the AoE-evasion exception (§1.8) on top. |
-| **Strongman** | **8** | Owner-given anchor. Brace-and-shrug tank; strong but not the best — physically eating a hit is a step down from never being touched at all. |
-| **Doppelganger** | **9** | Mixed affinity; parries by swapping in a clone that eats the hit rather than by pure personal reflex, so slightly worse than the two dedicated-defense classes above. |
-| **Juggler** | **10** | Tagged "ranged" in DESIGN.md's roster prose but functionally combat-adjacent (thrown weapons, often at melee range) — closer to a mixed martial class than a true backline caster, so it sits just past the melee/mixed cluster rather than down with the casters. |
-| **Joker** | **11** | Mixed affinity, high-variance chaos engine — parry itself isn't the chaos hook (the *deck* is), so it lands centrally, a shade worse than Juggler's combat-adjacent positioning. |
-| **Jester** | **12** | Ranged-caster, but its Parry reskin ("mock attacker -> disadvantage") is an active reactive trick rather than passive casting distance, so it's the best of the three ranged-casters. |
-| **Illusionist** | **13** | Ranged-caster; parries via afterimage/blur, a purely defensive trick with no offensive follow-up, one step worse than Jester's disadvantage-imposing mock. |
-| **Puppeteer** | **15** | Owner-given anchor. Worst physical parrier by design — a hard-control ranged-caster whose whole fantasy is not being anywhere near the fight; string-deflect is a last resort, not a specialty. |
+| **The Sandow** | **9** | Shipped value. Brace-and-shrug tank; strong but not the best — physically eating a hit is a step down from never being touched at all. |
+| **Doppelganger** | **10** | Shipped value; defense ability is **Constitution**, not Dexterity — it parries by swapping in a resilient clone that eats the hit rather than by pure personal reflex, so durability fits its fantasy better than agility does. Sits one point worse than The Sandow: a clone body-double is a step down from actually bracing the hit yourself. |
+| **Joker** | **11** | Shipped value. Mixed affinity, high-variance chaos engine — parry itself isn't the chaos hook (the *deck* is), so it lands centrally, a shade worse than Doppelganger's clone-swap. |
+| **Juggler** | **12** | Unbuilt; re-seated here (was 10) because Doppelganger now occupies that slot. Tagged "ranged" in DESIGN.md's roster prose but functionally combat-adjacent (thrown weapons, often at melee range) — closer to a mixed martial class than a true backline caster, so it sits at the front edge of the ranged-caster block, just past Joker, rather than deep in caster territory. |
+| **Jester** | **13** | Unbuilt; re-seated here (was 12), one slot later than before since Juggler now leads the ranged-caster block. Ranged-caster, but its Parry reskin ("mock attacker -> disadvantage") is an active reactive trick rather than passive casting distance, so it's the best of the three true ranged-casters. |
+| **Illusionist** | **14** | Unbuilt; re-seated here (was 13), for the same reason as Jester above. Ranged-caster; parries via afterimage/blur, a purely defensive trick with no offensive follow-up, one step worse than Jester's disadvantage-imposing mock. |
+| **Puppeteer** | **15** | Shipped value. Worst physical parrier by design — a hard-control ranged-caster whose whole fantasy is not being anywhere near the fight; string-deflect is a last resort, not a specialty. |
 
 **Why this spread (levels 1-5 math check).** Effective DC (§1.5) applies proficiency and
 half the defense-ability modifier as reductions. Worked baseline: assume a **+2**
@@ -250,16 +266,19 @@ bump into that stat, still not maxed). Reduction = proficiency + floor(mod/2):
 No situational modifiers, no per-class features — this is the floor-adjusted baseline
 every class starts from:
 
+Arithmetic per row: Effective DC = Base − reduction (floored at 3). Fail = (DC−1)/20,
+Graze = 1/20 = 5% (constant), Full Dodge = (20−DC)/20.
+
 | Class | Base DC | Effective DC L1-4 (−3, floor 3) | Odds: Fail / Graze / Full Dodge | Effective DC L5 (−4, floor 3) | Odds: Fail / Graze / Full Dodge |
 |---|---:|---:|---|---:|---|
-| Acrobat | 7 | 4 | 15% / 5% / **80%** | 3 (floored) | 10% / 5% / **85%** |
-| Strongman | 8 | 5 | 20% / 5% / 75% | 4 | 15% / 5% / 80% |
-| Doppelganger | 9 | 6 | 25% / 5% / 70% | 5 | 20% / 5% / 75% |
-| Juggler | 10 | 7 | 30% / 5% / 65% | 6 | 25% / 5% / 70% |
-| Joker | 11 | 8 | 35% / 5% / 60% | 7 | 30% / 5% / 65% |
-| Jester | 12 | 9 | 40% / 5% / 55% | 8 | 35% / 5% / 60% |
-| Illusionist | 13 | 10 | 45% / 5% / 50% | 9 | 40% / 5% / 55% |
-| Puppeteer | 15 | 12 | 55% / 5% / **40%** | 11 | 50% / 5% / 45% |
+| Acrobat | 7 | 7−3=4 | (4−1)/20=15% / 5% / (20−4)/20=**80%** | 7−4=3 (floored) | (3−1)/20=10% / 5% / (20−3)/20=**85%** |
+| The Sandow | 9 | 9−3=6 | (6−1)/20=25% / 5% / (20−6)/20=70% | 9−4=5 | (5−1)/20=20% / 5% / (20−5)/20=75% |
+| Doppelganger | 10 | 10−3=7 | (7−1)/20=30% / 5% / (20−7)/20=65% | 10−4=6 | (6−1)/20=25% / 5% / (20−6)/20=70% |
+| Joker | 11 | 11−3=8 | (8−1)/20=35% / 5% / (20−8)/20=60% | 11−4=7 | (7−1)/20=30% / 5% / (20−7)/20=65% |
+| Juggler | 12 | 12−3=9 | (9−1)/20=40% / 5% / (20−9)/20=55% | 12−4=8 | (8−1)/20=35% / 5% / (20−8)/20=60% |
+| Jester | 13 | 13−3=10 | (10−1)/20=45% / 5% / (20−10)/20=50% | 13−4=9 | (9−1)/20=40% / 5% / (20−9)/20=55% |
+| Illusionist | 14 | 14−3=11 | (11−1)/20=50% / 5% / (20−11)/20=45% | 14−4=10 | (10−1)/20=45% / 5% / (20−10)/20=50% |
+| Puppeteer | 15 | 15−3=12 | (12−1)/20=55% / 5% / (20−12)/20=**40%** | 15−4=11 | (11−1)/20=50% / 5% / (20−11)/20=45% |
 
 Reading the table: Acrobat starts near 80% Full Dodge at level 1 and reaches the DC-3 floor (85%) by level 5
 (its class fantasy *is* being nearly untouchable — the floor is what stops it from becoming
@@ -354,14 +373,17 @@ enemy term = clamp(attacker's attack bonus - (5 + your proficiency bonus), 0, 5)
 
 - Field: `defenseAbility` on the class (see schema, §2).
 - **Default: Dexterity.** Use for any class whose defense fantasy is reflexes/agility
-  (Acrobat, Doppelganger, Illusionist, Joker, Jester, Juggler, Puppeteer, unless a
-  subclass overrides it).
+  (Acrobat, Illusionist, Joker, Jester, Juggler, Puppeteer, unless a subclass overrides
+  it).
 - **Strength** for Strongman-type classes whose defense fantasy is brute physicality
-  (brace and shrug, per DESIGN.md).
-- The field is a free enum across all six abilities (not restricted to STR/DEX) so a
+  (brace and shrug, per DESIGN.md) — e.g. The Sandow.
+- **Constitution** for the **Doppelganger** (shipped override, not the Dex default) — it
+  parries by swapping in a resilient clone/body-double that eats the hit rather than by
+  personal reflex, so raw durability fits the fantasy better than agility does.
+- The field is a free enum across all six abilities (not restricted to STR/DEX/CON) so a
   future subclass or reskin (e.g. an Illusionist variant that "parries" by predicting
-  outcomes) could plausibly use INT or WIS. Only STR and DEX are used by the current
-  8-class roster.
+  outcomes) could plausibly use INT or WIS. STR, DEX, and CON are the abilities used by
+  the current 8-class roster (CON via the Doppelganger override above).
 - **Role in v2:** its modifier is halved (floor) and subtracted in the effective-DC
   formula (§1.5), and its *full* modifier feeds a class's Riposte attack roll when it has
   one (§1.9). It is intentionally a smaller lever than `parryBaseDC` in the DC math —
@@ -442,7 +464,7 @@ it suits bounded-variance classes like the Joker.
 ### 3.2 Authoring notation
 Mark a scaling die in any feature/engine description text by wrapping it in double square
 brackets: `[[1d6]]`. Plain dice written without brackets (`1d6`) do **not** scale — scaling
-is opt-in per value, so caps and flat mitigation (e.g. the Sandow's Brace `-6`) are never
+is opt-in per value, so caps and flat mitigation (e.g. The Sandow's Brace `-6`) are never
 silently inflated. Ioun's renderer expands `[[XdY]]` to the base die plus a "scales" marker
 whose tooltip shows the full `X d(chain)` progression at levels 1 / 5 / 11 / 17. The
 compendium shows the progression rather than a single value because no character level is
