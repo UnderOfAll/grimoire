@@ -6,5 +6,6 @@
   "category": "light",
   "baseAC": 11,
   "maxDexBonus": null,
-  "stealthDisadvantage": true
+  "stealthDisadvantage": true,
+  "availability": "starter"
 }

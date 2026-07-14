@@ -7,5 +7,6 @@
   "baseAC": 18,
   "maxDexBonus": 0,
   "strengthRequirement": 15,
-  "stealthDisadvantage": true
+  "stealthDisadvantage": true,
+  "availability": "bought"
 }

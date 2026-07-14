@@ -6,5 +6,6 @@
   "category": "medium",
   "baseAC": 12,
   "maxDexBonus": 2,
-  "stealthDisadvantage": false
+  "stealthDisadvantage": false,
+  "availability": "starter"
 }

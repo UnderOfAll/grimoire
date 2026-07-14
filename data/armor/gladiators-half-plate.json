@@ -1,0 +1,11 @@
+{
+  "id": "gladiators-half-plate",
+  "name": "Gladiators Half-Plate",
+  "source": "Circus System",
+  "flavor": "Show-arena plate that covers most of the body but leaves the legs free. The best medium AC there is — you just clank, so forget sneaking.",
+  "category": "medium",
+  "baseAC": 15,
+  "maxDexBonus": 2,
+  "availability": "bought",
+  "stealthDisadvantage": true
+}

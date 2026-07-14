@@ -2,7 +2,7 @@
   "id": "control-wires",
   "name": "Control Wires",
   "source": "Circus System",
-  "flavor": "Near-invisible monofilament strung from the fingertips — it cuts, it binds, and it answers the puppeteer's will as readily as it answers his hand.",
+  "flavor": "Near-invisible monofilament strung from the fingertips — it cuts, it binds, and it answers the puppeteer's will as readily as it answers his hand. In close it threatens with a duelist's reach; at distance the wires snap taut across the room to open a wound where no blade could reach. Special: you may attack with it as a melee weapon (10 ft reach) OR as a ranged weapon (range 30/60 ft), your choice each attack — a hit lets the Strings engine attach a free String at that range.",
   "category": "signature",
   "damage": {
     "die": "1d4",
@@ -11,8 +11,13 @@
   "properties": [
     "finesse",
     "reach",
-    "light"
+    "light",
+    "special"
   ],
+  "range": {
+    "normal": 30,
+    "long": 60
+  },
   "parryProfile": {
     "canParry": true,
     "parryRange": "ranged",

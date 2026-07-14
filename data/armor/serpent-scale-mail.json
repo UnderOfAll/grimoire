@@ -2,9 +2,10 @@
   "id": "serpent-scale-mail",
   "name": "Serpent-Scale Mail",
   "source": "Circus System",
-  "flavor": "Overlapping enameled scales that shimmer like a snake charmer's prize — protective, but they hiss and clink when you try to move unseen.",
+  "flavor": "Overlapping enameled scales that shimmer like a snake charmer's prize — protective, but they hiss and clink when you try to move unseen. Cheaper cover than a breastplate for the same base AC, but the overlapping scales rattle — disadvantage on stealth.",
   "category": "medium",
   "baseAC": 14,
   "maxDexBonus": 2,
-  "stealthDisadvantage": true
+  "stealthDisadvantage": true,
+  "availability": "starter"
 }

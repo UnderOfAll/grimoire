@@ -65,13 +65,17 @@
   ],
   "armor": [
     "armor/beasthide-wrap.json",
+    "armor/boilerplate-splint.json",
     "armor/colossus-plate.json",
+    "armor/fortune-tellers-robes.json",
+    "armor/gladiators-half-plate.json",
     "armor/ironmonger-chain-mail.json",
     "armor/padded-motley.json",
     "armor/parade-shield.json",
     "armor/serpent-scale-mail.json",
     "armor/strongmans-breastplate.json",
     "armor/studded-showleather.json",
+    "armor/troupers-chain-shirt.json",
     "armor/tumblers-leathers.json"
   ]
 }

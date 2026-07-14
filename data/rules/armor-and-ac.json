@@ -13,16 +13,36 @@
     {
       "heading": "Armor categories",
       "list": [
-        "Light: base AC + your full Dexterity modifier.",
-        "Medium: base AC + Dexterity modifier (maximum +2).",
-        "Heavy: a fixed base AC, no Dexterity; some require a minimum Strength or cost you speed.",
-        "Shield: +2 AC on top of whatever armor you wear."
+        "Clothing (e.g. robes): AC 10 + your full Dexterity modifier. Needs no proficiency — the option for casters with no armor training. Same as being unarmored.",
+        "Light: base AC + your FULL Dexterity modifier. Quiet and nimble; favors high-Dex characters.",
+        "Medium: base AC + Dexterity modifier, but capped at +2. A high-Dex character gains no more than +2 from it.",
+        "Heavy: a FIXED base AC — no Dexterity added at all. The best flat AC, but Dexterity never helps; the strongest pieces also require a minimum Strength.",
+        "Shield: +2 AC on top of whatever armor (or clothing) you wear."
       ]
     },
     {
       "heading": "Armor does not affect Parry",
       "paragraphs": [
         "Wearing heavy armor does not make you worse at Parrying. Some classes parry by bracing and absorbing rather than dodging, so armor is never a penalty to it. How good you are at Parrying is set by your class's Parry DC, not by what you wear."
+      ]
+    },
+    {
+      "heading": "Starter vs bought armor",
+      "paragraphs": [
+        "Not every armor is available at character creation. Starter armor is the basic kit you can begin with: padded, leather, and studded leather; hide and scale; chain mail; and a shield.",
+        "Bought armor is a premium upgrade — breastplate, plate, and the like — that you acquire later by purchase or loot, not at creation. A fresh character does not start in plate. Actual prices are left to the DM and the campaign."
+      ]
+    },
+    {
+      "heading": "Strength requirements",
+      "paragraphs": [
+        "Some heavy armors list a minimum Strength score (Chain Mail 13, Splint and Plate 15). You can still wear the armor without it, but your speed drops by 10 feet while you do. Light and medium armors never have a Strength requirement."
+      ]
+    },
+    {
+      "heading": "Why some armors look alike",
+      "paragraphs": [
+        "Two armors can share a base AC and differ only in stealth or Strength needs — for example a breastplate and scale mail are both base 14, but the breastplate lets you sneak while scale mail does not. In standard D&D the other differentiator is COST, which is left to your DM here. Once prices are set, the cheaper-but-louder or cheaper-but-weaker option becomes a real budget choice; until then, pick by stealth, Strength, and Dexterity fit."
       ]
     }
   ]

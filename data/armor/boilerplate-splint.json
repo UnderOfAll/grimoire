@@ -1,0 +1,12 @@
+{
+  "id": "boilerplate-splint",
+  "name": "Boilerplate Splint",
+  "source": "Circus System",
+  "flavor": "Riveted iron strips over a leather backing, salvaged from the shows machinery. Heavier and pricier than chain mail, a step short of full plate — and it takes real strength to march in.",
+  "category": "heavy",
+  "baseAC": 17,
+  "maxDexBonus": 0,
+  "strengthRequirement": 15,
+  "availability": "bought",
+  "stealthDisadvantage": true
+}

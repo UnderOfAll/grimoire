@@ -46,16 +46,36 @@
         {
           "heading": "Armor categories",
           "list": [
-            "Light: base AC + your full Dexterity modifier.",
-            "Medium: base AC + Dexterity modifier (maximum +2).",
-            "Heavy: a fixed base AC, no Dexterity; some require a minimum Strength or cost you speed.",
-            "Shield: +2 AC on top of whatever armor you wear."
+            "Clothing (e.g. robes): AC 10 + your full Dexterity modifier. Needs no proficiency — the option for casters with no armor training. Same as being unarmored.",
+            "Light: base AC + your FULL Dexterity modifier. Quiet and nimble; favors high-Dex characters.",
+            "Medium: base AC + Dexterity modifier, but capped at +2. A high-Dex character gains no more than +2 from it.",
+            "Heavy: a FIXED base AC — no Dexterity added at all. The best flat AC, but Dexterity never helps; the strongest pieces also require a minimum Strength.",
+            "Shield: +2 AC on top of whatever armor (or clothing) you wear."
           ]
         },
         {
           "heading": "Armor does not affect Parry",
           "paragraphs": [
             "Wearing heavy armor does not make you worse at Parrying. Some classes parry by bracing and absorbing rather than dodging, so armor is never a penalty to it. How good you are at Parrying is set by your class's Parry DC, not by what you wear."
+          ]
+        },
+        {
+          "heading": "Starter vs bought armor",
+          "paragraphs": [
+            "Not every armor is available at character creation. Starter armor is the basic kit you can begin with: padded, leather, and studded leather; hide and scale; chain mail; and a shield.",
+            "Bought armor is a premium upgrade — breastplate, plate, and the like — that you acquire later by purchase or loot, not at creation. A fresh character does not start in plate. Actual prices are left to the DM and the campaign."
+          ]
+        },
+        {
+          "heading": "Strength requirements",
+          "paragraphs": [
+            "Some heavy armors list a minimum Strength score (Chain Mail 13, Splint and Plate 15). You can still wear the armor without it, but your speed drops by 10 feet while you do. Light and medium armors never have a Strength requirement."
+          ]
+        },
+        {
+          "heading": "Why some armors look alike",
+          "paragraphs": [
+            "Two armors can share a base AC and differ only in stealth or Strength needs — for example a breastplate and scale mail are both base 14, but the breastplate lets you sneak while scale mail does not. In standard D&D the other differentiator is COST, which is left to your DM here. Once prices are set, the cheaper-but-louder or cheaper-but-weaker option becomes a real budget choice; until then, pick by stealth, Strength, and Dexterity fit."
           ]
         }
       ],
@@ -2298,7 +2318,7 @@
       "id": "control-wires",
       "name": "Control Wires",
       "source": "Circus System",
-      "flavor": "Near-invisible monofilament strung from the fingertips — it cuts, it binds, and it answers the puppeteer's will as readily as it answers his hand.",
+      "flavor": "Near-invisible monofilament strung from the fingertips — it cuts, it binds, and it answers the puppeteer's will as readily as it answers his hand. In close it threatens with a duelist's reach; at distance the wires snap taut across the room to open a wound where no blade could reach. Special: you may attack with it as a melee weapon (10 ft reach) OR as a ranged weapon (range 30/60 ft), your choice each attack — a hit lets the Strings engine attach a free String at that range.",
       "category": "signature",
       "damage": {
         "die": "1d4",
@@ -2307,8 +2327,13 @@
       "properties": [
         "finesse",
         "reach",
-        "light"
+        "light",
+        "special"
       ],
+      "range": {
+        "normal": 30,
+        "long": 60
+      },
       "parryProfile": {
         "canParry": true,
         "parryRange": "ranged",
@@ -2685,7 +2710,21 @@
       "baseAC": 12,
       "maxDexBonus": 2,
       "stealthDisadvantage": false,
+      "availability": "starter",
       "_file": "armor/beasthide-wrap.json"
+    },
+    {
+      "id": "boilerplate-splint",
+      "name": "Boilerplate Splint",
+      "source": "Circus System",
+      "flavor": "Riveted iron strips over a leather backing, salvaged from the shows machinery. Heavier and pricier than chain mail, a step short of full plate — and it takes real strength to march in.",
+      "category": "heavy",
+      "baseAC": 17,
+      "maxDexBonus": 0,
+      "strengthRequirement": 15,
+      "availability": "bought",
+      "stealthDisadvantage": true,
+      "_file": "armor/boilerplate-splint.json"
     },
     {
       "id": "colossus-plate",
@@ -2697,7 +2736,32 @@
       "maxDexBonus": 0,
       "strengthRequirement": 15,
       "stealthDisadvantage": true,
+      "availability": "bought",
       "_file": "armor/colossus-plate.json"
+    },
+    {
+      "id": "fortune-tellers-robes",
+      "name": "Fortune-Tellers Robes",
+      "source": "Circus System",
+      "flavor": "Layered silks and star-charts — the working clothes of the tent mystics. No protection to speak of, but they need no training to wear, which is the whole point for someone whose defense is their mind, not their hide.",
+      "category": "clothing",
+      "baseAC": 10,
+      "maxDexBonus": null,
+      "availability": "starter",
+      "stealthDisadvantage": false,
+      "_file": "armor/fortune-tellers-robes.json"
+    },
+    {
+      "id": "gladiators-half-plate",
+      "name": "Gladiators Half-Plate",
+      "source": "Circus System",
+      "flavor": "Show-arena plate that covers most of the body but leaves the legs free. The best medium AC there is — you just clank, so forget sneaking.",
+      "category": "medium",
+      "baseAC": 15,
+      "maxDexBonus": 2,
+      "availability": "bought",
+      "stealthDisadvantage": true,
+      "_file": "armor/gladiators-half-plate.json"
     },
     {
       "id": "ironmonger-chain-mail",
@@ -2709,6 +2773,7 @@
       "maxDexBonus": 0,
       "strengthRequirement": 13,
       "stealthDisadvantage": true,
+      "availability": "starter",
       "_file": "armor/ironmonger-chain-mail.json"
     },
     {
@@ -2720,6 +2785,7 @@
       "baseAC": 11,
       "maxDexBonus": null,
       "stealthDisadvantage": true,
+      "availability": "starter",
       "_file": "armor/padded-motley.json"
     },
     {
@@ -2730,28 +2796,31 @@
       "category": "shield",
       "acBonus": 2,
       "stealthDisadvantage": false,
+      "availability": "starter",
       "_file": "armor/parade-shield.json"
     },
     {
       "id": "serpent-scale-mail",
       "name": "Serpent-Scale Mail",
       "source": "Circus System",
-      "flavor": "Overlapping enameled scales that shimmer like a snake charmer's prize — protective, but they hiss and clink when you try to move unseen.",
+      "flavor": "Overlapping enameled scales that shimmer like a snake charmer's prize — protective, but they hiss and clink when you try to move unseen. Cheaper cover than a breastplate for the same base AC, but the overlapping scales rattle — disadvantage on stealth.",
       "category": "medium",
       "baseAC": 14,
       "maxDexBonus": 2,
       "stealthDisadvantage": true,
+      "availability": "starter",
       "_file": "armor/serpent-scale-mail.json"
     },
     {
       "id": "strongmans-breastplate",
       "name": "Strongman's Breastplate",
       "source": "Circus System",
-      "flavor": "A fitted steel chest piece worn over the bare arms of a showman — solid protection that still lets the shoulders flex for a lift.",
+      "flavor": "A fitted steel chest piece worn over the bare arms of a showman — solid protection that still lets the shoulders flex for a lift. Its edge over scale mail isn't AC — it's silence: the same 14 base, but no stealth penalty.",
       "category": "medium",
       "baseAC": 14,
       "maxDexBonus": 2,
       "stealthDisadvantage": false,
+      "availability": "bought",
       "_file": "armor/strongmans-breastplate.json"
     },
     {
@@ -2763,7 +2832,20 @@
       "baseAC": 12,
       "maxDexBonus": null,
       "stealthDisadvantage": false,
+      "availability": "starter",
       "_file": "armor/studded-showleather.json"
+    },
+    {
+      "id": "troupers-chain-shirt",
+      "name": "Troupers Chain Shirt",
+      "source": "Circus System",
+      "flavor": "A light mesh worn under the costume — quiet enough to tumble in, sturdier than leather. The middle-ground medium for a performer who still wants to move.",
+      "category": "medium",
+      "baseAC": 13,
+      "maxDexBonus": 2,
+      "availability": "starter",
+      "stealthDisadvantage": false,
+      "_file": "armor/troupers-chain-shirt.json"
     },
     {
       "id": "tumblers-leathers",
@@ -2774,6 +2856,7 @@
       "baseAC": 11,
       "maxDexBonus": null,
       "stealthDisadvantage": false,
+      "availability": "starter",
       "_file": "armor/tumblers-leathers.json"
     }
   ]

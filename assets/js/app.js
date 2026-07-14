@@ -176,6 +176,8 @@ function renderList(key) {
   // Grouped views: skills by the ability they scale with, subclasses by parent class.
   if (key === "skills")     return renderGroupedList(list, key, items, groupBySkillAbility);
   if (key === "subclasses") return renderGroupedList(list, key, items, groupBySubclassParent);
+  // Armor: split into Starter (owned at creation) vs Bought (premium upgrades).
+  if (key === "armor")      return renderGroupedList(list, key, items, groupByAvailability);
   for (const it of items) list.appendChild(makeCard(key, it));
 }
 
@@ -311,6 +313,19 @@ function groupBySubclassParent(items) {
     .sort((a, b) => a[0].localeCompare(b[0]));
 }
 
+// Armor list split by availability: Starter gear first, then Bought upgrades.
+const AVAILABILITY_LABELS = { starter: "Starter armor", bought: "Bought — premium upgrades" };
+function groupByAvailability(items) {
+  const order = ["starter", "bought"];
+  const groups = new Map(order.map((k) => [k, []]));
+  for (const it of items) {
+    const k = it.availability === "bought" ? "bought" : "starter";
+    groups.get(k).push(it);
+  }
+  return order.filter((k) => groups.get(k).length)
+    .map((k) => [AVAILABILITY_LABELS[k], groups.get(k)]);
+}
+
 // Display name for a class id (e.g. "the-sandow" -> "The Sandow").
 function className(id) {
   const c = (store.classes || []).find((x) => (x.id || slug(x)) === id);
@@ -326,7 +341,7 @@ function cardMeta(key, it) {
     case "skills":     return `${it.ability || ""}`;
     case "passives":   return `${it.type || "Feature"}`;
     case "weapons":    return `${it.category ? cap(it.category) : ""} · ${it.damage && it.damage.type ? it.damage.type : ""}`;
-    case "armor":      return `${it.category ? cap(it.category) : ""}${it.category === "shield" ? " · +" + (it.acBonus ?? 0) + " AC" : " · AC " + (it.baseAC ?? "?")}`;
+    case "armor":      return `${it.category ? cap(it.category) : ""}${it.category === "shield" ? " · +" + (it.acBonus ?? 0) + " AC" : " · AC " + (it.baseAC ?? "?")}${it.availability === "bought" ? " · Bought" : ""}`;
     default:           return "";
   }
 }
@@ -753,11 +768,17 @@ function renderArmor(a) {
     `<div class="detail-grid">
       ${stat("Armor Class", armorAC(a))}
       ${stat("Category", a.category ? cap(a.category) : "—")}
+      ${stat("Availability", a.availability === "bought" ? "Bought" : "Starter")}
       ${a.strengthRequirement != null ? stat("Strength Req.", "Str " + a.strengthRequirement) : ""}
       ${stat("Stealth", a.stealthDisadvantage ? "Disadvantage" : "Normal")}
     </div>
     <div class="detail-body">
-      <p class="muted">Armor grants AC only — an attack must beat your AC to hit, and only a hit can then be Parried. Proficiency with an armor's category (Light / Medium / Heavy) comes from your class.</p>
+      <p class="muted">Armor grants AC only — an attack must beat your AC to hit, and only a hit can then be Parried. ${a.category === "clothing"
+        ? "Clothing needs <strong>no proficiency</strong> — anyone can wear it, including casters with no armor training. It is the unarmored baseline (10 + full Dex) in wearable form."
+        : "Proficiency with an armor's category (Light / Medium / Heavy) comes from your class; wearing armor you aren't proficient with gives disadvantage on Strength- and Dexterity-based checks, attacks, and saves."}</p>
+      <p class="muted">${a.availability === "bought"
+        ? "<strong>Bought</strong> — a premium upgrade acquired by purchase or loot during play, not owned at character creation."
+        : "<strong>Starter</strong> — basic gear available at character creation."} Pricing is left to the DM / campaign.</p>
     </div>`;
 }
 
