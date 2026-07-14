@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Local dev server for Grimoire.
+"""Local dev server for Circus of Chaos (CoC).
 
 Same as `python -m http.server`, but sends no-cache headers so edits to
 app.js / style.css show up on a normal refresh — no hard-reload needed.
@@ -19,5 +19,5 @@ class NoCacheHandler(SimpleHTTPRequestHandler):
 
 if __name__ == "__main__":
     port = int(sys.argv[1]) if len(sys.argv) > 1 else 8777
-    print(f"Grimoire serving http://localhost:{port} (no-cache)")
+    print(f"Circus of Chaos serving http://localhost:{port} (no-cache)")
     HTTPServer(("", port), NoCacheHandler).serve_forever()

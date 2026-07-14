@@ -186,6 +186,14 @@ h1 { font-family: var(--serif); font-weight: 600; margin: 0 0 1.25rem; }
 .fmeta .fv { background: var(--panel); color: var(--text); padding: 0.12rem 0.5rem; font-weight: 600; }
 .fmeta:first-child .fv { color: var(--gold); }
 
+/* Pill marking a subclass's roleplay (non-combat) skill */
+.role-badge {
+  display: inline-block; margin-left: 0.5rem; padding: 0.08rem 0.5rem;
+  border: 1px solid var(--gold); border-radius: 999px; color: var(--gold);
+  font-size: 0.68rem; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.5px; vertical-align: middle;
+}
+
 /* Circus-system class fields: parry / engine */
 .parry-block, .engine-block { margin-bottom: 1.5rem; }
 .parry-reskin { font-style: italic; color: var(--muted); }

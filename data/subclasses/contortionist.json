@@ -34,6 +34,17 @@
         "uses": "1 / round",
         "range": "Melee (5 ft)"
       }
+    },
+    {
+      "level": 3,
+      "name": "Sideshow Escapist",
+      "role": "roleplay",
+      "description": "Your act is escape itself, and no lock, rope, or cage in the show has ever held you through a full performance. You can squeeze through any gap wide enough for your head, moving at half speed while you do. Given 1 minute of wriggling, you automatically escape any nonmagical restraint — ropes, chains, manacles, a straitjacket, a locked stock. You also have advantage on Dexterity (Sleight of Hand) and Dexterity (Acrobatics) checks made to slip bonds discreetly or to hide in cramped spaces a person shouldn't fit.",
+      "sheetSummary": "Squeeze through any head-sized gap at half speed. Escape any nonmagical restraint automatically in 1 minute. Advantage on checks to slip bonds discreetly or hide in cramped spaces.",
+      "meta": {
+        "action": "Passive",
+        "range": "Self"
+      }
     }
   ]
 }

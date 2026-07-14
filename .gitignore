@@ -19,3 +19,5 @@ Stop Grimoire.bat
 
 # Local screenshots / scratch images — not part of the hosted app
 prints/
+node_modules/
+package-lock.json

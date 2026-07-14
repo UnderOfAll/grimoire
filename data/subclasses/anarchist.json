@@ -26,6 +26,17 @@
         "uses": "1 / turn",
         "range": "5 ft"
       }
+    },
+    {
+      "level": 3,
+      "name": "Demolitionist's Eye",
+      "role": "roleplay",
+      "description": "You read a building the way a card sharp reads a table: where it's weak, where it's load-bearing, and exactly what a charge in the wrong pocket would do to it. By studying a structure, wall, door, or large object for 1 minute, you learn its weak points, what it would take to bring it down, and how it would fall. You have advantage on ability checks made to break, breach, or dismantle objects and structures, and your damage against objects and structures is doubled. You can also pop a harmless flash or bang from a treated card at any point you can see within 60 feet — a distraction, a signal, or a very convincing bluff.",
+      "sheetSummary": "Study a structure/object 1 min: learn its weak points. Advantage on checks to break/breach objects; double damage vs objects and structures. Pop a harmless flash-bang at a point within 60 ft.",
+      "meta": {
+        "action": "Special",
+        "range": "60 ft"
+      }
     }
   ]
 }

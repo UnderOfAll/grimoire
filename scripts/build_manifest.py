@@ -28,6 +28,62 @@ def entries(path):
     yield from (doc if isinstance(doc, list) else [doc])
 
 
+# Prose must never spell a derived-number formula (a DC, a to-hit, a cap) inline. Such
+# numbers are character-dependent: on a class page they belong in a {{Label|formula}} hover
+# tooltip; on a real character sheet they get replaced by the computed value. This lint
+# catches raw calculus that slipped into prose so it can't silently reappear (see DESIGN.md
+# "Formula tooltips, not inline"). Formulas *inside* a {{...}} token are the correct usage
+# and are exempt (stripped before matching).
+# Tokens whose contents are the SANCTIONED place for math — stripped before linting.
+# {{Label|formula}} = a derived-number tooltip; [[XdY]] / [[XdY+Abil]] = a scaling-damage die.
+TOKEN_RE = re.compile(r"\{\{[^}]*\}\}|\[\[[^\]]*\]\]")
+INLINE_FORMULA_RES = [
+    # DC / derived-number formulas spelled out (must be a {{Label|formula}} token).
+    re.compile(r"\d+\s*\+\s*(?:your\s+)?proficiency bonus", re.I),
+    re.compile(r"proficiency bonus\s*\+\s*(?:your\s+)?[A-Za-z]+ modifier", re.I),
+    # Damage die immediately followed by "+ your <ability> modifier" (fold into [[XdY+Abil]]).
+    re.compile(r"\]\]\s*(?:\+|plus|and)\s+(?:your\s+)?[A-Za-z]+ modifier", re.I),
+    # An attack-roll formula spelled out (must be a {{attack roll|...}} token).
+    re.compile(r"d20\s*\+\s*(?:your\s+)?[A-Za-z]+ modifier", re.I),
+    # A uses-count / cap / flat value spelled as "equal to your <stat>" (must be a token).
+    re.compile(r"equal to your (?:proficiency bonus|[A-Za-z]+ modifier)", re.I),
+]
+# Rules pages exist to TEACH the math, so their formulas stay inline (lint-exempt).
+LINT_EXEMPT_CATEGORIES = {"rules"}
+# Keys whose free-text values are player-facing prose to lint. NOTE: `sheetSummary` is
+# deliberately excluded — it is condensed character-sheet text that the sheet renders with
+# the real computed numbers, so it may keep compact "1d6 + Con" style shorthand.
+PROSE_KEYS = {"description", "effect", "summary", "flavor", "note", "text",
+              "paragraphs", "parryReskin", "riposte"}
+
+
+def _iter_prose(obj):
+    """Yield (key, string) for every player-facing prose value, recursively."""
+    if isinstance(obj, dict):
+        for k, v in obj.items():
+            if isinstance(v, str) and k in PROSE_KEYS:
+                yield k, v
+            else:
+                yield from _iter_prose(v)
+    elif isinstance(obj, list):
+        for v in obj:
+            yield from _iter_prose(v)
+
+
+def lint_inline_formulas(obj, rel):
+    """Return a list of error strings for inline calculus found in prose (tokens exempt)."""
+    out = []
+    for _key, text in _iter_prose(obj):
+        stripped = TOKEN_RE.sub("", text)
+        for rx in INLINE_FORMULA_RES:
+            m = rx.search(stripped)
+            if m:
+                out.append(f"inline formula in {rel}: {m.group(0)!r} "
+                           f"— wrap as {{{{Label|formula}}}} (see DESIGN.md)")
+                break
+    return out
+
+
 def stamp_assets():
     """Stamp a short content hash onto each versioned asset's link in index.html.
 
@@ -73,6 +129,8 @@ def main():
                     if key in seen_ids:
                         errors.append(f"duplicate {cat} id {key[1]!r}: {rel} and {seen_ids[key]}")
                     seen_ids[key] = rel
+                    if cat not in LINT_EXEMPT_CATEGORIES:
+                        errors.extend(lint_inline_formulas(obj, rel))
                     obj["_file"] = rel
                     objs.append(obj)
                 files.append(rel)

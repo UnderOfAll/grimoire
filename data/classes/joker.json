@@ -51,7 +51,7 @@
     {
       "level": 1,
       "name": "Wild Talent",
-      "description": "Your chaos answers your personality, not your hands: you use your Charisma modifier, instead of Strength or Dexterity, for attack and damage rolls you make with a finesse weapon you're proficient with (your Razor Cards, Harlequin's Cane, or Dagger). Any saving throw a Joker feature or Wild Card forces on a creature uses your gambit DC, equal to 8 + your proficiency bonus + your Charisma modifier.",
+      "description": "Your chaos answers your personality, not your hands: you use your Charisma modifier, instead of Strength or Dexterity, for attack and damage rolls you make with a finesse weapon you're proficient with (your Razor Cards, Harlequin's Cane, or Dagger). Any saving throw a Joker feature or Wild Card forces on a creature uses your {{gambit DC|8 + proficiency bonus + Charisma modifier}}.",
       "meta": {
         "action": "Passive"
       }
@@ -124,7 +124,7 @@
     {
       "level": 1,
       "name": "Trickster's Luck",
-      "description": "The deck looks after its own. A number of times equal to your Charisma modifier (minimum 1), which you regain when you finish a long rest, when you roll below your effective Parry DC (an Overcommitted result), you can treat that Parry as a Grazing Parry instead — taking half damage rather than +50%. You decide after seeing the roll. This doesn't change your Parry DC, only how badly a failed one lands.",
+      "description": "The deck looks after its own. A number of times equal to your {{Charisma modifier (min 1)|set from your stats on your character sheet}}, which you regain when you finish a long rest, when you roll below your effective Parry DC (an Overcommitted result), you can treat that Parry as a Grazing Parry instead — taking half damage rather than +50%. You decide after seeing the roll. This doesn't change your Parry DC, only how badly a failed one lands.",
       "meta": {
         "action": "Free",
         "uses": "Cha mod / long rest",

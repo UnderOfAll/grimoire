@@ -53,7 +53,7 @@
     {
       "level": 1,
       "name": "Strings of Will",
-      "description": "Your art runs on focus and anticipation, not muscle or bluster: you use your Wisdom modifier for attack and damage rolls made with a finesse weapon you're proficient with (your Control Wires, Dagger, or Whip). Any saving throw a Puppeteer feature forces on a creature uses your control DC, equal to 8 + your proficiency bonus + your Wisdom modifier.",
+      "description": "Your art runs on focus and anticipation, not muscle or bluster: you use your Wisdom modifier for attack and damage rolls made with a finesse weapon you're proficient with (your Control Wires, Dagger, or Whip). Any saving throw a Puppeteer feature forces on a creature uses your {{control DC|8 + proficiency bonus + Wisdom modifier}}.",
       "meta": {
         "action": "Passive"
       }
@@ -61,7 +61,7 @@
     {
       "level": 1,
       "name": "Bodyguard Strings",
-      "description": "You never meant to take a hit yourself. A number of times equal to your Wisdom modifier (minimum 1), which you regain when you finish a long rest, when you are hit by an attack while you have a String attached to another creature within 10 feet of you, you can redirect the attack's damage onto that stringed creature instead of resolving it against you: it takes the full damage of the hit and you take none. Redirecting resolves the attack, so you cannot also Parry the same hit, and it costs you no action or reaction. The wire yanks it into the path — an unwilling creature gets no save; a willing ally may choose to refuse.",
+      "description": "You never meant to take a hit yourself. A number of times equal to your {{Wisdom modifier (min 1)|set from your stats on your character sheet}}, which you regain when you finish a long rest, when you are hit by an attack while you have a String attached to another creature within 10 feet of you, you can redirect the attack's damage onto that stringed creature instead of resolving it against you: it takes the full damage of the hit and you take none. Redirecting resolves the attack, so you cannot also Parry the same hit, and it costs you no action or reaction. The wire yanks it into the path — an unwilling creature gets no save; a willing ally may choose to refuse.",
       "meta": {
         "action": "Free",
         "uses": "Wis mod / long rest",

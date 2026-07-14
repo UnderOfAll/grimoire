@@ -16,12 +16,22 @@
     {
       "level": 3,
       "name": "Bulldozer Charge",
-      "description": "When you move at least 15 feet in a straight line toward a creature and then hit it with a melee weapon attack before the end of the same turn, the attack deals an extra [[1d6]] bludgeoning damage, and the target must succeed on a Strength saving throw (DC = 8 + your proficiency bonus + your Strength modifier) or be knocked prone and pushed 5 feet directly away from you, your choice of direction. You can use Bulldozer Charge only once per turn.",
+      "description": "When you move at least 15 feet in a straight line toward a creature and then hit it with a melee weapon attack before the end of the same turn, the attack deals an extra [[1d6]] bludgeoning damage, and the target must succeed on a Strength saving throw against your {{save DC|8 + proficiency bonus + Strength modifier}} or be knocked prone and pushed 5 feet directly away from you, your choice of direction. You can use Bulldozer Charge only once per turn.",
       "meta": {
         "action": "Part of Attack",
         "uses": "1 / turn",
         "range": "Melee",
         "save": "Str save vs your DC"
+      }
+    },
+    {
+      "level": 3,
+      "name": "Through, Not Around",
+      "role": "roleplay",
+      "description": "Doors are a suggestion and walls are a delay. You have advantage on Strength checks made to break, force, or topple objects and barriers, and your attacks deal double damage to objects and structures. Given a minute of uninterrupted battering, you can break through any nonmagical door, palisade, or barricade that a creature of your size could conceivably breach — the only question the table needs to answer is how much noise you make doing it.",
+      "sheetSummary": "Advantage on Strength checks to break/force objects and barriers; double damage vs objects and structures. Given 1 minute, breach any breachable nonmagical door or barricade.",
+      "meta": {
+        "action": "Passive"
       }
     }
   ]

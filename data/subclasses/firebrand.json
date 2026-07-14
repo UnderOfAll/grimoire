@@ -23,6 +23,17 @@
         "range": "10 ft burst",
         "save": "Dex vs Trick Shot DC"
       }
+    },
+    {
+      "level": 3,
+      "name": "Fire-Eater's Trade",
+      "role": "roleplay",
+      "description": "Before the fire was a weapon, it was the act. You can eat, breathe, and dance with flame harmlessly for a crowd. You can light or snuff any mundane flame you can see within 30 feet — a candle, a torch, a campfire — at will, no action required on your turn. Ordinary open flames can't harm you (fire damage from attacks, spells, and hazards still can), your implements can burn as torches without being consumed, and you have advantage on Charisma (Performance) checks that use fire.",
+      "sheetSummary": "Light/snuff any mundane flame within 30 ft at will. Ordinary open flames can't harm you (fire damage from attacks/spells/hazards still can). Implements burn as torches unconsumed. Advantage on fire Performance checks.",
+      "meta": {
+        "action": "Free",
+        "range": "30 ft"
+      }
     }
   ]
 }

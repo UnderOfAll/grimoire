@@ -19,11 +19,22 @@
     {
       "level": 3,
       "name": "Puppet's Spite",
-      "description": "Your Control Wires cut deeper into a foe already caught in your web. When you hit a creature you have a String attached to with a Control Wires attack, it takes extra damage equal to your Wisdom modifier (minimum 1). You can deal this extra damage only once per turn. This extra damage applies only to unwilling creatures — it never triggers against a willing creature, such as an ally you've strung for support rather than control.",
+      "description": "Your Control Wires cut deeper into a foe already caught in your web. When you hit a creature you have a String attached to with a Control Wires attack, it takes extra damage equal to your {{Wisdom modifier (min 1)|set from your stats on your character sheet}}. You can deal this extra damage only once per turn. This extra damage applies only to unwilling creatures — it never triggers against a willing creature, such as an ally you've strung for support rather than control.",
       "meta": {
         "action": "Passive",
         "uses": "1 / turn",
         "range": "Melee"
+      }
+    },
+    {
+      "level": 3,
+      "name": "Deft Wires",
+      "role": "roleplay",
+      "description": "Your wires are fine enough to vanish in lamplight and precise enough to sign your name. As an action, you can manipulate an object within 30 feet of you as though with your own hands: open a latch, pull a lever, lift or carry up to 10 pounds, pour a drink, palm a key from a belt. Dexterity (Sleight of Hand) checks made this way can target creatures and objects at that range, and you have advantage on them when your hands are visibly elsewhere — nobody suspects the man across the room.",
+      "sheetSummary": "Action: manipulate an object within 30 ft as if by hand (open, pull, lift up to 10 lb, pickpocket at range). Advantage on Sleight of Hand made this way while your hands are visibly elsewhere.",
+      "meta": {
+        "action": "Action",
+        "range": "30 ft"
       }
     }
   ]

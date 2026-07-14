@@ -8,22 +8,37 @@
     {
       "level": 3,
       "name": "Perfect Mimicry",
-      "description": "You have practiced copying more than a silhouette. As an action, you can assume the exact physical appearance — clothing, minor scars, voice, and posture included — of any Medium or Small humanoid you have observed for at least 1 minute, for up to 1 hour or until you end it early (no action required) or use this feature again. This changes only your outward appearance, not your game statistics, and any equipment you're wearing or carrying isn't transformed along with you. While disguised this way, you have advantage on Charisma (Deception) checks made to pass yourself off as that specific individual, and a creature without a particular reason to be suspicious can't tell you're a fake without succeeding on a Wisdom (Insight) check contested by your Deception check (or other means, such as true seeing). You can use this feature a number of times equal to your proficiency bonus, regaining all expended uses when you finish a long rest.",
+      "description": "You have practiced copying more than a silhouette. As an action, you can assume the exact physical appearance — clothing, minor scars, voice, and posture included — of any Medium or Small humanoid you have observed for at least 1 minute, for up to 1 hour or until you end it early (no action required) or use this feature again. This changes only your outward appearance, not your game statistics, and any equipment you're wearing or carrying isn't transformed along with you. While disguised this way, you have advantage on Charisma (Deception) checks made to pass yourself off as that specific individual, and a creature without a particular reason to be suspicious can't tell you're a fake without succeeding on a Wisdom (Insight) check contested by your Deception check (or other means, such as true seeing). You can use this feature a number of times equal to your {{proficiency bonus|set from your stats on your character sheet}}, regaining all expended uses when you finish a long rest.",
       "meta": {
         "action": "Action",
         "uses": "Prof bonus / long rest",
         "range": "Self"
-      }
+      },
+      "role": "roleplay",
+      "sheetSummary": "Action: assume the exact appearance/voice of a Medium or Small humanoid observed for 1+ min (1 h, appearance only, gear unchanged). Advantage on Deception to pass as them; seeing through it takes an Insight check vs your Deception. Prof bonus uses / long rest."
     },
     {
       "level": 3,
       "name": "Borrowed Trick",
-      "description": "You pick up more than a face — you pick up a trick. Whenever a creature hits you with an attack, or whenever you spend your action studying a creature within 30 feet of you, you memorize one simple trait of that creature: a natural or basic weapon attack that deals no more than one damage die (a claw, bite, sting, or similar strike). You keep a memorized trick until the end of the current combat, or until you replace it: you can hold only one at a time, and memorizing a new simple attack (again, by being hit by it or by studying its owner) swaps out the old one. Any memorized trick fades once the fight ends. As a bonus action, you may destroy one of your Clones within 5 feet of you to have it deliver your memorized trick against a target within 5 feet of the Clone: make an attack roll using your proficiency bonus plus your Dexterity modifier, dealing [[1d6]] plus your Constitution modifier damage of a type appropriate to the trick on a hit (a Clone-delivered blow draws on your vitality, not your Dexterity). You can use this Clone-delivered attack a number of times equal to your proficiency bonus, regaining all expended uses when you finish a long rest. This doesn't require the spent Clone to have been created this turn, and is separate from Mirror Assault's own Clone-consuming attack.",
+      "description": "You study how others fight and echo the shape of their strikes through your reflections. When a creature you can see attacks you or an ally within 30 feet of you — whether the attack hits or misses — you can memorize the damage type of that attack. You hold one memorized type at a time; memorizing a new one replaces it, and it fades when the fight ends. As a bonus action, you can destroy one of your Clones within 5 feet of a target: make your normal attack roll, and on a hit the Clone deals [[1d6+Con]] damage of the memorized type. The Clone copies only the damage type — never the original attack's damage dice, riders, or special effects. (If a paladin smites you, you don't gain the smite; your Clone simply deals this [[1d6]] as radiant.) You can do this a number of times equal to your {{proficiency bonus|set from your stats on your character sheet}}, regaining all uses on a long rest.",
+      "role": "combat",
+      "sheetSummary": "When a creature attacks you or an ally within 30 ft (hit or miss), memorize its damage type (hold one, lasts the fight). Bonus action, destroy a Clone within 5 ft of a target: normal attack roll, on hit [[1d6]] + Con of the memorized type. Copies the type only, not the attack's dice/riders/effects. Prof bonus uses / long rest.",
       "meta": {
         "action": "Bonus Action",
         "cost": "1 Clone",
         "uses": "Prof bonus / long rest",
         "range": "5 ft"
+      }
+    },
+    {
+      "level": 3,
+      "name": "Treacherous Opening",
+      "role": "combat",
+      "description": "A borrowed face is a weapon the moment you stop needing it. Once per combat, the first attack roll you make against a creature that currently believes a Perfect Mimicry disguise of yours is genuine is made with advantage and deals an extra [[1d6]] damage on a hit. Making an attack immediately ends the deception for every creature that sees it — the face stays, but nobody believes it anymore.",
+      "sheetSummary": "1/combat: first attack vs a creature fooled by your active Perfect Mimicry has advantage + extra [[1d6]] damage on hit. Attacking ends the deception for all who see it.",
+      "meta": {
+        "action": "Part of Attack",
+        "uses": "1 / combat"
       }
     }
   ]

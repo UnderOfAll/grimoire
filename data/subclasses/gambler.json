@@ -8,7 +8,7 @@
     {
       "level": 3,
       "name": "Stacked Deck",
-      "description": "You've learned to load the deck in your favor. A number of times equal to your Charisma modifier (minimum 1), which you regain when you finish a long rest, you can do one of the following, no action required: choose the result of a Wild Card draw instead of rolling the d8; reroll a d20 you just rolled for your own attack roll, ability check, or saving throw and use the new result; or target one creature within 30 feet of you that just made an attack roll or saving throw, forcing it to succeed on a Charisma saving throw against your gambit DC or reroll that d20 and use the new result. These uses don't cost Mayhem and are separate from your Gambit's Rewrite the Draw option — the two don't share a pool.",
+      "description": "You've learned to load the deck in your favor. A number of times equal to your {{Charisma modifier (min 1)|set from your stats on your character sheet}}, which you regain when you finish a long rest, you can do one of the following, no action required: choose the result of a Wild Card draw instead of rolling the d8; reroll a d20 you just rolled for your own attack roll, ability check, or saving throw and use the new result; or target one creature within 30 feet of you that just made an attack roll or saving throw, forcing it to succeed on a Charisma saving throw against your gambit DC or reroll that d20 and use the new result. These uses don't cost Mayhem and are separate from your Gambit's Rewrite the Draw option — the two don't share a pool.",
       "meta": {
         "action": "Free",
         "uses": "Cha mod / long rest",
@@ -25,6 +25,16 @@
         "cost": "1 Mayhem",
         "uses": "1 / turn",
         "range": "Self"
+      }
+    },
+    {
+      "level": 3,
+      "name": "Card Sharp",
+      "role": "roleplay",
+      "description": "You've sat at every kind of table and walked away from all of them ahead. By handling the pieces, you instantly recognize loaded dice, marked cards, or any rigged game of chance. In games of chance or gambling skill against nonmagical opposition you have advantage on any check involved, and you can cheat without being caught by anything short of magic (opposed Sleight of Hand checks made to cheat are rolled with advantage). You also have advantage on Wisdom (Insight) checks to tell whether someone is bluffing about a bet, a deal, or a debt.",
+      "sheetSummary": "Auto-detect rigged games by handling them. Advantage on game-of-chance checks and on cheating undetected (vs nonmagical opposition). Advantage on Insight vs bluffs in bets, deals, and debts.",
+      "meta": {
+        "action": "Passive"
       }
     }
   ]

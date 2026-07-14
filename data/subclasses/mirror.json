@@ -8,7 +8,7 @@
     {
       "level": 3,
       "name": "Shattering Reflection",
-      "description": "Your Clones don't break quietly. Whenever a creature destroys one of your Clones with an attack roll (including a Clone destroyed by an attack redirected onto it via Mirror Image, but never a Clone you destroy yourself through one of your own features), that creature must make a Dexterity saving throw (DC = 8 + your proficiency bonus + your Constitution modifier). On a failed save, it takes [[1d6]] plus your Constitution modifier psychic damage as shards of the shattered illusion rake across it, and it has disadvantage on the next attack roll it makes before the end of its next turn. On a successful save, it takes half as much damage and suffers no other effect. This triggers at most once per turn (no matter how many Clones are destroyed that turn) and requires no action or reaction from you to resolve.",
+      "description": "Your Clones don't break quietly. Whenever a creature destroys one of your Clones with an attack roll (including a Clone destroyed by an attack redirected onto it via Mirror Image, but never a Clone you destroy yourself through one of your own features), that creature must make a Dexterity saving throw against your {{save DC|8 + proficiency bonus + Constitution modifier}}. On a failed save, it takes [[1d6+Con]] psychic damage as shards of the shattered illusion rake across it, and it has disadvantage on the next attack roll it makes before the end of its next turn. On a successful save, it takes half as much damage and suffers no other effect. This triggers at most once per turn (no matter how many Clones are destroyed that turn) and requires no action or reaction from you to resolve.",
       "meta": {
         "action": "Passive (auto)",
         "uses": "1 / turn",
@@ -23,6 +23,18 @@
         "action": "Free with Swap / Reaction (defensive)",
         "uses": "Disadv 1 / turn; defensive Swap 1 / combat",
         "range": "5 ft / Swap range"
+      }
+    },
+    {
+      "level": 3,
+      "name": "Flawless Forgery",
+      "role": "roleplay",
+      "description": "A reflection doesn't have to stay in the glass. As an action, you can create a mirror-copy of a Small or smaller nonmagical object you have held within the last minute. The copy is identical to close inspection but is all surface: it shatters into harmless light if it takes any damage, and dissolves on its own after 1 hour. A forged key opens nothing and a forged coin won't survive a bite test — but for a swap, a con, or a decoy on a cushion, it is perfect. You can use this feature a number of times equal to your {{proficiency bonus|set from your stats on your character sheet}}, regaining all expended uses when you finish a long rest.",
+      "sheetSummary": "Action: create a mirror-copy of a Small or smaller nonmagical object held in the last minute — perfect to inspection, shatters on any damage, lasts 1 h. Prof bonus uses / long rest.",
+      "meta": {
+        "action": "Action",
+        "uses": "Prof bonus / long rest",
+        "range": "Self"
       }
     }
   ]

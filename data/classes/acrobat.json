@@ -81,7 +81,7 @@
     {
       "level": 2,
       "name": "Momentum Strike",
-      "description": "When you hit a Large or smaller creature with a melee weapon attack, you can spend 1 Momentum to deal an extra [[1d6]] damage and force it to make a Strength saving throw (DC = 8 + your proficiency bonus + your Dexterity modifier). On a failed save, you shove it 5 feet or knock it prone (your choice).",
+      "description": "When you hit a Large or smaller creature with a melee weapon attack, you can spend 1 Momentum to deal an extra [[1d6]] damage and force it to make a Strength saving throw against your {{save DC|8 + proficiency bonus + Dexterity modifier}}. On a failed save, you shove it 5 feet or knock it prone (your choice).",
       "meta": {
         "action": "On a hit",
         "cost": "1 Momentum",

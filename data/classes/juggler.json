@@ -50,7 +50,7 @@
     {
       "level": 1,
       "name": "Barrage",
-      "description": "When you take the Attack action, you loose your Barrage instead of making a normal attack: choose any number of implements from 0 up to your Set Size and throw them at targets you can see within normal thrown range (20 feet, or up to 60 at disadvantage). Each thrown implement is a separate ranged attack roll (d20 + your Dexterity modifier + your proficiency bonus). On a hit, the FIRST of your implements to land each turn deals [[1d4]] + your Dexterity modifier; every implement that hits after that deals only its [[1d4]] die, no ability modifier — a barrage is a flurry, not a dozen full-power strikes. Any Weapon Mastery your implements carry (such as Topple or Slow) triggers at most once per Barrage, however many implements hit. You may split them across different targets or pile them all onto one. Throwing 0 is a real choice — you make no attack but keep your full set in hand for defense (see Deflect).",
+      "description": "When you take the Attack action, you loose your Barrage instead of making a normal attack: choose any number of implements from 0 up to your Set Size and throw them at targets you can see within normal thrown range (20 feet, or up to 60 at disadvantage). Each thrown implement is a separate ranged {{attack roll|d20 + Dexterity modifier + proficiency bonus}}. On a hit, the FIRST of your implements to land each turn deals [[1d4+Dex]]; every implement that hits after that deals only its [[1d4]] die, no ability modifier — a barrage is a flurry, not a dozen full-power strikes. Any Weapon Mastery your implements carry (such as Topple or Slow) triggers at most once per Barrage, however many implements hit. You may split them across different targets or pile them all onto one. Throwing 0 is a real choice — you make no attack but keep your full set in hand for defense (see Deflect).",
       "meta": {
         "action": "Attack action",
         "uses": "0 to Set Size / turn",
@@ -104,7 +104,7 @@
     {
       "level": 2,
       "name": "Ricochet",
-      "description": "Your implements carom off their targets. Once on each of your turns, when a thrown implement hits a creature during your Barrage, you can have it ricochet outward from that target: make a separate ranged attack roll against every other creature you can see within 15 feet of it, and on each hit the implement deals [[1d4]] + your Dexterity modifier damage (rolled separately for each). Only ONE implement ricochets per turn, no matter how many you throw — so a full 3-implement Barrage still gets a single ricochet. The ricochet is a free bonus of an implement you already threw: it doesn't cost you an implement or further worsen your Deflect.",
+      "description": "Your implements carom off their targets. Once on each of your turns, when a thrown implement hits a creature during your Barrage, you can have it ricochet outward from that target: make a separate ranged attack roll against every other creature you can see within 15 feet of it, and on each hit the implement deals [[1d4+Dex]] damage (rolled separately for each). Only ONE implement ricochets per turn, no matter how many you throw — so a full 3-implement Barrage still gets a single ricochet. The ricochet is a free bonus of an implement you already threw: it doesn't cost you an implement or further worsen your Deflect.",
       "meta": {
         "action": "Part of your Barrage",
         "uses": "1 / turn",
@@ -150,7 +150,7 @@
     {
       "level": 5,
       "name": "Chain Reaction",
-      "description": "Keep the show going. Once per combat, you can choose to make your Ricochet chain: after it sprays its targets, pick one creature it hit and the implement caroms off and ricochets a second time from that creature's space — a separate ranged attack against every other creature you can see within 15 feet of it, dealing [[1d4]] + your Dexterity modifier on each hit, exactly like Ricochet. You decide when to trigger it; it does not require dropping a target.",
+      "description": "Keep the show going. Once per combat, you can choose to make your Ricochet chain: after it sprays its targets, pick one creature it hit and the implement caroms off and ricochets a second time from that creature's space — a separate ranged attack against every other creature you can see within 15 feet of it, dealing [[1d4+Dex]] on each hit, exactly like Ricochet. You decide when to trigger it; it does not require dropping a target.",
       "meta": {
         "action": "Part of your Barrage",
         "uses": "1 / combat",

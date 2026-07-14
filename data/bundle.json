@@ -311,7 +311,7 @@
         {
           "level": 2,
           "name": "Momentum Strike",
-          "description": "When you hit a Large or smaller creature with a melee weapon attack, you can spend 1 Momentum to deal an extra [[1d6]] damage and force it to make a Strength saving throw (DC = 8 + your proficiency bonus + your Dexterity modifier). On a failed save, you shove it 5 feet or knock it prone (your choice).",
+          "description": "When you hit a Large or smaller creature with a melee weapon attack, you can spend 1 Momentum to deal an extra [[1d6]] damage and force it to make a Strength saving throw against your {{save DC|8 + proficiency bonus + Dexterity modifier}}. On a failed save, you shove it 5 feet or knock it prone (your choice).",
           "meta": {
             "action": "On a hit",
             "cost": "1 Momentum",
@@ -471,7 +471,7 @@
         {
           "level": 2,
           "name": "Decoy Detonation",
-          "description": "As an action, you cause one of your Clones to burst in a flash of shattering reflections, destroying it. Because you choose which Clone, you decide where the blast lands — spawn a Clone into a cluster of enemies, or Swap one there, then detonate it. Each creature within 5 feet of that Clone must make a Dexterity saving throw (DC = 8 + your proficiency bonus + your Constitution modifier). On a failed save a creature takes [[1d6]] plus your Constitution modifier psychic damage and is shoved 5 feet straight away from the Clone's space; on a success it takes half as much damage and is not moved. From 3rd level, Splintered Reflexes also lets you trigger Decoy Detonation as a reaction on another creature's turn. You can trigger Decoy Detonation at most once per turn.",
+          "description": "As an action, you cause one of your Clones to burst in a flash of shattering reflections, destroying it. Because you choose which Clone, you decide where the blast lands — spawn a Clone into a cluster of enemies, or Swap one there, then detonate it. Each creature within 5 feet of that Clone must make a Dexterity saving throw against your {{save DC|8 + proficiency bonus + Constitution modifier}}. On a failed save a creature takes [[1d6+Con]] psychic damage and is shoved 5 feet straight away from the Clone's space; on a success it takes half as much damage and is not moved. From 3rd level, Splintered Reflexes also lets you trigger Decoy Detonation as a reaction on another creature's turn. You can trigger Decoy Detonation at most once per turn.",
           "meta": {
             "action": "Action (or Reaction from L3)",
             "cost": "1 Clone",
@@ -598,7 +598,7 @@
         {
           "level": 1,
           "name": "Wild Talent",
-          "description": "Your chaos answers your personality, not your hands: you use your Charisma modifier, instead of Strength or Dexterity, for attack and damage rolls you make with a finesse weapon you're proficient with (your Razor Cards, Harlequin's Cane, or Dagger). Any saving throw a Joker feature or Wild Card forces on a creature uses your gambit DC, equal to 8 + your proficiency bonus + your Charisma modifier.",
+          "description": "Your chaos answers your personality, not your hands: you use your Charisma modifier, instead of Strength or Dexterity, for attack and damage rolls you make with a finesse weapon you're proficient with (your Razor Cards, Harlequin's Cane, or Dagger). Any saving throw a Joker feature or Wild Card forces on a creature uses your {{gambit DC|8 + proficiency bonus + Charisma modifier}}.",
           "meta": {
             "action": "Passive"
           }
@@ -671,7 +671,7 @@
         {
           "level": 1,
           "name": "Trickster's Luck",
-          "description": "The deck looks after its own. A number of times equal to your Charisma modifier (minimum 1), which you regain when you finish a long rest, when you roll below your effective Parry DC (an Overcommitted result), you can treat that Parry as a Grazing Parry instead — taking half damage rather than +50%. You decide after seeing the roll. This doesn't change your Parry DC, only how badly a failed one lands.",
+          "description": "The deck looks after its own. A number of times equal to your {{Charisma modifier (min 1)|set from your stats on your character sheet}}, which you regain when you finish a long rest, when you roll below your effective Parry DC (an Overcommitted result), you can treat that Parry as a Grazing Parry instead — taking half damage rather than +50%. You decide after seeing the roll. This doesn't change your Parry DC, only how badly a failed one lands.",
           "meta": {
             "action": "Free",
             "uses": "Cha mod / long rest",
@@ -821,7 +821,7 @@
         {
           "level": 1,
           "name": "Barrage",
-          "description": "When you take the Attack action, you loose your Barrage instead of making a normal attack: choose any number of implements from 0 up to your Set Size and throw them at targets you can see within normal thrown range (20 feet, or up to 60 at disadvantage). Each thrown implement is a separate ranged attack roll (d20 + your Dexterity modifier + your proficiency bonus). On a hit, the FIRST of your implements to land each turn deals [[1d4]] + your Dexterity modifier; every implement that hits after that deals only its [[1d4]] die, no ability modifier — a barrage is a flurry, not a dozen full-power strikes. Any Weapon Mastery your implements carry (such as Topple or Slow) triggers at most once per Barrage, however many implements hit. You may split them across different targets or pile them all onto one. Throwing 0 is a real choice — you make no attack but keep your full set in hand for defense (see Deflect).",
+          "description": "When you take the Attack action, you loose your Barrage instead of making a normal attack: choose any number of implements from 0 up to your Set Size and throw them at targets you can see within normal thrown range (20 feet, or up to 60 at disadvantage). Each thrown implement is a separate ranged {{attack roll|d20 + Dexterity modifier + proficiency bonus}}. On a hit, the FIRST of your implements to land each turn deals [[1d4+Dex]]; every implement that hits after that deals only its [[1d4]] die, no ability modifier — a barrage is a flurry, not a dozen full-power strikes. Any Weapon Mastery your implements carry (such as Topple or Slow) triggers at most once per Barrage, however many implements hit. You may split them across different targets or pile them all onto one. Throwing 0 is a real choice — you make no attack but keep your full set in hand for defense (see Deflect).",
           "meta": {
             "action": "Attack action",
             "uses": "0 to Set Size / turn",
@@ -875,7 +875,7 @@
         {
           "level": 2,
           "name": "Ricochet",
-          "description": "Your implements carom off their targets. Once on each of your turns, when a thrown implement hits a creature during your Barrage, you can have it ricochet outward from that target: make a separate ranged attack roll against every other creature you can see within 15 feet of it, and on each hit the implement deals [[1d4]] + your Dexterity modifier damage (rolled separately for each). Only ONE implement ricochets per turn, no matter how many you throw — so a full 3-implement Barrage still gets a single ricochet. The ricochet is a free bonus of an implement you already threw: it doesn't cost you an implement or further worsen your Deflect.",
+          "description": "Your implements carom off their targets. Once on each of your turns, when a thrown implement hits a creature during your Barrage, you can have it ricochet outward from that target: make a separate ranged attack roll against every other creature you can see within 15 feet of it, and on each hit the implement deals [[1d4+Dex]] damage (rolled separately for each). Only ONE implement ricochets per turn, no matter how many you throw — so a full 3-implement Barrage still gets a single ricochet. The ricochet is a free bonus of an implement you already threw: it doesn't cost you an implement or further worsen your Deflect.",
           "meta": {
             "action": "Part of your Barrage",
             "uses": "1 / turn",
@@ -921,7 +921,7 @@
         {
           "level": 5,
           "name": "Chain Reaction",
-          "description": "Keep the show going. Once per combat, you can choose to make your Ricochet chain: after it sprays its targets, pick one creature it hit and the implement caroms off and ricochets a second time from that creature's space — a separate ranged attack against every other creature you can see within 15 feet of it, dealing [[1d4]] + your Dexterity modifier on each hit, exactly like Ricochet. You decide when to trigger it; it does not require dropping a target.",
+          "description": "Keep the show going. Once per combat, you can choose to make your Ricochet chain: after it sprays its targets, pick one creature it hit and the implement caroms off and ricochets a second time from that creature's space — a separate ranged attack against every other creature you can see within 15 feet of it, dealing [[1d4+Dex]] on each hit, exactly like Ricochet. You decide when to trigger it; it does not require dropping a target.",
           "meta": {
             "action": "Part of your Barrage",
             "uses": "1 / combat",
@@ -1010,7 +1010,7 @@
         {
           "level": 1,
           "name": "Strings of Will",
-          "description": "Your art runs on focus and anticipation, not muscle or bluster: you use your Wisdom modifier for attack and damage rolls made with a finesse weapon you're proficient with (your Control Wires, Dagger, or Whip). Any saving throw a Puppeteer feature forces on a creature uses your control DC, equal to 8 + your proficiency bonus + your Wisdom modifier.",
+          "description": "Your art runs on focus and anticipation, not muscle or bluster: you use your Wisdom modifier for attack and damage rolls made with a finesse weapon you're proficient with (your Control Wires, Dagger, or Whip). Any saving throw a Puppeteer feature forces on a creature uses your {{control DC|8 + proficiency bonus + Wisdom modifier}}.",
           "meta": {
             "action": "Passive"
           }
@@ -1018,7 +1018,7 @@
         {
           "level": 1,
           "name": "Bodyguard Strings",
-          "description": "You never meant to take a hit yourself. A number of times equal to your Wisdom modifier (minimum 1), which you regain when you finish a long rest, when you are hit by an attack while you have a String attached to another creature within 10 feet of you, you can redirect the attack's damage onto that stringed creature instead of resolving it against you: it takes the full damage of the hit and you take none. Redirecting resolves the attack, so you cannot also Parry the same hit, and it costs you no action or reaction. The wire yanks it into the path — an unwilling creature gets no save; a willing ally may choose to refuse.",
+          "description": "You never meant to take a hit yourself. A number of times equal to your {{Wisdom modifier (min 1)|set from your stats on your character sheet}}, which you regain when you finish a long rest, when you are hit by an attack while you have a String attached to another creature within 10 feet of you, you can redirect the attack's damage onto that stringed creature instead of resolving it against you: it takes the full damage of the hit and you take none. Redirecting resolves the attack, so you cannot also Parry the same hit, and it costs you no action or reaction. The wire yanks it into the path — an unwilling creature gets no save; a willing ally may choose to refuse.",
           "meta": {
             "action": "Free",
             "uses": "Wis mod / long rest",
@@ -1141,7 +1141,7 @@
       "parryBaseDC": 9,
       "defenseAbility": "Strength",
       "parryReskin": "You don't dodge a hit at all — you plant your feet, turn your shoulder or weapon into the line of the blow, and let your frame do what a lesser body couldn't. A Sandow's Parry is a brace, never a step back.",
-      "riposte": "On a Full Dodge (your Parry d20 roll comes up strictly above your effective Parry DC), the braced impact drives the triggering attacker back: it is pushed 5 feet directly away from you, no save required, at no cost beyond the Parry itself — a shove, not a counterattack. On that same clean brace you may also spend 1 Grit to Brace Up: gain temporary hit points equal to your proficiency bonus + your Constitution modifier, lasting until the start of your next turn (like all temporary hit points these don't stack — a new Brace Up replaces any you already have). The shove is free; the Brace Up is the paid option.",
+      "riposte": "On a Full Dodge (your Parry d20 roll comes up strictly above your effective Parry DC), the braced impact drives the triggering attacker back: it is pushed 5 feet directly away from you, no save required, at no cost beyond the Parry itself — a shove, not a counterattack. On that same clean brace you may also spend 1 Grit to Brace Up: gain temporary hit points equal to your {{Brace Up|proficiency bonus + Constitution modifier}}, lasting until the start of your next turn (like all temporary hit points these don't stack — a new Brace Up replaces any you already have). The shove is free; the Brace Up is the paid option.",
       "engine": {
         "name": "Grit",
         "resourceType": "pool",
@@ -1171,7 +1171,7 @@
         {
           "level": 1,
           "name": "Iron Grip",
-          "description": "When you hit a creature no larger than Mighty Build allows with a melee attack, you can immediately try to grab it — no extra action or attack, it rides the same hit. The target must succeed on a Strength saving throw against your save DC (8 + your proficiency bonus + your Strength modifier) or be caught: while held it is grappled by you (its speed becomes 0) and has disadvantage on attack rolls it makes against you — pinned against your own frame, its swings at you go wide (its attacks against other creatures are unaffected). The hold has no time limit — the creature does not slip free on its own. It stays grabbed until you cash the hold in by Crushing it (see Crushing Grip) or Heaving it, until you let go or are incapacitated, or until it escapes on its turn by using its action to make a Strength (Athletics) or Dexterity (Acrobatics) check against your save DC. When a creature escapes this way it shakes free entirely and can't be caught by your Iron Grip again until the end of its next turn — so you can't chain-grab the same target, though you're free to set your hands on a different one in the meantime. (Ending the hold yourself by Crushing or Heaving the creature does not grant it this reprieve.) You can hold only one creature in your Iron Grip at a time — catching a new target releases the last. A creature held this way counts as grappled by you, so it is a valid target for Heave. Forced movement you cause with your own features (such as a Juggernaut's Bulldozer Charge) never breaks this hold — the creature is dragged with you rather than shoved free.",
+          "description": "When you hit a creature no larger than Mighty Build allows with a melee attack, you can immediately try to grab it — no extra action or attack, it rides the same hit. The target must succeed on a Strength saving throw against your {{save DC|8 + proficiency bonus + Strength modifier}} or be caught: while held it is grappled by you (its speed becomes 0) and has disadvantage on attack rolls it makes against you — pinned against your own frame, its swings at you go wide (its attacks against other creatures are unaffected). The hold has no time limit — the creature does not slip free on its own. It stays grabbed until you cash the hold in by Crushing it (see Crushing Grip) or Heaving it, until you let go or are incapacitated, or until it escapes on its turn by using its action to make a Strength (Athletics) or Dexterity (Acrobatics) check against your save DC. When a creature escapes this way it shakes free entirely and can't be caught by your Iron Grip again until the end of its next turn — so you can't chain-grab the same target, though you're free to set your hands on a different one in the meantime. (Ending the hold yourself by Crushing or Heaving the creature does not grant it this reprieve.) You can hold only one creature in your Iron Grip at a time — catching a new target releases the last. A creature held this way counts as grappled by you, so it is a valid target for Heave. Forced movement you cause with your own features (such as a Juggernaut's Bulldozer Charge) never breaks this hold — the creature is dragged with you rather than shoved free.",
           "meta": {
             "action": "Free (on a melee hit)",
             "uses": "One creature at a time",
@@ -1222,7 +1222,7 @@
         {
           "level": 3,
           "name": "Crushing Grip",
-          "description": "Your hold is a weapon in its own right. While you have a creature caught in your Iron Grip, two things become true. First, the grip turns mobile and sticky: you can drag the held creature with you when you move (it moves with you at no extra cost, staying grappled), and it has disadvantage on any check it makes to escape your grip. Second, you can crush it: in place of one attack when you take the Attack action, spend 1 Grit to deal [[1d6]] bludgeoning damage plus your Strength modifier to the held creature — no attack roll, the grip crushes down and the damage simply lands. You then slam the wrung-out body to the ground: the crushed creature is knocked prone, and the impact ripples outward as a shockwave — each other creature within 5 feet of it must succeed on a Strength saving throw against your save DC or be knocked prone as well. Crushing spends the hold: once you Crush a creature it is no longer grabbed, so to lock it again you must catch it fresh with a new hit. With Extra Attack you can Crush with one attack and make a normal attack with the other to re-catch it (or catch a different target), so a target barely leaves your hands. Unlike Heave, Crushing Grip moves no one — it's a stationary finisher that flattens the held creature and staggers everything pressed in around it.",
+          "description": "Your hold is a weapon in its own right. While you have a creature caught in your Iron Grip, two things become true. First, the grip turns mobile and sticky: you can drag the held creature with you when you move (it moves with you at no extra cost, staying grappled), and it has disadvantage on any check it makes to escape your grip. Second, you can crush it: in place of one attack when you take the Attack action, spend 1 Grit to deal [[1d6+Str]] bludgeoning damage to the held creature — no attack roll, the grip crushes down and the damage simply lands. You then slam the wrung-out body to the ground: the crushed creature is knocked prone, and the impact ripples outward as a shockwave — each other creature within 5 feet of it must succeed on a Strength saving throw against your save DC or be knocked prone as well. Crushing spends the hold: once you Crush a creature it is no longer grabbed, so to lock it again you must catch it fresh with a new hit. With Extra Attack you can Crush with one attack and make a normal attack with the other to re-catch it (or catch a different target), so a target barely leaves your hands. Unlike Heave, Crushing Grip moves no one — it's a stationary finisher that flattens the held creature and staggers everything pressed in around it.",
           "meta": {
             "action": "In place of 1 attack",
             "cost": "1 Grit",
@@ -1241,7 +1241,7 @@
         {
           "level": 5,
           "name": "Earthshaker",
-          "description": "As an action, spend 3 Grit to slam a weapon, fist, or heavy object into the ground and send a shockwave through every creature of your choice within 15 feet of you. Each must succeed on a Strength saving throw (DC = 8 + your proficiency bonus + your Strength modifier) or be pushed 5 feet directly away from you and knocked prone. Earthshaker deals no damage on its own — it's forced movement and control, a battlefield reset, not another source of hurt. You can use Earthshaker once per turn.",
+          "description": "As an action, spend 3 Grit to slam a weapon, fist, or heavy object into the ground and send a shockwave through every creature of your choice within 15 feet of you. Each must succeed on a Strength saving throw against your {{save DC|8 + proficiency bonus + Strength modifier}} or be pushed 5 feet directly away from you and knocked prone. Earthshaker deals no damage on its own — it's forced movement and control, a battlefield reset, not another source of hurt. You can use Earthshaker once per turn.",
           "meta": {
             "action": "Action",
             "cost": "3 Grit",
@@ -1308,6 +1308,17 @@
             "uses": "1 / turn",
             "range": "5 ft"
           }
+        },
+        {
+          "level": 3,
+          "name": "Demolitionist's Eye",
+          "role": "roleplay",
+          "description": "You read a building the way a card sharp reads a table: where it's weak, where it's load-bearing, and exactly what a charge in the wrong pocket would do to it. By studying a structure, wall, door, or large object for 1 minute, you learn its weak points, what it would take to bring it down, and how it would fall. You have advantage on ability checks made to break, breach, or dismantle objects and structures, and your damage against objects and structures is doubled. You can also pop a harmless flash or bang from a treated card at any point you can see within 60 feet — a distraction, a signal, or a very convincing bluff.",
+          "sheetSummary": "Study a structure/object 1 min: learn its weak points. Advantage on checks to break/breach objects; double damage vs objects and structures. Pop a harmless flash-bang at a point within 60 ft.",
+          "meta": {
+            "action": "Special",
+            "range": "60 ft"
+          }
         }
       ],
       "_file": "subclasses/anarchist.json"
@@ -1350,6 +1361,17 @@
             "uses": "Intercept 1 / turn",
             "range": "10 ft taunt · 5 ft intercept"
           }
+        },
+        {
+          "level": 3,
+          "name": "Living Barricade",
+          "role": "roleplay",
+          "description": "You are a wall that walks, and everyone who has ever tried to get past you knows it. Outside combat, you count as one size larger and have advantage on any check made to block a passage, hold a door or gate shut, anchor a rope or a person, or resist being moved or dragged. A doorway, corridor, or gap you choose to fill with your body cannot be squeezed past without your permission.",
+          "sheetSummary": "Count as one size larger + advantage on checks to block passages, hold doors shut, anchor ropes/people, or resist being moved. A gap you fill can't be squeezed past without your consent.",
+          "meta": {
+            "action": "Passive",
+            "range": "Self"
+          }
         }
       ],
       "_file": "subclasses/bulwark.json"
@@ -1390,6 +1412,17 @@
             "uses": "1 / round",
             "range": "Melee (5 ft)"
           }
+        },
+        {
+          "level": 3,
+          "name": "Sideshow Escapist",
+          "role": "roleplay",
+          "description": "Your act is escape itself, and no lock, rope, or cage in the show has ever held you through a full performance. You can squeeze through any gap wide enough for your head, moving at half speed while you do. Given 1 minute of wriggling, you automatically escape any nonmagical restraint — ropes, chains, manacles, a straitjacket, a locked stock. You also have advantage on Dexterity (Sleight of Hand) and Dexterity (Acrobatics) checks made to slip bonds discreetly or to hide in cramped spaces a person shouldn't fit.",
+          "sheetSummary": "Squeeze through any head-sized gap at half speed. Escape any nonmagical restraint automatically in 1 minute. Advantage on checks to slip bonds discreetly or hide in cramped spaces.",
+          "meta": {
+            "action": "Passive",
+            "range": "Self"
+          }
         }
       ],
       "_file": "subclasses/contortionist.json"
@@ -1419,6 +1452,17 @@
             "range": "10 ft burst",
             "save": "Dex vs Trick Shot DC"
           }
+        },
+        {
+          "level": 3,
+          "name": "Fire-Eater's Trade",
+          "role": "roleplay",
+          "description": "Before the fire was a weapon, it was the act. You can eat, breathe, and dance with flame harmlessly for a crowd. You can light or snuff any mundane flame you can see within 30 feet — a candle, a torch, a campfire — at will, no action required on your turn. Ordinary open flames can't harm you (fire damage from attacks, spells, and hazards still can), your implements can burn as torches without being consumed, and you have advantage on Charisma (Performance) checks that use fire.",
+          "sheetSummary": "Light/snuff any mundane flame within 30 ft at will. Ordinary open flames can't harm you (fire damage from attacks/spells/hazards still can). Implements burn as torches unconsumed. Advantage on fire Performance checks.",
+          "meta": {
+            "action": "Free",
+            "range": "30 ft"
+          }
         }
       ],
       "_file": "subclasses/firebrand.json"
@@ -1433,7 +1477,7 @@
         {
           "level": 3,
           "name": "Stacked Deck",
-          "description": "You've learned to load the deck in your favor. A number of times equal to your Charisma modifier (minimum 1), which you regain when you finish a long rest, you can do one of the following, no action required: choose the result of a Wild Card draw instead of rolling the d8; reroll a d20 you just rolled for your own attack roll, ability check, or saving throw and use the new result; or target one creature within 30 feet of you that just made an attack roll or saving throw, forcing it to succeed on a Charisma saving throw against your gambit DC or reroll that d20 and use the new result. These uses don't cost Mayhem and are separate from your Gambit's Rewrite the Draw option — the two don't share a pool.",
+          "description": "You've learned to load the deck in your favor. A number of times equal to your {{Charisma modifier (min 1)|set from your stats on your character sheet}}, which you regain when you finish a long rest, you can do one of the following, no action required: choose the result of a Wild Card draw instead of rolling the d8; reroll a d20 you just rolled for your own attack roll, ability check, or saving throw and use the new result; or target one creature within 30 feet of you that just made an attack roll or saving throw, forcing it to succeed on a Charisma saving throw against your gambit DC or reroll that d20 and use the new result. These uses don't cost Mayhem and are separate from your Gambit's Rewrite the Draw option — the two don't share a pool.",
           "meta": {
             "action": "Free",
             "uses": "Cha mod / long rest",
@@ -1450,6 +1494,16 @@
             "cost": "1 Mayhem",
             "uses": "1 / turn",
             "range": "Self"
+          }
+        },
+        {
+          "level": 3,
+          "name": "Card Sharp",
+          "role": "roleplay",
+          "description": "You've sat at every kind of table and walked away from all of them ahead. By handling the pieces, you instantly recognize loaded dice, marked cards, or any rigged game of chance. In games of chance or gambling skill against nonmagical opposition you have advantage on any check involved, and you can cheat without being caught by anything short of magic (opposed Sleight of Hand checks made to cheat are rolled with advantage). You also have advantage on Wisdom (Insight) checks to tell whether someone is bluffing about a bet, a deal, or a debt.",
+          "sheetSummary": "Auto-detect rigged games by handling them. Advantage on game-of-chance checks and on cheating undetected (vs nonmagical opposition). Advantage on Insight vs bluffs in bets, deals, and debts.",
+          "meta": {
+            "action": "Passive"
           }
         }
       ],
@@ -1475,10 +1529,20 @@
         {
           "level": 3,
           "name": "Center of the Ring",
-          "description": "You thrive surrounded by danger. At the start of your turn, if you are within 5 feet of at least two hostile creatures, you gain temporary hit points equal to your Charisma modifier (minimum 1), and for the rest of the turn moving through a space occupied by a hostile creature costs you no extra movement (you still can't end your movement there). As with temporary hit points from any other source, these don't stack — if you already have some, keep whichever total is higher.",
+          "description": "You thrive surrounded by danger. At the start of your turn, if you are within 5 feet of at least two hostile creatures, you gain temporary hit points equal to your {{Charisma modifier (min 1)|set from your stats on your character sheet}}, and for the rest of the turn moving through a space occupied by a hostile creature costs you no extra movement (you still can't end your movement there). As with temporary hit points from any other source, these don't stack — if you already have some, keep whichever total is higher.",
           "meta": {
             "action": "Passive",
             "range": "5 ft"
+          }
+        },
+        {
+          "level": 3,
+          "name": "Jester's License",
+          "role": "roleplay",
+          "description": "The fool may say what the courtier cannot. When you frame it as performance — a jest, a song, a pantomime — you can deliver insults, accusations, and uncomfortable truths without your audience turning violent: creatures may eject you, despise you, or plot quietly, but they don't move to harm you for the words alone. You also have advantage on Charisma (Performance) checks, and on Charisma (Persuasion) checks made while playing the fool.",
+          "sheetSummary": "Insults/accusations/hard truths delivered as performance don't provoke violence (targets may still eject or resent you). Advantage on Performance checks and on Persuasion while playing the fool.",
+          "meta": {
+            "action": "Passive"
           }
         }
       ],
@@ -1502,13 +1566,24 @@
         {
           "level": 3,
           "name": "Cannon Launch",
-          "description": "As a bonus action, spend 2 Grit to launch yourself up to 30 feet in a straight line to an unoccupied space you can see. This movement doesn't provoke opportunity attacks and never causes fall damage from the arc, however dramatic it looks. If you end that movement within 5 feet of a hostile creature, or pass through a hostile creature's space en route (stopping in the nearest available space when you do), that creature must succeed on a Strength saving throw (DC = 8 + your proficiency bonus + your Strength modifier) or take [[2d6]] bludgeoning damage and be knocked prone. You can use Cannon Launch only once per turn. Additionally, when you use Heave's fastball special to throw a willing ally, the throw's range increases to 20 feet per point of Grit spent, instead of the normal 10.",
+          "description": "As a bonus action, spend 2 Grit to launch yourself up to 30 feet in a straight line to an unoccupied space you can see. This movement doesn't provoke opportunity attacks and never causes fall damage from the arc, however dramatic it looks. If you end that movement within 5 feet of a hostile creature, or pass through a hostile creature's space en route (stopping in the nearest available space when you do), that creature must succeed on a Strength saving throw against your {{save DC|8 + proficiency bonus + Strength modifier}} or take [[2d6]] bludgeoning damage and be knocked prone. You can use Cannon Launch only once per turn. Additionally, when you use Heave's fastball special to throw a willing ally, the throw's range increases to 20 feet per point of Grit spent, instead of the normal 10.",
           "meta": {
             "action": "Bonus Action",
             "cost": "2 Grit",
             "uses": "1 / turn",
             "range": "30 ft",
             "save": "Str save vs your DC"
+          }
+        },
+        {
+          "level": 3,
+          "name": "Death-Defying Stunt",
+          "role": "roleplay",
+          "description": "Launching yourself at things is not just a combat trick — it's the act. Your long jump distance is doubled and your high jump increases by 10 feet. You land any deliberate jump or drop of 30 feet or less on your feet, unharmed and looking spectacular. You also have advantage on Charisma (Performance) and Dexterity (Acrobatics) checks made as part of a stunt.",
+          "sheetSummary": "Long jump doubled; high jump +10 ft. Land any deliberate jump/drop of 30 ft or less unharmed. Advantage on Performance and Acrobatics checks made as part of a stunt.",
+          "meta": {
+            "action": "Passive",
+            "range": "Self"
           }
         }
       ],
@@ -1524,7 +1599,7 @@
         {
           "level": 3,
           "name": "Mark",
-          "description": "As a bonus action, you can Mark one creature you can see — a cold read of its guard and rhythm. Until the end of your next turn, your thrown implements score a critical hit against the Marked creature on a roll of 19 or 20, and the first of your implements to hit it each turn deals extra damage equal to your Intelligence modifier. You can have only one creature Marked at a time; Marking a new one ends the old.",
+          "description": "As a bonus action, you can Mark one creature you can see — a cold read of its guard and rhythm. Until the end of your next turn, your thrown implements score a critical hit against the Marked creature on a roll of 19 or 20, and the first of your implements to hit it each turn deals extra damage equal to your {{Intelligence modifier|set from your stats on your character sheet}}. You can have only one creature Marked at a time; Marking a new one ends the old.",
           "meta": {
             "action": "Bonus Action",
             "uses": "1 creature at a time",
@@ -1535,6 +1610,16 @@
           "level": 3,
           "name": "Impossible Shot",
           "description": "Your calculations beat the battlefield. Your thrown implements ignore half and three-quarters cover, and they suffer no disadvantage anywhere within their full range: a normal throw reaches 20 feet, and you simply ignore the long-range penalty that would otherwise apply on throws from 20 out to 60 feet. Every angle is a clean angle.",
+          "meta": {
+            "action": "Passive"
+          }
+        },
+        {
+          "level": 3,
+          "name": "Sideshow Precision",
+          "role": "roleplay",
+          "description": "You have split apples on volunteers' heads for years, and you have never once hit the volunteer. Your thrown implements automatically hit any stationary object target you can see within range — no roll needed. You can pin a willing or unaware creature's clothing to a nearby surface with a throw, holding it in place until it spends an action tearing free. You never hit an unintended creature with a thrown implement, and you have advantage on Charisma (Performance) checks built around throwing.",
+          "sheetSummary": "Thrown implements auto-hit stationary objects in range. Pin a willing/unaware creature's clothing to a surface (it spends an action to tear free). Never hit bystanders by accident. Advantage on throwing-act Performance checks.",
           "meta": {
             "action": "Passive"
           }
@@ -1552,22 +1637,37 @@
         {
           "level": 3,
           "name": "Perfect Mimicry",
-          "description": "You have practiced copying more than a silhouette. As an action, you can assume the exact physical appearance — clothing, minor scars, voice, and posture included — of any Medium or Small humanoid you have observed for at least 1 minute, for up to 1 hour or until you end it early (no action required) or use this feature again. This changes only your outward appearance, not your game statistics, and any equipment you're wearing or carrying isn't transformed along with you. While disguised this way, you have advantage on Charisma (Deception) checks made to pass yourself off as that specific individual, and a creature without a particular reason to be suspicious can't tell you're a fake without succeeding on a Wisdom (Insight) check contested by your Deception check (or other means, such as true seeing). You can use this feature a number of times equal to your proficiency bonus, regaining all expended uses when you finish a long rest.",
+          "description": "You have practiced copying more than a silhouette. As an action, you can assume the exact physical appearance — clothing, minor scars, voice, and posture included — of any Medium or Small humanoid you have observed for at least 1 minute, for up to 1 hour or until you end it early (no action required) or use this feature again. This changes only your outward appearance, not your game statistics, and any equipment you're wearing or carrying isn't transformed along with you. While disguised this way, you have advantage on Charisma (Deception) checks made to pass yourself off as that specific individual, and a creature without a particular reason to be suspicious can't tell you're a fake without succeeding on a Wisdom (Insight) check contested by your Deception check (or other means, such as true seeing). You can use this feature a number of times equal to your {{proficiency bonus|set from your stats on your character sheet}}, regaining all expended uses when you finish a long rest.",
           "meta": {
             "action": "Action",
             "uses": "Prof bonus / long rest",
             "range": "Self"
-          }
+          },
+          "role": "roleplay",
+          "sheetSummary": "Action: assume the exact appearance/voice of a Medium or Small humanoid observed for 1+ min (1 h, appearance only, gear unchanged). Advantage on Deception to pass as them; seeing through it takes an Insight check vs your Deception. Prof bonus uses / long rest."
         },
         {
           "level": 3,
           "name": "Borrowed Trick",
-          "description": "You pick up more than a face — you pick up a trick. Whenever a creature hits you with an attack, or whenever you spend your action studying a creature within 30 feet of you, you memorize one simple trait of that creature: a natural or basic weapon attack that deals no more than one damage die (a claw, bite, sting, or similar strike). You keep a memorized trick until the end of the current combat, or until you replace it: you can hold only one at a time, and memorizing a new simple attack (again, by being hit by it or by studying its owner) swaps out the old one. Any memorized trick fades once the fight ends. As a bonus action, you may destroy one of your Clones within 5 feet of you to have it deliver your memorized trick against a target within 5 feet of the Clone: make an attack roll using your proficiency bonus plus your Dexterity modifier, dealing [[1d6]] plus your Constitution modifier damage of a type appropriate to the trick on a hit (a Clone-delivered blow draws on your vitality, not your Dexterity). You can use this Clone-delivered attack a number of times equal to your proficiency bonus, regaining all expended uses when you finish a long rest. This doesn't require the spent Clone to have been created this turn, and is separate from Mirror Assault's own Clone-consuming attack.",
+          "description": "You study how others fight and echo the shape of their strikes through your reflections. When a creature you can see attacks you or an ally within 30 feet of you — whether the attack hits or misses — you can memorize the damage type of that attack. You hold one memorized type at a time; memorizing a new one replaces it, and it fades when the fight ends. As a bonus action, you can destroy one of your Clones within 5 feet of a target: make your normal attack roll, and on a hit the Clone deals [[1d6+Con]] damage of the memorized type. The Clone copies only the damage type — never the original attack's damage dice, riders, or special effects. (If a paladin smites you, you don't gain the smite; your Clone simply deals this [[1d6]] as radiant.) You can do this a number of times equal to your {{proficiency bonus|set from your stats on your character sheet}}, regaining all uses on a long rest.",
+          "role": "combat",
+          "sheetSummary": "When a creature attacks you or an ally within 30 ft (hit or miss), memorize its damage type (hold one, lasts the fight). Bonus action, destroy a Clone within 5 ft of a target: normal attack roll, on hit [[1d6]] + Con of the memorized type. Copies the type only, not the attack's dice/riders/effects. Prof bonus uses / long rest.",
           "meta": {
             "action": "Bonus Action",
             "cost": "1 Clone",
             "uses": "Prof bonus / long rest",
             "range": "5 ft"
+          }
+        },
+        {
+          "level": 3,
+          "name": "Treacherous Opening",
+          "role": "combat",
+          "description": "A borrowed face is a weapon the moment you stop needing it. Once per combat, the first attack roll you make against a creature that currently believes a Perfect Mimicry disguise of yours is genuine is made with advantage and deals an extra [[1d6]] damage on a hit. Making an attack immediately ends the deception for every creature that sees it — the face stays, but nobody believes it anymore.",
+          "sheetSummary": "1/combat: first attack vs a creature fooled by your active Perfect Mimicry has advantage + extra [[1d6]] damage on hit. Attacking ends the deception for all who see it.",
+          "meta": {
+            "action": "Part of Attack",
+            "uses": "1 / combat"
           }
         }
       ],
@@ -1591,12 +1691,22 @@
         {
           "level": 3,
           "name": "Bulldozer Charge",
-          "description": "When you move at least 15 feet in a straight line toward a creature and then hit it with a melee weapon attack before the end of the same turn, the attack deals an extra [[1d6]] bludgeoning damage, and the target must succeed on a Strength saving throw (DC = 8 + your proficiency bonus + your Strength modifier) or be knocked prone and pushed 5 feet directly away from you, your choice of direction. You can use Bulldozer Charge only once per turn.",
+          "description": "When you move at least 15 feet in a straight line toward a creature and then hit it with a melee weapon attack before the end of the same turn, the attack deals an extra [[1d6]] bludgeoning damage, and the target must succeed on a Strength saving throw against your {{save DC|8 + proficiency bonus + Strength modifier}} or be knocked prone and pushed 5 feet directly away from you, your choice of direction. You can use Bulldozer Charge only once per turn.",
           "meta": {
             "action": "Part of Attack",
             "uses": "1 / turn",
             "range": "Melee",
             "save": "Str save vs your DC"
+          }
+        },
+        {
+          "level": 3,
+          "name": "Through, Not Around",
+          "role": "roleplay",
+          "description": "Doors are a suggestion and walls are a delay. You have advantage on Strength checks made to break, force, or topple objects and barriers, and your attacks deal double damage to objects and structures. Given a minute of uninterrupted battering, you can break through any nonmagical door, palisade, or barricade that a creature of your size could conceivably breach — the only question the table needs to answer is how much noise you make doing it.",
+          "sheetSummary": "Advantage on Strength checks to break/force objects and barriers; double damage vs objects and structures. Given 1 minute, breach any breachable nonmagical door or barricade.",
+          "meta": {
+            "action": "Passive"
           }
         }
       ],
@@ -1612,7 +1722,7 @@
         {
           "level": 3,
           "name": "Shattering Reflection",
-          "description": "Your Clones don't break quietly. Whenever a creature destroys one of your Clones with an attack roll (including a Clone destroyed by an attack redirected onto it via Mirror Image, but never a Clone you destroy yourself through one of your own features), that creature must make a Dexterity saving throw (DC = 8 + your proficiency bonus + your Constitution modifier). On a failed save, it takes [[1d6]] plus your Constitution modifier psychic damage as shards of the shattered illusion rake across it, and it has disadvantage on the next attack roll it makes before the end of its next turn. On a successful save, it takes half as much damage and suffers no other effect. This triggers at most once per turn (no matter how many Clones are destroyed that turn) and requires no action or reaction from you to resolve.",
+          "description": "Your Clones don't break quietly. Whenever a creature destroys one of your Clones with an attack roll (including a Clone destroyed by an attack redirected onto it via Mirror Image, but never a Clone you destroy yourself through one of your own features), that creature must make a Dexterity saving throw against your {{save DC|8 + proficiency bonus + Constitution modifier}}. On a failed save, it takes [[1d6+Con]] psychic damage as shards of the shattered illusion rake across it, and it has disadvantage on the next attack roll it makes before the end of its next turn. On a successful save, it takes half as much damage and suffers no other effect. This triggers at most once per turn (no matter how many Clones are destroyed that turn) and requires no action or reaction from you to resolve.",
           "meta": {
             "action": "Passive (auto)",
             "uses": "1 / turn",
@@ -1627,6 +1737,18 @@
             "action": "Free with Swap / Reaction (defensive)",
             "uses": "Disadv 1 / turn; defensive Swap 1 / combat",
             "range": "5 ft / Swap range"
+          }
+        },
+        {
+          "level": 3,
+          "name": "Flawless Forgery",
+          "role": "roleplay",
+          "description": "A reflection doesn't have to stay in the glass. As an action, you can create a mirror-copy of a Small or smaller nonmagical object you have held within the last minute. The copy is identical to close inspection but is all surface: it shatters into harmless light if it takes any damage, and dissolves on its own after 1 hour. A forged key opens nothing and a forged coin won't survive a bite test — but for a swap, a con, or a decoy on a cushion, it is perfect. You can use this feature a number of times equal to your {{proficiency bonus|set from your stats on your character sheet}}, regaining all expended uses when you finish a long rest.",
+          "sheetSummary": "Action: create a mirror-copy of a Small or smaller nonmagical object held in the last minute — perfect to inspection, shatters on any damage, lasts 1 h. Prof bonus uses / long rest.",
+          "meta": {
+            "action": "Action",
+            "uses": "Prof bonus / long rest",
+            "range": "Self"
           }
         }
       ],
@@ -1653,11 +1775,22 @@
         {
           "level": 3,
           "name": "Puppet's Spite",
-          "description": "Your Control Wires cut deeper into a foe already caught in your web. When you hit a creature you have a String attached to with a Control Wires attack, it takes extra damage equal to your Wisdom modifier (minimum 1). You can deal this extra damage only once per turn. This extra damage applies only to unwilling creatures — it never triggers against a willing creature, such as an ally you've strung for support rather than control.",
+          "description": "Your Control Wires cut deeper into a foe already caught in your web. When you hit a creature you have a String attached to with a Control Wires attack, it takes extra damage equal to your {{Wisdom modifier (min 1)|set from your stats on your character sheet}}. You can deal this extra damage only once per turn. This extra damage applies only to unwilling creatures — it never triggers against a willing creature, such as an ally you've strung for support rather than control.",
           "meta": {
             "action": "Passive",
             "uses": "1 / turn",
             "range": "Melee"
+          }
+        },
+        {
+          "level": 3,
+          "name": "Deft Wires",
+          "role": "roleplay",
+          "description": "Your wires are fine enough to vanish in lamplight and precise enough to sign your name. As an action, you can manipulate an object within 30 feet of you as though with your own hands: open a latch, pull a lever, lift or carry up to 10 pounds, pour a drink, palm a key from a belt. Dexterity (Sleight of Hand) checks made this way can target creatures and objects at that range, and you have advantage on them when your hands are visibly elsewhere — nobody suspects the man across the room.",
+          "sheetSummary": "Action: manipulate an object within 30 ft as if by hand (open, pull, lift up to 10 lb, pickpocket at range). Advantage on Sleight of Hand made this way while your hands are visibly elsewhere.",
+          "meta": {
+            "action": "Action",
+            "range": "30 ft"
           }
         }
       ],
@@ -1691,6 +1824,17 @@
             "range": "15 ft",
             "save": "Wis vs Trick Shot DC"
           }
+        },
+        {
+          "level": 3,
+          "name": "Command the Crowd",
+          "role": "roleplay",
+          "description": "The ring taught you that any room is an audience that hasn't been addressed yet. Your voice carries clearly up to 300 feet without shouting. You have advantage on Charisma checks made to address, sway, or intimidate a group of three or more creatures at once, and with a word and a gesture you can pull a nonhostile crowd's attention onto yourself — cutting through noise, panic, or a rival speaker mid-sentence.",
+          "sheetSummary": "Voice carries 300 ft clearly. Advantage on Charisma checks against groups of 3+ creatures. Can seize a nonhostile crowd's attention at will (cuts through noise/panic).",
+          "meta": {
+            "action": "Passive",
+            "range": "300 ft"
+          }
         }
       ],
       "_file": "subclasses/ringmaster.json"
@@ -1714,12 +1858,23 @@
         {
           "level": 3,
           "name": "Overwhelming Numbers",
-          "description": "You press your numbers from every angle at once — and then take the legs out. Once per turn, when you hit a creature with a weapon attack while one of your Clones is within 5 feet of it, two things happen: you deal an extra [[1d4]] damage of the weapon's damage type as the creature flinches from a second angle it can't track, and the Clone sweeps in at the same instant, forcing the target to succeed on a Constitution saving throw against your save DC (8 + your proficiency bonus + your Constitution modifier) or be knocked prone. Both happen at most once per turn no matter how many Clones are adjacent, and this combines with the advantage granted by Flanking Reflection.",
+          "description": "You press your numbers from every angle at once — and then take the legs out. Once per turn, when you hit a creature with a weapon attack while one of your Clones is within 5 feet of it, two things happen: you deal an extra [[1d4]] damage of the weapon's damage type as the creature flinches from a second angle it can't track, and the Clone sweeps in at the same instant, forcing the target to succeed on a Constitution saving throw against your {{save DC|8 + proficiency bonus + Constitution modifier}} or be knocked prone. Both happen at most once per turn no matter how many Clones are adjacent, and this combines with the advantage granted by Flanking Reflection.",
           "meta": {
             "action": "Passive",
             "uses": "1 / turn",
             "range": "5 ft",
             "save": "Con save vs your DC (or prone)"
+          }
+        },
+        {
+          "level": 3,
+          "name": "One-Man Crowd",
+          "role": "roleplay",
+          "description": "Why blend into a crowd when you can bring your own? Outside combat, your Clones can wear faces that aren't yours — distinct strangers rather than copies — and can mill about within 60 feet of you: enough to fake a gathering, an entourage, a queue, or a very busy alibi. You have advantage on ability checks made to blend into, start, or read a crowd, and you know instantly when one of your Clones is destroyed, and where it was.",
+          "sheetSummary": "Out of combat, Clones can look like distinct strangers and mill within 60 ft (fake crowds, entourages, alibis). Advantage on checks to blend into/start/read crowds. Know instantly when and where a Clone is destroyed.",
+          "meta": {
+            "action": "Passive",
+            "range": "60 ft"
           }
         }
       ],
@@ -1735,7 +1890,7 @@
         {
           "level": 3,
           "name": "Snare Weave",
-          "description": "As an action, you weave loose wire across the ground in a 15-foot square within 60 feet of you, filling it with a low, near-invisible lattice that lasts for 1 minute or until you dismiss it (no action required). The area is difficult terrain to any creature without a String attached to you. Any creature other than you that enters the area for the first time on a turn or starts its turn there must succeed on a Charisma saving throw against your control DC or become restrained by the wire. A creature restrained this way can repeat the save at the end of each of its turns, ending the restrained condition on itself on a success, or use its action to make a Strength or Dexterity check (its choice) against your control DC to tear free instead. You can use Snare Weave a number of times equal to your Wisdom modifier (minimum once), regaining all expended uses when you finish a long rest.",
+          "description": "As an action, you weave loose wire across the ground in a 15-foot square within 60 feet of you, filling it with a low, near-invisible lattice that lasts for 1 minute or until you dismiss it (no action required). The area is difficult terrain to any creature without a String attached to you. Any creature other than you that enters the area for the first time on a turn or starts its turn there must succeed on a Charisma saving throw against your control DC or become restrained by the wire. A creature restrained this way can repeat the save at the end of each of its turns, ending the restrained condition on itself on a success, or use its action to make a Strength or Dexterity check (its choice) against your control DC to tear free instead. You can use Snare Weave a number of times equal to your {{Wisdom modifier (min 1)|set from your stats on your character sheet}}, regaining all expended uses when you finish a long rest.",
           "meta": {
             "action": "Action",
             "uses": "Wis mod / long rest",
@@ -1746,11 +1901,23 @@
         {
           "level": 3,
           "name": "Binding Knots",
-          "description": "Your bindings compound on themselves. When you use Tangle, you can target one additional creature you have a String attached to within range, provided the two targets are within 15 feet of each other and you don't mix a willing target with an unwilling one in the same use. You can use this double-target option a number of times equal to your Wisdom modifier (minimum once), regaining all expended uses when you finish a long rest.",
+          "description": "Your bindings compound on themselves. When you use Tangle, you can target one additional creature you have a String attached to within range, provided the two targets are within 15 feet of each other and you don't mix a willing target with an unwilling one in the same use. You can use this double-target option a number of times equal to your {{Wisdom modifier (min 1)|set from your stats on your character sheet}}, regaining all expended uses when you finish a long rest.",
           "meta": {
             "action": "Passive (with Tangle)",
             "uses": "Wis mod / long rest",
             "range": "15 ft between targets"
+          }
+        },
+        {
+          "level": 3,
+          "name": "Wired Room",
+          "role": "roleplay",
+          "description": "You never sleep anywhere you haven't strung first. Over 10 minutes, you can rig an area up to a 30-foot square — a room, a campsite, a corridor — with a lattice of near-invisible trip-lines that lasts 8 hours or until you dismantle it. You know instantly when a Small or larger creature enters the area (and roughly where). When you rig the area, you can include one snare: the first creature to trigger it must succeed on a Dexterity saving throw against your Control DC or be caught, restrained until it or an ally uses an action to cut it free.",
+          "sheetSummary": "10 min: wire up to a 30-ft square for 8 h — know instantly when a Small or larger creature enters. Optional snare: first trigger, Dex save vs Control DC or restrained until cut free (action).",
+          "meta": {
+            "action": "Special",
+            "range": "30-ft square",
+            "save": "Dex vs Control DC"
           }
         }
       ],
@@ -1787,6 +1954,16 @@
             "action": "Reaction",
             "uses": "1 / round",
             "range": "Melee (5 ft)"
+          }
+        },
+        {
+          "level": 3,
+          "name": "Wire-Walker's Poise",
+          "role": "roleplay",
+          "description": "Years above the crowd have calibrated your eye and your nerve. You can judge any distance, height, drop, or gap you can see to within a foot, just by looking. You have advantage on Charisma (Performance) checks that showcase balance or precision, and you can carry one willing Medium or smaller creature across a narrow or unstable surface without slowing or risking either of you.",
+          "sheetSummary": "Judge any visible distance/height/drop exactly by eye. Advantage on balance/precision Performance checks. Carry one willing Medium or smaller creature across narrow surfaces safely at full speed.",
+          "meta": {
+            "action": "Passive"
           }
         }
       ],
@@ -1825,6 +2002,17 @@
             "uses": "1 / round",
             "range": "30 ft"
           }
+        },
+        {
+          "level": 3,
+          "name": "Show Rigging",
+          "role": "roleplay",
+          "description": "The lines you conjure don't have to be for you alone. As an action outside combat, you can conjure up to 60 feet of shimmering rigging anchored to any two points you can see — a climbable rope, a rope ladder, or a taut line. It holds up to 500 pounds, lasts 10 minutes or until you dismiss it (no action required), and you can maintain only one at a time. You also have advantage on ability checks involving ropes, knots, and rigging.",
+          "sheetSummary": "Action (out of combat): conjure up to 60 ft of climbable rigging between two visible anchor points (holds 500 lb, lasts 10 min, one at a time). Advantage on rope/knot/rigging checks.",
+          "meta": {
+            "action": "Action",
+            "range": "60 ft"
+          }
         }
       ],
       "_file": "subclasses/trapeze.json"
@@ -1853,6 +2041,18 @@
           "meta": {
             "action": "Passive",
             "range": "Leash"
+          }
+        },
+        {
+          "level": 3,
+          "name": "Keeper's Thread",
+          "role": "roleplay",
+          "description": "Some strings aren't for pulling — they're for holding on. Over 1 minute, you can tie a hair-fine thread to a willing creature you touch. For the next 24 hours, while the creature is within 1 mile of you, you know its direction and its general condition (unharmed, wounded, unconscious, or dead), and if it is in danger while you sleep, the thread's tug wakes you instantly. You can maintain a number of threads equal to your {{Charisma modifier (min 1)|set from your stats on your character sheet}}.",
+          "sheetSummary": "1-min ritual, touch, willing creature: for 24 h know its direction + condition (unharmed/wounded/unconscious/dead) within 1 mile; its danger wakes you from sleep. Cha mod threads at once (min 1).",
+          "meta": {
+            "action": "Special",
+            "uses": "Cha mod active threads",
+            "range": "Touch / 1 mile"
           }
         }
       ],

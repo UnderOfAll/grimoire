@@ -26,6 +26,17 @@
         "range": "15 ft",
         "save": "Wis vs Trick Shot DC"
       }
+    },
+    {
+      "level": 3,
+      "name": "Command the Crowd",
+      "role": "roleplay",
+      "description": "The ring taught you that any room is an audience that hasn't been addressed yet. Your voice carries clearly up to 300 feet without shouting. You have advantage on Charisma checks made to address, sway, or intimidate a group of three or more creatures at once, and with a word and a gesture you can pull a nonhostile crowd's attention onto yourself — cutting through noise, panic, or a rival speaker mid-sentence.",
+      "sheetSummary": "Voice carries 300 ft clearly. Advantage on Charisma checks against groups of 3+ creatures. Can seize a nonhostile crowd's attention at will (cuts through noise/panic).",
+      "meta": {
+        "action": "Passive",
+        "range": "300 ft"
+      }
     }
   ]
 }

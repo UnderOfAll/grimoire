@@ -30,6 +30,16 @@
         "uses": "1 / round",
         "range": "Melee (5 ft)"
       }
+    },
+    {
+      "level": 3,
+      "name": "Wire-Walker's Poise",
+      "role": "roleplay",
+      "description": "Years above the crowd have calibrated your eye and your nerve. You can judge any distance, height, drop, or gap you can see to within a foot, just by looking. You have advantage on Charisma (Performance) checks that showcase balance or precision, and you can carry one willing Medium or smaller creature across a narrow or unstable surface without slowing or risking either of you.",
+      "sheetSummary": "Judge any visible distance/height/drop exactly by eye. Advantage on balance/precision Performance checks. Carry one willing Medium or smaller creature across narrow surfaces safely at full speed.",
+      "meta": {
+        "action": "Passive"
+      }
     }
   ]
 }

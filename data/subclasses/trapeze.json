@@ -31,6 +31,17 @@
         "uses": "1 / round",
         "range": "30 ft"
       }
+    },
+    {
+      "level": 3,
+      "name": "Show Rigging",
+      "role": "roleplay",
+      "description": "The lines you conjure don't have to be for you alone. As an action outside combat, you can conjure up to 60 feet of shimmering rigging anchored to any two points you can see — a climbable rope, a rope ladder, or a taut line. It holds up to 500 pounds, lasts 10 minutes or until you dismiss it (no action required), and you can maintain only one at a time. You also have advantage on ability checks involving ropes, knots, and rigging.",
+      "sheetSummary": "Action (out of combat): conjure up to 60 ft of climbable rigging between two visible anchor points (holds 500 lb, lasts 10 min, one at a time). Advantage on rope/knot/rigging checks.",
+      "meta": {
+        "action": "Action",
+        "range": "60 ft"
+      }
     }
   ]
 }

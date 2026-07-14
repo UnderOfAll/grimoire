@@ -36,6 +36,17 @@
         "uses": "Intercept 1 / turn",
         "range": "10 ft taunt · 5 ft intercept"
       }
+    },
+    {
+      "level": 3,
+      "name": "Living Barricade",
+      "role": "roleplay",
+      "description": "You are a wall that walks, and everyone who has ever tried to get past you knows it. Outside combat, you count as one size larger and have advantage on any check made to block a passage, hold a door or gate shut, anchor a rope or a person, or resist being moved or dragged. A doorway, corridor, or gap you choose to fill with your body cannot be squeezed past without your permission.",
+      "sheetSummary": "Count as one size larger + advantage on checks to block passages, hold doors shut, anchor ropes/people, or resist being moved. A gap you fill can't be squeezed past without your consent.",
+      "meta": {
+        "action": "Passive",
+        "range": "Self"
+      }
     }
   ]
 }

@@ -1,5 +1,5 @@
 /*
- * Grimoire — D&D 5e Compendium (base app)
+ * Circus of Chaos (CoC) — 5e Compendium (base app)
  * Data-driven: every category is a list of JSON files declared in data/manifest.json.
  * Agents add content by dropping a JSON file in data/<category>/ and regenerating the
  * manifest (scripts/build_manifest.py). The UI never needs to change to show new content.
@@ -360,8 +360,9 @@ function features(list) {
     const body = Array.isArray(f.options) && f.options.length
       ? `<br>${fmtDesc(f.description || "")}${optionTable(f.options)}`
       : renderFeatureDesc(f.description);
+    const roleBadge = f.role === "roleplay" ? `<span class="role-badge">Roleplay</span>` : "";
     return `<div class="feature"><span class="lvl">Level ${esc(f.level ?? "—")}:</span>
-     <strong>${esc(f.name || "")}</strong>${metaRow(f.meta)}${body}</div>`;
+     <strong>${esc(f.name || "")}</strong>${roleBadge}${metaRow(f.meta)}${body}</div>`;
   }).join("");
 }
 
@@ -414,18 +415,26 @@ const DIE_CHAIN = [4, 6, 8, 10, 12];
 function fmtDesc(s) {
   if (s == null) return "";
   const str = String(s);
-  // Two inline tokens: [[XdY]] scaling die, and {{Label|formula}} a hover/tap formula tooltip
-  // (use the latter for any derived number like a save DC instead of spelling out the math).
-  const re = /\[\[\s*(\d+)d(\d+)\s*\]\]|\{\{\s*([^|{}]+?)\s*\|\s*([^{}]+?)\s*\}\}/g;
+  // Two inline tokens: [[XdY]] or [[XdY+Abil]] scaling die (Abil = Str/Dex/Con/Int/Wis/Cha,
+  // folds "+ your <Ability> modifier" into the die's tooltip), and {{Label|formula}} a hover/tap
+  // tooltip (use it for any derived number — a save DC, an attack roll, a uses-count — instead
+  // of spelling the math inline; on a real character sheet the token becomes the computed value).
+  const re = /\[\[\s*(\d+)d(\d+)\s*(?:\+\s*([A-Za-z]{3}))?\s*\]\]|\{\{\s*([^|{}]+?)\s*\|\s*([^{}]+?)\s*\}\}/g;
   let out = "", last = 0, m;
   while ((m = re.exec(str)) !== null) {
     out += esc(str.slice(last, m.index));
-    if (m[1]) out += scalingDieHTML(parseInt(m[1], 10), parseInt(m[2], 10));
-    else out += tipTermHTML(m[3], m[4]);
+    if (m[1]) out += scalingDieHTML(parseInt(m[1], 10), parseInt(m[2], 10), m[3]);
+    else out += tipTermHTML(m[4], m[5]);
     last = re.lastIndex;
   }
   return out + esc(str.slice(last));
 }
+
+// Full names for the [[XdY+Abil]] damage token's ability abbreviation.
+const ABILITY_NAMES = {
+  str: "Strength", dex: "Dexterity", con: "Constitution",
+  int: "Intelligence", wis: "Wisdom", cha: "Charisma",
+};
 
 // A hover/tap tooltip term for an inline derived number (e.g. a save DC): shows the label + ⓘ,
 // reveals the formula on hover/tap. Mirrors the keyStats formula tooltip so descriptions stay clean.
@@ -475,16 +484,21 @@ function propsHTML(list) {
   }).join(", ");
 }
 
-function scalingDieHTML(count, size) {
+function scalingDieHTML(count, size, abil) {
   const i = DIE_CHAIN.indexOf(size);
   const base = `${count}d${size}`;
-  if (i < 0) return esc(base); // not a standard die — render plainly, no scaling
+  // Optional "+ ability modifier" folded into the tooltip (kept out of the visible prose).
+  const ab = abil && ABILITY_NAMES[String(abil).toLowerCase()];
+  const modLine = ab ? ` + your ${ab} modifier` : "";
+  if (i < 0) return esc(base + (ab ? ` + ${ab} mod` : "")); // non-standard die: no scaling tooltip
   const seq = [0, 1, 2, 3].map((k) => count + "d" + DIE_CHAIN[Math.min(i + k, DIE_CHAIN.length - 1)]);
-  return `<span class="scaling-die" title="Scaling die: ${esc(seq.join(" · "))} (at levels 1 · 5 · 11 · 17)">${esc(base)}<sup class="scale-mark">▲</sup>` +
+  const title = `Damage: ${seq.join(" · ")} (die steps up at levels 5 · 11 · 17)${modLine}`;
+  return `<span class="scaling-die" title="${esc(title)}">${esc(base)}<sup class="scale-mark">▲</sup>` +
     `<span class="scale-tip" role="tooltip">
-       <span class="scale-tip-title">Scaling die</span>
+       <span class="scale-tip-title">${ab ? "Damage" : "Scaling die"}</span>
        <span class="scale-tip-row">${esc(seq.join(" · "))}</span>
-       <span class="scale-tip-lv">at levels 1 · 5 · 11 · 17</span>
+       <span class="scale-tip-lv">die steps up at levels 5 · 11 · 17</span>
+       ${ab ? `<span class="scale-tip-lv">+ your ${esc(ab)} modifier</span>` : ""}
      </span></span>`;
 }
 

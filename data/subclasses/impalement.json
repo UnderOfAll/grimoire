@@ -8,7 +8,7 @@
     {
       "level": 3,
       "name": "Mark",
-      "description": "As a bonus action, you can Mark one creature you can see — a cold read of its guard and rhythm. Until the end of your next turn, your thrown implements score a critical hit against the Marked creature on a roll of 19 or 20, and the first of your implements to hit it each turn deals extra damage equal to your Intelligence modifier. You can have only one creature Marked at a time; Marking a new one ends the old.",
+      "description": "As a bonus action, you can Mark one creature you can see — a cold read of its guard and rhythm. Until the end of your next turn, your thrown implements score a critical hit against the Marked creature on a roll of 19 or 20, and the first of your implements to hit it each turn deals extra damage equal to your {{Intelligence modifier|set from your stats on your character sheet}}. You can have only one creature Marked at a time; Marking a new one ends the old.",
       "meta": {
         "action": "Bonus Action",
         "uses": "1 creature at a time",
@@ -19,6 +19,16 @@
       "level": 3,
       "name": "Impossible Shot",
       "description": "Your calculations beat the battlefield. Your thrown implements ignore half and three-quarters cover, and they suffer no disadvantage anywhere within their full range: a normal throw reaches 20 feet, and you simply ignore the long-range penalty that would otherwise apply on throws from 20 out to 60 feet. Every angle is a clean angle.",
+      "meta": {
+        "action": "Passive"
+      }
+    },
+    {
+      "level": 3,
+      "name": "Sideshow Precision",
+      "role": "roleplay",
+      "description": "You have split apples on volunteers' heads for years, and you have never once hit the volunteer. Your thrown implements automatically hit any stationary object target you can see within range — no roll needed. You can pin a willing or unaware creature's clothing to a nearby surface with a throw, holding it in place until it spends an action tearing free. You never hit an unintended creature with a thrown implement, and you have advantage on Charisma (Performance) checks built around throwing.",
+      "sheetSummary": "Thrown implements auto-hit stationary objects in range. Pin a willing/unaware creature's clothing to a surface (it spends an action to tear free). Never hit bystanders by accident. Advantage on throwing-act Performance checks.",
       "meta": {
         "action": "Passive"
       }
