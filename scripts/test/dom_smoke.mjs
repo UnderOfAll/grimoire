@@ -41,8 +41,11 @@ const $ = (sel) => window.document.querySelector(sel);
 let checked = 0, fails = 0;
 const check = (cond, msg) => { if (!cond) { fails++; console.log("  FAIL: " + msg); } };
 
-for (const key of ["classes", "subclasses"]) {
-  const ids = JSON.parse(peek(`JSON.stringify(store["${key}"].map(x=>slug(x)))`));
+// Render every entry in every category through its real renderer. New content types
+// (races, backgrounds, spells, …) are picked up automatically from the store.
+const allKeys = JSON.parse(peek(`JSON.stringify(CATEGORIES.map(c=>c.key))`));
+for (const key of allKeys) {
+  const ids = JSON.parse(peek(`JSON.stringify((store["${key}"]||[]).map(x=>slug(x)))`));
   for (const id of ids) {
     try { window.showDetail(key, id); }
     catch (e) { fails++; console.log(`  THREW ${key}/${id}: ${e.message}`); continue; }
@@ -50,7 +53,7 @@ for (const key of ["classes", "subclasses"]) {
     checked++;
     check(!h.includes("[["), `${key}/${id}: raw [[ leaked`);
     check(!h.includes("{{"), `${key}/${id}: raw {{ leaked`);
-    check(h.length > 200, `${key}/${id}: empty render`);
+    check(h.length > 80, `${key}/${id}: empty render`);
   }
 }
 

@@ -8,7 +8,7 @@
     {
       "level": 3,
       "name": "Iron Resolve",
-      "description": "Your body is trained to feed off punishment, your own and the punishment aimed at those you're shielding. In addition to your baseline Grit generation, you gain 1 additional Grit the first time each turn you take damage from an attack, and you gain 1 Grit the first time each turn a hostile creature's attack hits an ally within 5 feet of you (hits on yourself are already covered by the first clause) — two separate sources, each capped at once per turn, exactly like your baseline Grit generation. Standing at the front and eating blows, yours or an ally's, is how a Bulwark keeps his Grit topped up.",
+      "description": "Your body is trained to feed off danger, your own and the danger aimed at those you're shielding. In addition to your baseline Grit generation, you gain 1 additional Grit the first time each turn you are targeted by an attack from any source (whether it hits or misses), and you gain 1 Grit the first time each turn a hostile creature targets an ally within 5 feet of you with an attack (attacks against you are already covered by the first clause) — two separate sources, each capped at once per turn, exactly like your baseline Grit generation. Standing at the front and drawing fire, onto himself or off an ally, is how a Bulwark keeps his Grit topped up.",
       "meta": {
         "action": "Passive"
       }

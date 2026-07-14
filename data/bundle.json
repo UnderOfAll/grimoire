@@ -1146,7 +1146,7 @@
         "name": "Grit",
         "resourceType": "pool",
         "description": "A pool of raw physical fortitude and adrenaline built from being in the thick of a fight — trading blows, absorbing them, hurling anything not nailed down. The Sandow's sole resource. This baseline generation is shared by every Sandow from 1st level; your Strongman's Act (chosen at 3rd level) layers its own primary Grit stream on top of it — a defensive Act builds more from taking hits, an offensive Act more from dealing them, and Human Cannonball from impacts and forced movement.",
-        "generation": "Gain 1 Grit the first time each turn you hit a creature with a melee attack, AND gain 1 Grit the first time each turn you are hit by an attack — two separate sources, each capped at once per turn (landing a hit and being hit in the same turn grants 2 Grit total; a third hit landed or taken that same turn grants no further Grit from that source). This works from 1st level, before any subclass is chosen.",
+        "generation": "Gain 1 Grit the first time each turn you hit a creature with a melee attack, AND gain 1 Grit the first time each turn you are targeted by an attack from any source — whether that attack hits or misses — two separate sources, each capped at once per turn (landing a hit and being attacked in the same turn grants 2 Grit total; further hits you land or attacks made against you that same turn grant no additional Grit from that source). This works from 1st level, before any subclass is chosen.",
         "spend": "Spend Grit in 1-point increments to fuel Heave, Brace, and the other feats of strength described in your features. Unspent Grit carries over between rounds but drains to 0 if you finish a short or long rest without spending it.",
         "cap": "≈4 (L1–4) · 5–6 (L5+)",
         "capFormula": "Constitution modifier + proficiency bonus (minimum 3)"
@@ -1333,7 +1333,7 @@
         {
           "level": 3,
           "name": "Iron Resolve",
-          "description": "Your body is trained to feed off punishment, your own and the punishment aimed at those you're shielding. In addition to your baseline Grit generation, you gain 1 additional Grit the first time each turn you take damage from an attack, and you gain 1 Grit the first time each turn a hostile creature's attack hits an ally within 5 feet of you (hits on yourself are already covered by the first clause) — two separate sources, each capped at once per turn, exactly like your baseline Grit generation. Standing at the front and eating blows, yours or an ally's, is how a Bulwark keeps his Grit topped up.",
+          "description": "Your body is trained to feed off danger, your own and the danger aimed at those you're shielding. In addition to your baseline Grit generation, you gain 1 additional Grit the first time each turn you are targeted by an attack from any source (whether it hits or misses), and you gain 1 Grit the first time each turn a hostile creature targets an ally within 5 feet of you with an attack (attacks against you are already covered by the first clause) — two separate sources, each capped at once per turn, exactly like your baseline Grit generation. Standing at the front and drawing fire, onto himself or off an ally, is how a Bulwark keeps his Grit topped up.",
           "meta": {
             "action": "Passive"
           }
