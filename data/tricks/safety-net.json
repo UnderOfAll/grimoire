@@ -1,0 +1,22 @@
+{
+  "id": "safety-net",
+  "name": "Safety Net",
+  "source": "Circus of Chaos",
+  "flavor": "There's always a net under the wire. Tonight, it's you.",
+  "tier": "turn",
+  "discipline": "Fortune",
+  "minLevel": 1,
+  "cooldown": 2,
+  "castingTime": "1 bonus action",
+  "range": "30 feet",
+  "components": [
+    "Patter",
+    "Flourish"
+  ],
+  "duration": "1 round",
+  "description": "You call a quiet promise to an ally: no fall is final tonight. Choose one ally you can see within range. It gains [[1d6]] temporary hit points, and until the start of your next turn it has advantage on saving throws against being frightened or charmed.",
+  "sheetSummary": "Bonus action, 30 ft, cooldown 2. Chosen ally gains [[1d6]] temporary hit points and advantage on saves vs frightened/charmed until the start of your next turn.",
+  "classes": [
+    "jester"
+  ]
+}

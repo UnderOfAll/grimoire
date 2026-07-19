@@ -1,0 +1,22 @@
+{
+  "id": "powder-screen",
+  "name": "Powder Screen",
+  "source": "Circus of Chaos",
+  "flavor": "One second you're standing there. The next, there's just a lot of colored smoke and a faint, receding laugh.",
+  "tier": "turn",
+  "discipline": "Pyrotechnics",
+  "minLevel": 2,
+  "cooldown": 2,
+  "castingTime": "1 action",
+  "range": "60 feet",
+  "components": [
+    "Flourish",
+    "Prop (a smoke charge)"
+  ],
+  "duration": "1 minute",
+  "description": "You detonate a charge of colored smoke, filling a 15-foot cube within range with a thick, drifting haze that heavily obscures the area for the duration or until a strong wind (such as one created by a Strength check or a trick) disperses it. You can see through this smoke without penalty; every other creature treats it as any other heavily obscuring smoke.",
+  "sheetSummary": "Action, 60 ft, 15-ft cube, cooldown 2, 1 min. Heavily obscures the area for everyone except you. Dispersible by strong wind.",
+  "classes": [
+    "joker"
+  ]
+}

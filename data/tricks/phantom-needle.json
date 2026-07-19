@@ -1,0 +1,22 @@
+{
+  "id": "phantom-needle",
+  "name": "Phantom Needle",
+  "source": "Circus of Chaos",
+  "flavor": "There's no blade in your hand. That doesn't stop the audience member three rows back clutching their arm.",
+  "tier": "pledge",
+  "discipline": "Illusion",
+  "minLevel": 1,
+  "castingTime": "1 action",
+  "range": "60 feet",
+  "components": [
+    "Patter",
+    "Flourish"
+  ],
+  "duration": "Instantaneous",
+  "save": "Wisdom",
+  "description": "You point at a creature you can see within range, and for one vivid instant it feels exactly what a blade sliding between its ribs would feel like. The target must succeed on a Wisdom saving throw against your {{trick save DC|8 + proficiency bonus + your trick ability modifier}} or take [[1d6]] psychic damage, flinching from a wound that was never there. On a success, the target takes no damage.",
+  "sheetSummary": "Action, 60 ft. Wisdom save vs trick save DC. Fail: [[1d6]] psychic damage. Success: no effect.",
+  "classes": [
+    "illusionist"
+  ]
+}

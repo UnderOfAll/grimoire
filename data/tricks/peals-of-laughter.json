@@ -1,0 +1,23 @@
+{
+  "id": "peals-of-laughter",
+  "name": "Peals of Laughter",
+  "source": "Circus of Chaos",
+  "flavor": "You tell the joke you've been saving for exactly this moment, and it lands like a hammer.",
+  "tier": "turn",
+  "discipline": "Mesmerism",
+  "minLevel": 3,
+  "cooldown": 3,
+  "castingTime": "1 action",
+  "range": "30 feet",
+  "components": [
+    "Patter",
+    "Flourish"
+  ],
+  "duration": "Up to 1 minute (concentration)",
+  "save": "Wisdom",
+  "description": "You land a joke so devastatingly funny that one creature you can see within range doubles over. The target must succeed on a Wisdom saving throw against your {{trick save DC|8 + proficiency bonus + your trick ability modifier}} or fall prone, incapacitated with helpless laughter for the duration. At the end of each of its turns, and whenever it takes damage, the target can make another Wisdom saving throw, ending the effect on itself on a success. A creature immune to being charmed automatically succeeds on its save.",
+  "sheetSummary": "Action, 30 ft, cooldown 3, concentration up to 1 minute. Wis save vs trick save DC. Fail: prone + incapacitated (helpless laughter). Target saves again at end of each of its turns or when it takes damage, ending the effect on a success. Charm-immune creatures auto-succeed.",
+  "classes": [
+    "jester"
+  ]
+}

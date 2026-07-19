@@ -1,0 +1,20 @@
+{
+  "id": "word-of-encouragement",
+  "name": "Word of Encouragement",
+  "source": "Circus of Chaos",
+  "flavor": "A quick, warm aside from the wings: \"You've got this, kid.\" Somehow, they always do.",
+  "tier": "pledge",
+  "discipline": "Fortune",
+  "minLevel": 1,
+  "castingTime": "1 action",
+  "range": "30 feet",
+  "components": [
+    "Patter"
+  ],
+  "duration": "1 round",
+  "description": "You call out a quick word of encouragement to one creature you can see within range. The next time that creature makes an ability check, attack roll, or saving throw before the start of your next turn, it can add 1d4 to the roll. The creature can wait to see the roll before deciding whether to add the bonus.",
+  "sheetSummary": "Action, 30 ft, no save. Target may add 1d4 to its next ability check, attack roll, or save before the start of your next turn (decided after rolling).",
+  "classes": [
+    "jester"
+  ]
+}

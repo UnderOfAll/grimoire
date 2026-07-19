@@ -194,6 +194,37 @@ h1 { font-family: var(--serif); font-weight: 600; margin: 0 0 1.25rem; }
   letter-spacing: 0.5px; vertical-align: middle;
 }
 
+/* Tricks tab: the Tier / Class / Level grouping toggle */
+.group-toggle { display: flex; gap: 0.4rem; margin-bottom: 1.25rem; flex-wrap: wrap; }
+.toggle-btn {
+  background: none; border: 1px solid var(--border); color: var(--muted);
+  padding: 0.3rem 0.9rem; border-radius: 999px; cursor: pointer;
+  font-family: var(--sans); font-size: 0.78rem; letter-spacing: 0.5px;
+}
+.toggle-btn:hover { color: var(--gold); border-color: var(--gold); }
+.toggle-btn.active { color: var(--bg); background: var(--gold); border-color: var(--gold); font-weight: 600; }
+
+/* Class view: each class's repertoire as a level ladder */
+.level-block { margin: 0 0 1.25rem; }
+.level-title {
+  margin: 0 0 0.6rem; font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 1.5px; color: var(--muted);
+  border-left: 2px solid var(--gold); padding-left: 0.6rem;
+}
+
+/* Trick tier badge (Pledge / Turn / Prestige) + the trick's in-world flavor line */
+.tier-row { margin: 0 0 0.75rem; }
+.tier-badge {
+  display: inline-block; padding: 0.15rem 0.7rem;
+  border: 1px solid var(--border); border-radius: 999px;
+  font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
+}
+/* Escalating emphasis: at-will is quiet, the engine-gated showstopper is loud. */
+.tier-pledge   { color: var(--muted); }
+.tier-turn     { color: var(--text); border-color: var(--muted); }
+.tier-prestige { color: var(--gold); border-color: var(--gold); }
+.detail-flavor { font-style: italic; color: var(--muted); margin: 0 0 1rem; }
+
 /* Circus-system class fields: parry / engine */
 .parry-block, .engine-block { margin-bottom: 1.5rem; }
 .parry-reskin { font-style: italic; color: var(--muted); }

@@ -1,0 +1,101 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Trick",
+  "description": "A Trick is this system's spell. See MECHANICS.md section 4 for the authoritative spec. Three tiers: Pledge (at-will), Turn (free, limited by a cooldown), Prestige (OP, spends the caster's class engine). There are deliberately NO spell slots and NO upcasting: a Turn's power is tuned by its cooldown, a Prestige's by its engineCost.",
+  "type": "object",
+  "required": ["name", "tier", "discipline", "castingTime", "range", "components", "duration", "description"],
+  "properties": {
+    "id": { "type": "string", "description": "kebab-case; should match the filename stem." },
+    "name": { "type": "string" },
+    "source": { "type": "string", "default": "Circus of Chaos" },
+    "flavor": { "type": "string", "description": "One or two lines of in-world colour. Kept out of sheetSummary." },
+
+    "tier": {
+      "type": "string",
+      "enum": ["pledge", "turn", "prestige"],
+      "description": "pledge = at-will cantrip equivalent, no cost/cooldown. turn = the workhorse; costs no engine, limited by cooldown. prestige = the showstopper; spends engine, minLevel 5+."
+    },
+    "discipline": {
+      "type": "string",
+      "enum": ["Illusion", "Mesmerism", "Legerdemain", "Pyrotechnics", "Animation", "Fortune"],
+      "description": "Replaces the 8 standard 5e schools (MECHANICS 4.9). Respects the locked damage-type list: Pyrotechnics = fire, Illusion/Mesmerism = psychic."
+    },
+    "minLevel": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 20,
+      "default": 1,
+      "description": "Earliest character level a class may learn this. Prestiges are 5+."
+    },
+
+    "cooldown": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5,
+      "description": "TURNS ONLY. Rounds the trick is 'Seen' before it can be cast again: you cannot cast it for this many of your turns. This is the sole balance dial for a Turn - a stronger effect gets a longer cooldown. Keep it 1-3; table bookkeeping is the real cost."
+    },
+    "engineCost": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "PRESTIGES ONLY. How much of the caster's class engine (Phantasm/Mirth/Strings/Clones/Mayhem) this consumes. Price it to eat most of a built-up meter. NOTE: every Prestige is ALSO capped at once per combat - that is a tier-wide rule (MECHANICS 4.5), not a field, so there is nothing to set here and a new Prestige inherits it automatically."
+    },
+
+    "castingTime": { "type": "string", "description": "e.g. '1 action', '1 bonus action', '1 reaction'." },
+    "range": { "type": "string" },
+    "components": {
+      "type": "array",
+      "description": "Patter (voice, was Verbal) / Flourish (hands, was Somatic) / Prop (an object, was Material). Prop may carry a parenthetical, e.g. 'Prop (a deck of cards)'.",
+      "items": { "type": "string", "pattern": "^(Patter|Flourish|Prop)" }
+    },
+    "duration": { "type": "string" },
+    "save": { "type": "string", "description": "Optional. The saving throw a target makes, e.g. 'Wisdom'. Rendered as a chip." },
+
+    "description": { "type": "string", "description": "Player-facing prose. Damage dice use the Scaling Die ([[XdY]] / [[XdY+Abil]]); every derived number is a {{Label|formula}} token - both are build-lint enforced." },
+    "sheetSummary": { "type": "string", "description": "Condensed mechanics-only text for the future character sheet: effect, damage + type, conditions, cost/uses. No flavor. Not linted." },
+    "options": {
+      "type": "array",
+      "description": "For tricks offering a menu or a random table. Rendered as a table by the shared optionTable renderer.",
+      "items": {
+        "type": "object",
+        "required": ["name", "effect"],
+        "properties": {
+          "roll": { "type": "string" },
+          "name": { "type": "string" },
+          "effect": { "type": "string" }
+        }
+      }
+    },
+    "classes": {
+      "type": "array",
+      "description": "Class ids that may learn this trick, e.g. ['illusionist','joker'].",
+      "items": { "type": "string" }
+    }
+  },
+
+  "allOf": [
+    {
+      "if": { "properties": { "tier": { "const": "pledge" } }, "required": ["tier"] },
+      "then": {
+        "not": { "anyOf": [{ "required": ["cooldown"] }, { "required": ["engineCost"] }] },
+        "description": "A Pledge is at-will: it may not carry a cooldown or an engine cost."
+      }
+    },
+    {
+      "if": { "properties": { "tier": { "const": "turn" } }, "required": ["tier"] },
+      "then": {
+        "required": ["cooldown"],
+        "not": { "required": ["engineCost"] },
+        "description": "A Turn is limited by a cooldown and NEVER spends engine (Kayki's absolute rule)."
+      }
+    },
+    {
+      "if": { "properties": { "tier": { "const": "prestige" } }, "required": ["tier"] },
+      "then": {
+        "required": ["engineCost", "minLevel"],
+        "properties": { "minLevel": { "minimum": 5 } },
+        "not": { "required": ["cooldown"] },
+        "description": "A Prestige spends engine, is gated to level 5+, and needs no cooldown - the engine price is its limiter."
+      }
+    }
+  ]
+}

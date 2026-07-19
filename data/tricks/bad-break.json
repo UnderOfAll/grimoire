@@ -1,0 +1,21 @@
+{
+  "id": "bad-break",
+  "name": "Bad Break",
+  "source": "Circus of Chaos",
+  "flavor": "\"Ooh, unlucky,\" you say, tutting — and somehow you're right.",
+  "tier": "turn",
+  "discipline": "Fortune",
+  "minLevel": 2,
+  "cooldown": 2,
+  "castingTime": "1 reaction, which you take when a creature you can see within range makes an attack roll, ability check, or saving throw",
+  "range": "60 feet",
+  "components": [
+    "Patter"
+  ],
+  "duration": "Instantaneous",
+  "description": "You click your tongue at exactly the wrong moment, and the universe agrees with you. When a creature you can see within range makes an attack roll, ability check, or saving throw, you can force it to reroll and use the lower of the two results. You can use this trick after the original roll is seen but before its effect (hit or miss, success or failure) is determined.",
+  "sheetSummary": "Reaction, 60 ft, cooldown 2. Force a seen d20 roll (attack, check, or save) to be made twice; the lower result is used.",
+  "classes": [
+    "jester"
+  ]
+}

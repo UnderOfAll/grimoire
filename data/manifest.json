@@ -5,6 +5,7 @@
     "rules/attacks-and-damage.json",
     "rules/parry.json",
     "rules/reaction-economy.json",
+    "rules/tricks-and-casting.json",
     "rules/weapon-mastery.json",
     "rules/weapon-properties.json"
   ],
@@ -36,8 +37,41 @@
     "subclasses/trapeze.json",
     "subclasses/warden.json"
   ],
-  "spells": [
-    "spells/fireball.json"
+  "tricks": [
+    "tricks/bad-break.json",
+    "tricks/card-trick.json",
+    "tricks/center-ring.json",
+    "tricks/cut-the-strings.json",
+    "tricks/dead-mans-hand.json",
+    "tricks/doubled-image.json",
+    "tricks/flash-powder.json",
+    "tricks/grand-guignol.json",
+    "tricks/idle-image.json",
+    "tricks/marionette-hand.json",
+    "tricks/master-of-ceremonies.json",
+    "tricks/meat-shield.json",
+    "tricks/now-you-dont.json",
+    "tricks/parting-shot.json",
+    "tricks/peals-of-laughter.json",
+    "tricks/phantom-needle.json",
+    "tricks/powder-screen.json",
+    "tricks/puppet-strike.json",
+    "tricks/quicksilver-guise.json",
+    "tricks/reflected-wound.json",
+    "tricks/rigged-draw.json",
+    "tricks/safety-net.json",
+    "tricks/sleight.json",
+    "tricks/smoke-and-mirrors.json",
+    "tricks/stage-fright.json",
+    "tricks/steal-their-luck.json",
+    "tricks/the-grand-illusion.json",
+    "tricks/the-impossible-show.json",
+    "tricks/the-prestige.json",
+    "tricks/the-quick-change.json",
+    "tricks/the-whole-audience-laughs.json",
+    "tricks/vicious-jibe.json",
+    "tricks/waking-nightmare.json",
+    "tricks/word-of-encouragement.json"
   ],
   "skills": [
     "skills/skills.json"

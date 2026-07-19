@@ -1,0 +1,85 @@
+{
+  "id": "tricks-and-casting",
+  "name": "Tricks & Casting",
+  "summary": "How magic works: there are no spell slots. A trick is a Pledge (at-will), a Turn (free, on a cooldown), or a Prestige (a showstopper that spends your class engine).",
+  "sections": [
+    {
+      "heading": "There are no spell slots",
+      "paragraphs": [
+        "Magic in the circus is a performance, not a spellbook. You never track slots, you never 'prepare' anything in the morning, and you never lose a spell because you cast something else earlier. A spell here is called a Trick, and a Trick is limited by one of two things: how recently you did it, or how much of your class engine you are willing to burn.",
+        "This means your magic runs on the same clock as everyone else's abilities: per combat, not per day. A caster and a Sandow walk into a fight with the same question — what have I got right now?"
+      ]
+    },
+    {
+      "heading": "The three tiers",
+      "paragraphs": [
+        "Every trick is one of three tiers, named for the three acts of a stage illusion. The Pledge shows you something ordinary. The Turn makes it do something extraordinary. The Prestige brings it back, and that is the part the crowd remembers."
+      ],
+      "list": [
+        "Pledge — at-will. No cost, no cooldown, use it as often as you like. This is the reliable fallback that should never be your best option, only your always-available one. Damage Pledges grow at levels 5, 11, and 17.",
+        "Turn — the workhorse, and most of your repertoire. A Turn costs you NOTHING: it never spends your engine. Its only limit is a cooldown.",
+        "Prestige — the showstopper. It spends your class engine, it is only available from level 5, and it is meant to be rare and memorable rather than reliable."
+      ]
+    },
+    {
+      "heading": "Cooldowns: the crowd has Seen it",
+      "paragraphs": [
+        "When you cast a Turn, it becomes Seen — the audience caught the trick, and it will not land again until they have forgotten it. A trick's cooldown is a number of rounds.",
+        "At the start of each of your turns, reduce each Seen trick's counter by one. At zero it is ready again. In practice: a cooldown of 2 means you cannot cast that trick again for 2 of your turns.",
+        "Outside combat, rounds pass freely — treat a Turn as ready again after about a minute. Utility tricks are effectively at-will when nobody is trying to kill you.",
+        "A trick's cooldown is the whole reason it is balanced the way it is. A stronger Turn carries a longer cooldown. There is no upcasting and no spell level: one number does the work."
+      ]
+    },
+    {
+      "heading": "Prestiges and your engine",
+      "paragraphs": [
+        "A Prestige is the only kind of magic that touches your class engine — your Phantasm, Mirth, Strings, Clones, or Mayhem. It costs a chunk of that meter, priced to eat most of what you have built up.",
+        "On top of that price, every Prestige is limited to once per combat, and it resets when the fight ends. Between the two, you cannot open a fight with a Prestige and you cannot do it twice: you have to earn it, and you only get the one.",
+        "Note what is still absent — there is no per-day counter and no slot table. Every limit in this system runs on the same per-combat clock as everyone else's abilities, so a caster never walks out of a fight with their real power locked behind a night's sleep.",
+        "For the Illusionist and the Jester, casting Turns is what builds the meter, so their whole loop is: cast Turns, bank the engine, unleash the Prestige.",
+        "For the Puppeteer, Doppelganger, and Joker, casting builds nothing. Their engines already pay for their core class features, so a Prestige means going without Strings, Clones, or Mayhem for the things those normally buy. That trade is the point.",
+        "This holds even when your class's own wording seems to allow it. A Joker gains Mayhem the first time each turn they deal damage — but damage dealt by a Trick never counts, and neither does any roll made as part of one. For these three classes, no trick ever feeds the meter, whatever the trigger says. That is exactly why their Turns are free."
+      ]
+    },
+    {
+      "heading": "Your trick ability",
+      "paragraphs": [
+        "You cast with your class's primary ability — always. The Illusionist uses Intelligence, the Jester and the Joker use Charisma, the Puppeteer uses Wisdom, and the Doppelganger uses Constitution.",
+        "This means a trick-user is never split between two stats: the number that makes your class work is the same number that makes your magic work. When a trick calls for a saving throw, the target rolls against your trick save DC."
+      ]
+    },
+    {
+      "heading": "Components: Patter, Flourish, Prop",
+      "paragraphs": [
+        "A trick lists what you need in order to perform it. Take the component away and the trick does not happen — which is exactly how you shut a performer down."
+      ],
+      "list": [
+        "Patter — the voice: the line, the count, the misdirecting joke. Denied while gagged, silenced, or unable to speak.",
+        "Flourish — the hands: the pass, the gesture, the reveal. Denied while bound or grappled, or without a free hand.",
+        "Prop — a physical object: cards, silks, powder, a coin. Denied if the prop is lost, stolen, or destroyed."
+      ]
+    },
+    {
+      "heading": "The six disciplines",
+      "paragraphs": [
+        "Tricks are grouped by discipline rather than by the traditional schools of magic. Which disciplines you can learn from depends on your class.",
+        "Only three kinds of damage exist in this setting — physical, fire, and psychic — so a discipline's damage follows from what it is: Pyrotechnics burns, and the mind disciplines hurt because the target believes them."
+      ],
+      "list": [
+        "Illusion — phantasms, false images, things that are not there. Deals psychic damage.",
+        "Mesmerism — hypnosis, charm, the compelling voice. Deals psychic damage.",
+        "Legerdemain — sleight of hand, vanishing, misdirection.",
+        "Pyrotechnics — flash, bang, fire-eating, the big finish. Deals fire damage.",
+        "Animation — objects and bodies moved as though alive. The Puppeteer's alone; no other class learns it.",
+        "Fortune — luck, fate, the rigged draw."
+      ]
+    },
+    {
+      "heading": "Tricks and the Parry",
+      "paragraphs": [
+        "The Parry answers attack rolls only, and that does not change here. A trick that forces a saving throw cannot be parried — no amount of footwork dodges a phantasm you already believe in. Evading those is the Acrobat's speciality.",
+        "A trick that makes an attack roll can be parried like any other attack. Casters are the worst parriers in the circus, and a trick in hand does not change that."
+      ]
+    }
+  ]
+}

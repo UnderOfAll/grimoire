@@ -182,6 +182,92 @@
       "_file": "rules/reaction-economy.json"
     },
     {
+      "id": "tricks-and-casting",
+      "name": "Tricks & Casting",
+      "summary": "How magic works: there are no spell slots. A trick is a Pledge (at-will), a Turn (free, on a cooldown), or a Prestige (a showstopper that spends your class engine).",
+      "sections": [
+        {
+          "heading": "There are no spell slots",
+          "paragraphs": [
+            "Magic in the circus is a performance, not a spellbook. You never track slots, you never 'prepare' anything in the morning, and you never lose a spell because you cast something else earlier. A spell here is called a Trick, and a Trick is limited by one of two things: how recently you did it, or how much of your class engine you are willing to burn.",
+            "This means your magic runs on the same clock as everyone else's abilities: per combat, not per day. A caster and a Sandow walk into a fight with the same question — what have I got right now?"
+          ]
+        },
+        {
+          "heading": "The three tiers",
+          "paragraphs": [
+            "Every trick is one of three tiers, named for the three acts of a stage illusion. The Pledge shows you something ordinary. The Turn makes it do something extraordinary. The Prestige brings it back, and that is the part the crowd remembers."
+          ],
+          "list": [
+            "Pledge — at-will. No cost, no cooldown, use it as often as you like. This is the reliable fallback that should never be your best option, only your always-available one. Damage Pledges grow at levels 5, 11, and 17.",
+            "Turn — the workhorse, and most of your repertoire. A Turn costs you NOTHING: it never spends your engine. Its only limit is a cooldown.",
+            "Prestige — the showstopper. It spends your class engine, it is only available from level 5, and it is meant to be rare and memorable rather than reliable."
+          ]
+        },
+        {
+          "heading": "Cooldowns: the crowd has Seen it",
+          "paragraphs": [
+            "When you cast a Turn, it becomes Seen — the audience caught the trick, and it will not land again until they have forgotten it. A trick's cooldown is a number of rounds.",
+            "At the start of each of your turns, reduce each Seen trick's counter by one. At zero it is ready again. In practice: a cooldown of 2 means you cannot cast that trick again for 2 of your turns.",
+            "Outside combat, rounds pass freely — treat a Turn as ready again after about a minute. Utility tricks are effectively at-will when nobody is trying to kill you.",
+            "A trick's cooldown is the whole reason it is balanced the way it is. A stronger Turn carries a longer cooldown. There is no upcasting and no spell level: one number does the work."
+          ]
+        },
+        {
+          "heading": "Prestiges and your engine",
+          "paragraphs": [
+            "A Prestige is the only kind of magic that touches your class engine — your Phantasm, Mirth, Strings, Clones, or Mayhem. It costs a chunk of that meter, priced to eat most of what you have built up.",
+            "On top of that price, every Prestige is limited to once per combat, and it resets when the fight ends. Between the two, you cannot open a fight with a Prestige and you cannot do it twice: you have to earn it, and you only get the one.",
+            "Note what is still absent — there is no per-day counter and no slot table. Every limit in this system runs on the same per-combat clock as everyone else's abilities, so a caster never walks out of a fight with their real power locked behind a night's sleep.",
+            "For the Illusionist and the Jester, casting Turns is what builds the meter, so their whole loop is: cast Turns, bank the engine, unleash the Prestige.",
+            "For the Puppeteer, Doppelganger, and Joker, casting builds nothing. Their engines already pay for their core class features, so a Prestige means going without Strings, Clones, or Mayhem for the things those normally buy. That trade is the point.",
+            "This holds even when your class's own wording seems to allow it. A Joker gains Mayhem the first time each turn they deal damage — but damage dealt by a Trick never counts, and neither does any roll made as part of one. For these three classes, no trick ever feeds the meter, whatever the trigger says. That is exactly why their Turns are free."
+          ]
+        },
+        {
+          "heading": "Your trick ability",
+          "paragraphs": [
+            "You cast with your class's primary ability — always. The Illusionist uses Intelligence, the Jester and the Joker use Charisma, the Puppeteer uses Wisdom, and the Doppelganger uses Constitution.",
+            "This means a trick-user is never split between two stats: the number that makes your class work is the same number that makes your magic work. When a trick calls for a saving throw, the target rolls against your trick save DC."
+          ]
+        },
+        {
+          "heading": "Components: Patter, Flourish, Prop",
+          "paragraphs": [
+            "A trick lists what you need in order to perform it. Take the component away and the trick does not happen — which is exactly how you shut a performer down."
+          ],
+          "list": [
+            "Patter — the voice: the line, the count, the misdirecting joke. Denied while gagged, silenced, or unable to speak.",
+            "Flourish — the hands: the pass, the gesture, the reveal. Denied while bound or grappled, or without a free hand.",
+            "Prop — a physical object: cards, silks, powder, a coin. Denied if the prop is lost, stolen, or destroyed."
+          ]
+        },
+        {
+          "heading": "The six disciplines",
+          "paragraphs": [
+            "Tricks are grouped by discipline rather than by the traditional schools of magic. Which disciplines you can learn from depends on your class.",
+            "Only three kinds of damage exist in this setting — physical, fire, and psychic — so a discipline's damage follows from what it is: Pyrotechnics burns, and the mind disciplines hurt because the target believes them."
+          ],
+          "list": [
+            "Illusion — phantasms, false images, things that are not there. Deals psychic damage.",
+            "Mesmerism — hypnosis, charm, the compelling voice. Deals psychic damage.",
+            "Legerdemain — sleight of hand, vanishing, misdirection.",
+            "Pyrotechnics — flash, bang, fire-eating, the big finish. Deals fire damage.",
+            "Animation — objects and bodies moved as though alive. The Puppeteer's alone; no other class learns it.",
+            "Fortune — luck, fate, the rigged draw."
+          ]
+        },
+        {
+          "heading": "Tricks and the Parry",
+          "paragraphs": [
+            "The Parry answers attack rolls only, and that does not change here. A trick that forces a saving throw cannot be parried — no amount of footwork dodges a phantasm you already believe in. Evading those is the Acrobat's speciality.",
+            "A trick that makes an attack roll can be parried like any other attack. Casters are the worst parriers in the circus, and a trick in hand does not change that."
+          ]
+        }
+      ],
+      "_file": "rules/tricks-and-casting.json"
+    },
+    {
       "id": "weapon-mastery",
       "name": "Weapon Mastery",
       "source": "circus-system",
@@ -601,7 +687,7 @@
         "name": "Mayhem",
         "resourceType": "pool",
         "description": "A small pool of chaotic energy built from doing risky, unpredictable things in a fight and spent to draw Wild Cards and fuel Gambits. The Joker's sole resource — deliberately kept small so its swings stay bounded rather than build into a snowball.",
-        "generation": "Gain 1 Mayhem the first time each turn you deal damage to a creature, AND gain 1 Mayhem the first time each turn you take damage, AND gain 1 Mayhem the first time each turn you roll a natural 1 or a natural 20 on an attack roll, ability check, or saving throw — three separate sources, each capped at once per turn (all three triggering in the same turn grants 3 Mayhem total; a source that already triggered this turn grants no more). This works from 1st level.",
+        "generation": "Gain 1 Mayhem the first time each turn you deal damage to a creature, AND gain 1 Mayhem the first time each turn you take damage, AND gain 1 Mayhem the first time each turn you roll a natural 1 or a natural 20 on an attack roll, ability check, or saving throw — three separate sources, each capped at once per turn (all three triggering in the same turn grants 3 Mayhem total; a source that already triggered this turn grants no more). This works from 1st level. None of these sources ever trigger off a Trick: damage you deal with a Trick, and rolls you make as part of one, generate no Mayhem. Your Tricks are free precisely because they don't feed the meter.",
         "spend": "Spend Mayhem in 1-point increments, at no action cost beyond the triggering feature, to draw Wild Cards, fuel your Gambits, and pay for your other Mayhem-keyed features. Unspent Mayhem carries over between rounds but drains to 0 if you finish a short or long rest without spending it.",
         "cap": "≈4–5 (L1–4) · 6+ (L5+)",
         "capFormula": "proficiency bonus + Charisma modifier (minimum 3)"
@@ -2079,28 +2165,808 @@
       "_file": "subclasses/warden.json"
     }
   ],
-  "spells": [
+  "tricks": [
     {
-      "id": "fireball",
-      "name": "Fireball",
-      "source": "5e SRD",
-      "level": 3,
-      "school": "Evocation",
-      "castingTime": "1 action",
-      "range": "150 feet",
+      "id": "bad-break",
+      "name": "Bad Break",
+      "source": "Circus of Chaos",
+      "flavor": "\"Ooh, unlucky,\" you say, tutting — and somehow you're right.",
+      "tier": "turn",
+      "discipline": "Fortune",
+      "minLevel": 2,
+      "cooldown": 2,
+      "castingTime": "1 reaction, which you take when a creature you can see within range makes an attack roll, ability check, or saving throw",
+      "range": "60 feet",
       "components": [
-        "V",
-        "S",
-        "M (a tiny ball of bat guano and sulfur)"
+        "Patter"
       ],
       "duration": "Instantaneous",
-      "description": "A bright streak flashes from your pointing finger to a point you choose within range and then blossoms with a low roar into an explosion of flame. Each creature in a 20-foot-radius sphere centered on that point must make a Dexterity saving throw. A target takes 8d6 fire damage on a failed save, or half as much on a successful one.",
-      "higherLevels": "When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd.",
+      "description": "You click your tongue at exactly the wrong moment, and the universe agrees with you. When a creature you can see within range makes an attack roll, ability check, or saving throw, you can force it to reroll and use the lower of the two results. You can use this trick after the original roll is seen but before its effect (hit or miss, success or failure) is determined.",
+      "sheetSummary": "Reaction, 60 ft, cooldown 2. Force a seen d20 roll (attack, check, or save) to be made twice; the lower result is used.",
       "classes": [
-        "Sorcerer",
-        "Wizard"
+        "jester"
       ],
-      "_file": "spells/fireball.json"
+      "_file": "tricks/bad-break.json"
+    },
+    {
+      "id": "card-trick",
+      "name": "Card Trick",
+      "source": "Circus of Chaos",
+      "flavor": "A flick of the wrist and the top card leaves the deck edge-first, humming, sharp enough to open a throat.",
+      "tier": "pledge",
+      "discipline": "Legerdemain",
+      "minLevel": 1,
+      "castingTime": "1 action",
+      "range": "30 feet",
+      "components": [
+        "Flourish",
+        "Prop (a deck of cards)"
+      ],
+      "duration": "Instantaneous",
+      "description": "You snap a razor-edged card at a creature you can see within range. Make a {{trick attack|d20 + proficiency bonus + your trick ability modifier}} against the target; on a hit it takes [[1d6]] slashing damage. Because this is an attack roll and not a saving throw, it can be parried like any other attack.",
+      "sheetSummary": "Action, 30 ft. Ranged trick attack ({{trick attack|d20 + proficiency bonus + your trick ability modifier}}). Hit: [[1d6]] slashing. Scales at 5/11/17. Can be parried.",
+      "classes": [
+        "joker"
+      ],
+      "_file": "tricks/card-trick.json"
+    },
+    {
+      "id": "center-ring",
+      "name": "Center Ring",
+      "source": "Circus of Chaos",
+      "flavor": "You strut into view, arms wide, painted grin blazing: \"Me! Look at ME!\" — and, gods help them, they do.",
+      "tier": "turn",
+      "discipline": "Mesmerism",
+      "minLevel": 3,
+      "cooldown": 3,
+      "castingTime": "1 bonus action",
+      "range": "60 feet",
+      "components": [
+        "Patter",
+        "Flourish"
+      ],
+      "duration": "1 round",
+      "save": "Wisdom",
+      "description": "You call one creature you can see within range into the spotlight, and it can't help but oblige. The target makes a Wisdom saving throw against your {{trick save DC|8 + proficiency bonus + your trick ability modifier}}. On a failure, until the start of your next turn the target must target you with its next attack, spell, or other harmful single-target effect, if you are a legal target for it. If you are not a legal target when it acts, the effect simply lapses for that action. A creature that succeeds on the save is unaffected, and a creature immune to being charmed automatically succeeds.",
+      "sheetSummary": "Bonus action, 60 ft, cooldown 3. Wis save vs trick save DC. Fail: target must direct its next single-target attack or spell at you (if you're a legal target) before the start of your next turn. Charm-immune creatures auto-succeed.",
+      "classes": [
+        "jester"
+      ],
+      "_file": "tricks/center-ring.json"
+    },
+    {
+      "id": "cut-the-strings",
+      "name": "Cut the Strings",
+      "source": "Circus of Chaos",
+      "flavor": "A snip of the fingers on a wire you already laid, and whatever was holding them up simply isn't.",
+      "tier": "turn",
+      "discipline": "Animation",
+      "minLevel": 2,
+      "cooldown": 2,
+      "castingTime": "1 bonus action",
+      "range": "60 feet",
+      "components": [
+        "Flourish",
+        "Prop (a pair of shears)"
+      ],
+      "duration": "Instantaneous",
+      "save": "Wisdom or Constitution",
+      "description": "You snip the wire fixed to a creature you have a String attached to within range, and its own body betrays it. Choose one effect below; the target resists with the listed saving throw against your {{trick save DC|8 + proficiency bonus + your trick ability modifier}}, and on a success it is unaffected. You must already have a String attached to the target to use this trick.",
+      "options": [
+        {
+          "name": "Disarm (Wisdom save)",
+          "effect": "On a failed save, the target drops one item of your choice that it is holding."
+        },
+        {
+          "name": "Trip (Constitution save)",
+          "effect": "On a failed save, the target is knocked prone."
+        }
+      ],
+      "sheetSummary": "Bonus action, 60 ft, cooldown 2. Requires a String on the target. Choose one: Disarm (Wis save or drop one held item of your choice) or Trip (Con save or knocked prone). Success: no effect.",
+      "classes": [
+        "puppeteer"
+      ],
+      "_file": "tricks/cut-the-strings.json"
+    },
+    {
+      "id": "dead-mans-hand",
+      "name": "Dead Man's Hand",
+      "source": "Circus of Chaos",
+      "flavor": "Aces and eights, face up on the table. Everyone at the game knows what that hand means, and so, now, do you.",
+      "tier": "prestige",
+      "discipline": "Fortune",
+      "minLevel": 5,
+      "engineCost": 4,
+      "castingTime": "1 action",
+      "range": "30 feet",
+      "components": [
+        "Patter",
+        "Flourish",
+        "Prop (a deck of cards)"
+      ],
+      "duration": "Instantaneous",
+      "save": "Constitution",
+      "description": "You lay down a hand that should not exist and let its meaning hit like a verdict. Choose one creature you can see within range; it must succeed on a Constitution saving throw against your {{trick save DC|8 + proficiency bonus + your trick ability modifier}} or be stunned until the end of your next turn. On a success, it instead has disadvantage on attack rolls and ability checks until the end of your next turn.",
+      "sheetSummary": "Once per combat. Action, 30 ft. Costs 4 Mayhem. Con save vs trick DC. Fail: stunned until end of your next turn. Success: disadvantage on attack rolls and ability checks until end of your next turn.",
+      "classes": [
+        "joker"
+      ],
+      "_file": "tricks/dead-mans-hand.json"
+    },
+    {
+      "id": "doubled-image",
+      "name": "Doubled Image",
+      "source": "Circus of Chaos",
+      "flavor": "Which one of you is real? Wrong question - ask which one of you the crowd is watching.",
+      "tier": "turn",
+      "discipline": "Illusion",
+      "minLevel": 3,
+      "cooldown": 3,
+      "castingTime": "1 bonus action",
+      "range": "Self",
+      "components": [
+        "Flourish"
+      ],
+      "duration": "Concentration, up to 1 minute",
+      "description": "Illusory afterimages of yourself flicker into being every time you move, blurring exactly where your real body is. Attack rolls against you have disadvantage for the duration, unless the attacker doesn't rely on sight to locate you (a blind attacker, or one with truesight or another sense that sees through the illusion) or can otherwise track you by a non-visual sense.",
+      "sheetSummary": "Bonus action, self, cooldown 3, concentration up to 1 min. Attack rolls against you have disadvantage (no effect on attackers who don't rely on sight, e.g. truesight or blind).",
+      "classes": [
+        "illusionist"
+      ],
+      "_file": "tricks/doubled-image.json"
+    },
+    {
+      "id": "flash-powder",
+      "name": "Flash Powder",
+      "source": "Circus of Chaos",
+      "flavor": "A pinch between two fingers, a snap of the wrist, and the world goes white and orange for exactly as long as you need it to.",
+      "tier": "turn",
+      "discipline": "Pyrotechnics",
+      "minLevel": 3,
+      "cooldown": 3,
+      "castingTime": "1 action",
+      "range": "30 feet",
+      "components": [
+        "Flourish",
+        "Prop (a pinch of flash powder)"
+      ],
+      "duration": "Instantaneous",
+      "save": "Dexterity",
+      "description": "You throw a pinch of flash powder that bursts into a searing white flash in a 10-foot radius centered on a point you choose within range. Each creature in that area makes a Dexterity saving throw against your {{trick save DC|8 + proficiency bonus + your trick ability modifier}}. On a failure, a creature is blinded until the end of its next turn. On a success, it is unaffected. The burst is light and noise, not fire — it deals no damage; it just takes the crowd's eyes away for a beat.",
+      "sheetSummary": "Action, 30 ft, 10-ft radius burst, cooldown 3. Dex save vs trick save DC. Fail: blinded until end of its next turn. Success: no effect. Deals no damage.",
+      "classes": [
+        "joker"
+      ],
+      "_file": "tricks/flash-powder.json"
+    },
+    {
+      "id": "grand-guignol",
+      "name": "Grand Guignol",
+      "source": "Circus of Chaos",
+      "flavor": "Every wire you've laid snaps taut at once, and for one terrible instant every puppet on your stage dances the same violent step.",
+      "tier": "prestige",
+      "discipline": "Animation",
+      "minLevel": 5,
+      "engineCost": 2,
+      "castingTime": "1 action",
+      "range": "60 feet",
+      "components": [
+        "Flourish",
+        "Prop (a fistful of shears)"
+      ],
+      "duration": "Instantaneous",
+      "save": "Strength",
+      "description": "You sever every String at once, and the recoil slams each stringed body against itself. Every creature you currently have a String attached to within range is wrenched by its own wire: each makes a Strength saving throw against your {{trick save DC|8 + proficiency bonus + your trick ability modifier}}. On a failure, a creature takes [[3d8]] physical damage, is knocked prone, and is restrained until it or another creature uses an action to cut it free. On a success, it takes half as much damage and is neither knocked prone nor restrained. You must have at least two Strings attached to cast Grand Guignol, and when it resolves the String on every creature it targets detaches and is consumed at once — leaving you to re-establish your control from scratch.",
+      "sheetSummary": "Once per combat. Action, 60 ft. Requires 2+ Strings attached; detaches and consumes the String on every creature it hits. Every Stringed creature in range: Str save vs trick save DC. Fail: [[3d8]] physical, prone + restrained (escape = an action to cut it free). Success: half damage only.",
+      "classes": [
+        "puppeteer"
+      ],
+      "_file": "tricks/grand-guignol.json"
+    },
+    {
+      "id": "idle-image",
+      "name": "Idle Image",
+      "source": "Circus of Chaos",
+      "flavor": "A little something to hold the audience's attention while your other hand does the real work.",
+      "tier": "pledge",
+      "discipline": "Illusion",
+      "minLevel": 1,
+      "castingTime": "1 action",
+      "range": "30 feet",
+      "components": [
+        "Flourish",
+        "Prop (a scrap of silk or a coin)"
+      ],
+      "duration": "Up to 1 minute",
+      "description": "You conjure a harmless sound or image of an object no larger than a 5-foot cube within range - a burst of applause, a shimmering curtain, a shadow that looks like a second performer standing in the wings. The illusion has no substance and cannot deal damage, move on its own, or convincingly imitate a specific creature's voice or appearance beyond a rough silhouette. Any creature that uses its action to inspect the image can determine it is an illusion with a successful Intelligence (Investigation) check against your {{trick save DC|8 + proficiency bonus + your trick ability modifier}}. The image lasts until you dismiss it (no action required), you move more than 30 feet from it, or its duration ends.",
+      "sheetSummary": "Action, 30 ft. Harmless illusory sound or image (max 5-ft cube), up to 1 minute or until dismissed/out of range. No damage, no self-movement, no true creature mimicry. Investigation check vs trick save DC to see through on close inspection.",
+      "classes": [
+        "illusionist"
+      ],
+      "_file": "tricks/idle-image.json"
+    },
+    {
+      "id": "marionette-hand",
+      "name": "Marionette Hand",
+      "source": "Circus of Chaos",
+      "flavor": "A hand that isn't there, hung on wires you never quite show the audience, doing the small work while you keep smiling.",
+      "tier": "pledge",
+      "discipline": "Animation",
+      "minLevel": 1,
+      "castingTime": "1 action",
+      "range": "30 feet",
+      "components": [
+        "Flourish",
+        "Prop (a length of wire)"
+      ],
+      "duration": "Up to 1 minute",
+      "description": "You conjure a near-invisible puppet hand, hung on wires, in an unoccupied space you can see within range. It lasts for the duration, until you dismiss it (no action required), or until it ends up more than 30 feet from you. As a bonus action on your turn you can direct the hand: it flies up to 30 feet and manipulates one object — open an unlocked door or container, stow or retrieve an item, pour a flask, pull a lever, or carry an object weighing up to 10 pounds. The hand cannot attack, cannot activate magic items, and cannot wield a weapon or move a creature or anything a creature is holding.",
+      "sheetSummary": "Action, 30 ft. Conjure a spectral puppet hand (up to 1 min, dismiss free). Bonus action to move it up to 30 ft and manipulate an object: open/carry (max 10 lb), stow/retrieve, pour, pull a lever. No attacks, no magic items, cannot affect creatures or held items.",
+      "classes": [
+        "puppeteer"
+      ],
+      "_file": "tricks/marionette-hand.json"
+    },
+    {
+      "id": "master-of-ceremonies",
+      "name": "Master of Ceremonies",
+      "source": "Circus of Chaos",
+      "flavor": "You throw your arms wide, and for the length of the introduction, you are exactly who the room needs you to be.",
+      "tier": "turn",
+      "discipline": "Illusion",
+      "minLevel": 1,
+      "cooldown": 1,
+      "castingTime": "1 action",
+      "range": "Self",
+      "components": [
+        "Patter",
+        "Flourish",
+        "Prop (a costume piece or mask)"
+      ],
+      "duration": "10 minutes",
+      "description": "You wrap yourself in a small illusion of bearing and reputation — a borrowed title, a fresh face, an unearned air of importance. For the duration, you have advantage on Charisma (Deception) and Charisma (Performance) checks, and your voice and appearance seem subtly different (the color of your eyes, the cut of your clothes, small mannerisms) to anyone who hasn't already seen through the act. This trick cannot make you pass for a specific individual.",
+      "sheetSummary": "Action, self, cooldown 1, 10 minutes. Advantage on Deception and Performance checks; minor cosmetic disguise (not impersonation of a specific person).",
+      "classes": [
+        "jester"
+      ],
+      "_file": "tricks/master-of-ceremonies.json"
+    },
+    {
+      "id": "meat-shield",
+      "name": "Meat Shield",
+      "source": "Circus of Chaos",
+      "flavor": "Why stop a blade when you can stand someone else in front of it? A yank of the wire, and the nearest enemy becomes a very reluctant barricade.",
+      "tier": "turn",
+      "discipline": "Animation",
+      "minLevel": 3,
+      "cooldown": 3,
+      "castingTime": "1 bonus action",
+      "range": "60 feet",
+      "components": [
+        "Flourish",
+        "Prop (a length of wire)"
+      ],
+      "duration": "Until the start of your next turn",
+      "save": "Strength",
+      "description": "You haul on the String fixed to a creature you have a String attached to within range, dragging its body where you want it and pinning it there as a living barricade. The target makes a Strength saving throw against your {{trick save DC|8 + proficiency bonus + your trick ability modifier}}. On a failure, you drag it up to 15 feet — through spaces it could normally move through, without provoking opportunity attacks — to an unoccupied space of your choice, where it is restrained until the start of your next turn. While it is pinned this way its body is a shield: any creature has half cover against an attack or effect whose path passes through the meat shield's space. On a success, the wire snaps — the String detaches and nothing else happens. You must already have a String attached to the target to use this trick.",
+      "sheetSummary": "Bonus action, 60 ft, cooldown 3. Requires a String on the target. Str save. Fail: drag it up to 15 ft (no opportunity attacks) to a space you choose; it is restrained until the start of your next turn and its body grants half cover to anyone behind it. Success: the String detaches, no effect.",
+      "classes": [
+        "puppeteer"
+      ],
+      "_file": "tricks/meat-shield.json"
+    },
+    {
+      "id": "now-you-dont",
+      "name": "Now You Don't",
+      "source": "Circus of Chaos",
+      "flavor": "The curtain drops for exactly one second. When it rises, you're not where the audience is looking anymore.",
+      "tier": "turn",
+      "discipline": "Legerdemain",
+      "minLevel": 3,
+      "cooldown": 3,
+      "castingTime": "1 bonus action",
+      "range": "Self",
+      "components": [
+        "Flourish",
+        "Prop (a length of black silk)"
+      ],
+      "duration": "1 round",
+      "description": "You vanish behind a snap of silk and misdirection, becoming invisible until the start of your next turn or until you make an attack roll, force a saving throw, or force an ability check, whichever comes first. As part of casting this, you may also move up to 10 feet without provoking opportunity attacks - the last thing anyone saw of you was already the wrong direction.",
+      "sheetSummary": "Bonus action, self, cooldown 3. Invisible until start of your next turn or until you attack/force a save or check; may move 10 ft without provoking opportunity attacks as part of the trick.",
+      "classes": [
+        "illusionist"
+      ],
+      "_file": "tricks/now-you-dont.json"
+    },
+    {
+      "id": "parting-shot",
+      "name": "Parting Shot",
+      "source": "Circus of Chaos",
+      "flavor": "The Clone doesn't just fall. It goes out in one last burst of stagelight, and whoever struck it wishes they'd looked away.",
+      "tier": "turn",
+      "discipline": "Illusion",
+      "minLevel": 3,
+      "cooldown": 2,
+      "castingTime": "1 reaction, which you take when one of your Clones is destroyed",
+      "range": "5 feet",
+      "components": [
+        "Flourish"
+      ],
+      "duration": "Instantaneous",
+      "save": "Constitution",
+      "description": "When a Clone of yours is destroyed — by an attack, by Mirror Image, by Decoy Detonation, or by any other means — you can flood the space it occupied with a last flare of false light. Each creature within 5 feet of the Clone's former space must succeed on a Constitution saving throw against your {{trick save DC|8 + proficiency bonus + your trick ability modifier}} or be blinded until the end of its next turn. This trick does not create, spend, or restore any Clones on its own — it only triggers off a Clone that is already being destroyed some other way.",
+      "sheetSummary": "Reaction when a Clone is destroyed (any cause), 5 ft, cooldown 2. Con save vs trick DC or blinded until end of its next turn. Doesn't cost or grant Clones.",
+      "classes": [
+        "doppelganger"
+      ],
+      "_file": "tricks/parting-shot.json"
+    },
+    {
+      "id": "peals-of-laughter",
+      "name": "Peals of Laughter",
+      "source": "Circus of Chaos",
+      "flavor": "You tell the joke you've been saving for exactly this moment, and it lands like a hammer.",
+      "tier": "turn",
+      "discipline": "Mesmerism",
+      "minLevel": 3,
+      "cooldown": 3,
+      "castingTime": "1 action",
+      "range": "30 feet",
+      "components": [
+        "Patter",
+        "Flourish"
+      ],
+      "duration": "Up to 1 minute (concentration)",
+      "save": "Wisdom",
+      "description": "You land a joke so devastatingly funny that one creature you can see within range doubles over. The target must succeed on a Wisdom saving throw against your {{trick save DC|8 + proficiency bonus + your trick ability modifier}} or fall prone, incapacitated with helpless laughter for the duration. At the end of each of its turns, and whenever it takes damage, the target can make another Wisdom saving throw, ending the effect on itself on a success. A creature immune to being charmed automatically succeeds on its save.",
+      "sheetSummary": "Action, 30 ft, cooldown 3, concentration up to 1 minute. Wis save vs trick save DC. Fail: prone + incapacitated (helpless laughter). Target saves again at end of each of its turns or when it takes damage, ending the effect on a success. Charm-immune creatures auto-succeed.",
+      "classes": [
+        "jester"
+      ],
+      "_file": "tricks/peals-of-laughter.json"
+    },
+    {
+      "id": "phantom-needle",
+      "name": "Phantom Needle",
+      "source": "Circus of Chaos",
+      "flavor": "There's no blade in your hand. That doesn't stop the audience member three rows back clutching their arm.",
+      "tier": "pledge",
+      "discipline": "Illusion",
+      "minLevel": 1,
+      "castingTime": "1 action",
+      "range": "60 feet",
+      "components": [
+        "Patter",
+        "Flourish"
+      ],
+      "duration": "Instantaneous",
+      "save": "Wisdom",
+      "description": "You point at a creature you can see within range, and for one vivid instant it feels exactly what a blade sliding between its ribs would feel like. The target must succeed on a Wisdom saving throw against your {{trick save DC|8 + proficiency bonus + your trick ability modifier}} or take [[1d6]] psychic damage, flinching from a wound that was never there. On a success, the target takes no damage.",
+      "sheetSummary": "Action, 60 ft. Wisdom save vs trick save DC. Fail: [[1d6]] psychic damage. Success: no effect.",
+      "classes": [
+        "illusionist"
+      ],
+      "_file": "tricks/phantom-needle.json"
+    },
+    {
+      "id": "powder-screen",
+      "name": "Powder Screen",
+      "source": "Circus of Chaos",
+      "flavor": "One second you're standing there. The next, there's just a lot of colored smoke and a faint, receding laugh.",
+      "tier": "turn",
+      "discipline": "Pyrotechnics",
+      "minLevel": 2,
+      "cooldown": 2,
+      "castingTime": "1 action",
+      "range": "60 feet",
+      "components": [
+        "Flourish",
+        "Prop (a smoke charge)"
+      ],
+      "duration": "1 minute",
+      "description": "You detonate a charge of colored smoke, filling a 15-foot cube within range with a thick, drifting haze that heavily obscures the area for the duration or until a strong wind (such as one created by a Strength check or a trick) disperses it. You can see through this smoke without penalty; every other creature treats it as any other heavily obscuring smoke.",
+      "sheetSummary": "Action, 60 ft, 15-ft cube, cooldown 2, 1 min. Heavily obscures the area for everyone except you. Dispersible by strong wind.",
+      "classes": [
+        "joker"
+      ],
+      "_file": "tricks/powder-screen.json"
+    },
+    {
+      "id": "puppet-strike",
+      "name": "Puppet Strike",
+      "source": "Circus of Chaos",
+      "flavor": "The wire goes taut, and a body that was never truly its own snaps forward or slams down like a puppet dropped mid-scene.",
+      "tier": "turn",
+      "discipline": "Animation",
+      "minLevel": 2,
+      "cooldown": 2,
+      "castingTime": "1 action",
+      "range": "60 feet",
+      "components": [
+        "Flourish",
+        "Prop (a control bar)"
+      ],
+      "duration": "Instantaneous",
+      "save": "Strength",
+      "description": "You wrench hard on a String already fixed to a creature you can see within range, forcing its own limbs to whip against itself. The target makes a Strength saving throw against your {{trick save DC|8 + proficiency bonus + your trick ability modifier}}. On a failure, it takes [[2d6]] physical damage and is knocked prone. On a success, it takes half as much damage and stays standing. You must already have a String attached to the target to use this trick.",
+      "sheetSummary": "Action, 60 ft, cooldown 2. Requires a String already on the target. Str save vs trick save DC. Fail: [[2d6]] physical, prone. Success: half damage only.",
+      "classes": [
+        "puppeteer"
+      ],
+      "_file": "tricks/puppet-strike.json"
+    },
+    {
+      "id": "quicksilver-guise",
+      "name": "Quicksilver Guise",
+      "source": "Circus of Chaos",
+      "flavor": "The face you wear is only ever a suggestion. Change the suggestion, and the room believes the new one instead.",
+      "tier": "turn",
+      "discipline": "Legerdemain",
+      "minLevel": 2,
+      "cooldown": 2,
+      "castingTime": "1 action",
+      "range": "Self",
+      "components": [
+        "Flourish",
+        "Prop (a scrap of borrowed clothing)"
+      ],
+      "duration": "10 minutes",
+      "description": "You reshape your face, voice, and build into those of a specific Small or Medium humanoid you have seen before, or into a generic member of a humanoid race you have seen. Your clothing and gear don't change in appearance, but you can present them as part of the disguise. A creature that interacts with you can see through the disguise only if it succeeds on an Intelligence (Investigation) check against your {{trick save DC|8 + proficiency bonus + your trick ability modifier}}. The disguise ends early if you attack, cast another trick with a visible Flourish, or dismiss it yourself (no action).",
+      "sheetSummary": "Action, self, cooldown 2, 10 min. Disguises you as a specific or generic humanoid seen before. Investigation check vs trick DC to see through. Ends on attacking or casting another visible-Flourish trick.",
+      "classes": [
+        "doppelganger"
+      ],
+      "_file": "tricks/quicksilver-guise.json"
+    },
+    {
+      "id": "reflected-wound",
+      "name": "Reflected Wound",
+      "source": "Circus of Chaos",
+      "flavor": "You show it a version of itself already broken, and for one sick instant its own body believes the lie.",
+      "tier": "turn",
+      "discipline": "Illusion",
+      "minLevel": 2,
+      "cooldown": 2,
+      "castingTime": "1 action",
+      "range": "60 feet",
+      "components": [
+        "Patter",
+        "Flourish"
+      ],
+      "duration": "Instantaneous",
+      "save": "Wisdom",
+      "description": "You conjure a flickering reflection of a creature you can see within range, twisted into a vision of its own mortal wound. The target makes a Wisdom saving throw against your {{trick save DC|8 + proficiency bonus + your trick ability modifier}}. On a failure, it takes [[1d8+Con]] psychic damage as its mind flinches from damage that was never real. On a success, it takes half as much damage.",
+      "sheetSummary": "Action, 60 ft, cooldown 2. Wis save vs trick DC. Fail: [[1d8+Con]] psychic. Success: half damage.",
+      "classes": [
+        "doppelganger"
+      ],
+      "_file": "tricks/reflected-wound.json"
+    },
+    {
+      "id": "rigged-draw",
+      "name": "Rigged Draw",
+      "source": "Circus of Chaos",
+      "flavor": "You palm the card it needed and hand back one that guarantees it loses.",
+      "tier": "turn",
+      "discipline": "Fortune",
+      "minLevel": 2,
+      "cooldown": 2,
+      "castingTime": "1 bonus action",
+      "range": "30 feet",
+      "components": [
+        "Patter",
+        "Flourish"
+      ],
+      "duration": "Instantaneous",
+      "description": "You gesture at a creature you can see within range, and fate quietly turns against it. Choose one creature within range; the next attack roll or ability check it makes before the start of your next turn is made with disadvantage. This has no effect on saving throws — for those, see your Gambit's Jinx.",
+      "sheetSummary": "Bonus action, 30 ft, cooldown 2. Target's next attack roll or ability check before the start of your next turn is made with disadvantage. Does not affect saving throws.",
+      "classes": [
+        "joker"
+      ],
+      "_file": "tricks/rigged-draw.json"
+    },
+    {
+      "id": "safety-net",
+      "name": "Safety Net",
+      "source": "Circus of Chaos",
+      "flavor": "There's always a net under the wire. Tonight, it's you.",
+      "tier": "turn",
+      "discipline": "Fortune",
+      "minLevel": 1,
+      "cooldown": 2,
+      "castingTime": "1 bonus action",
+      "range": "30 feet",
+      "components": [
+        "Patter",
+        "Flourish"
+      ],
+      "duration": "1 round",
+      "description": "You call a quiet promise to an ally: no fall is final tonight. Choose one ally you can see within range. It gains [[1d6]] temporary hit points, and until the start of your next turn it has advantage on saving throws against being frightened or charmed.",
+      "sheetSummary": "Bonus action, 30 ft, cooldown 2. Chosen ally gains [[1d6]] temporary hit points and advantage on saves vs frightened/charmed until the start of your next turn.",
+      "classes": [
+        "jester"
+      ],
+      "_file": "tricks/safety-net.json"
+    },
+    {
+      "id": "sleight",
+      "name": "Sleight",
+      "source": "Circus of Chaos",
+      "flavor": "The first thing any performer learns: the hand is quicker than the eye, and the eye is quicker than the brain.",
+      "tier": "pledge",
+      "discipline": "Legerdemain",
+      "minLevel": 1,
+      "castingTime": "1 action",
+      "range": "10 feet",
+      "components": [
+        "Flourish"
+      ],
+      "duration": "Up to 1 hour",
+      "description": "You perform a small feat of stage magic within range. You can produce a trivial effect: palm or vanish an object small enough to hide in one hand, make a coin walk across your knuckles and reappear anywhere within range, light or snuff a candle, chill or warm a mouthful of food, soil or clean an object, or create a harmless sensory flourish such as a puff of coloured smoke, a burst of confetti, or a single sour note from nowhere. The effect ends when you dismiss it, when you cast this trick again, or after 1 hour. It can never deal damage, and it can never move a creature or anything a creature is holding.",
+      "sheetSummary": "Action, 10 ft. Trivial stage-magic effect: vanish/palm a hand-sized object, move a coin, light or snuff a flame, clean or soil, minor sensory flourish. Up to 1 hour. No damage. Cannot affect creatures or held items.",
+      "classes": [
+        "illusionist",
+        "jester",
+        "puppeteer",
+        "doppelganger",
+        "joker"
+      ],
+      "_file": "tricks/sleight.json"
+    },
+    {
+      "id": "smoke-and-mirrors",
+      "name": "Smoke and Mirrors",
+      "source": "Circus of Chaos",
+      "flavor": "The stage fills with fog, mirrors unfold from nowhere, and suddenly nobody - including your enemies - can tell where anyone actually is.",
+      "tier": "turn",
+      "discipline": "Illusion",
+      "minLevel": 2,
+      "cooldown": 2,
+      "castingTime": "1 action",
+      "range": "60 feet",
+      "components": [
+        "Prop (a fistful of flash powder)"
+      ],
+      "duration": "Concentration, up to 10 minutes",
+      "description": "You fill a 20-foot cube within range with a bank of illusory smoke and drifting false reflections. The area becomes heavily obscured for as long as you concentrate on this trick. The smoke has no substance - it doesn't impede movement and can't be dispersed by wind - and creatures relying on darkvision see only more illusory smoke, not through it. You may designate any number of creatures, including yourself, that see the area normally instead, letting you use the cloud as cover for yourself and your allies while it blinds everyone else.",
+      "sheetSummary": "Action, 60 ft, cooldown 2, concentration up to 10 min. Fills a 20-ft cube with illusory heavily-obscuring smoke (no wind dispersal, ignores darkvision); you may designate chosen creatures to see through it normally.",
+      "classes": [
+        "illusionist"
+      ],
+      "_file": "tricks/smoke-and-mirrors.json"
+    },
+    {
+      "id": "stage-fright",
+      "name": "Stage Fright",
+      "source": "Circus of Chaos",
+      "flavor": "You show them, for just a heartbeat, exactly how badly this could go for them. Their body believes you completely.",
+      "tier": "turn",
+      "discipline": "Mesmerism",
+      "minLevel": 2,
+      "cooldown": 2,
+      "castingTime": "1 action",
+      "range": "60 feet",
+      "components": [
+        "Patter",
+        "Flourish"
+      ],
+      "duration": "Concentration, up to 1 minute",
+      "save": "Wisdom",
+      "description": "You plant a single, perfectly convincing image of its own doom in one creature's mind within range. The target must make a Wisdom saving throw against your {{trick save DC|8 + proficiency bonus + your trick ability modifier}}. On a failure, it is frightened of you for the duration and, on each of its turns while frightened this way, must use its action to move as far away from you as it can by the safest available route, unless there is nowhere safer to move. A frightened target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. On a success, the target is unaffected.",
+      "sheetSummary": "Action, 60 ft, cooldown 2, concentration up to 1 min. Wisdom save vs trick save DC. Fail: frightened, must use its action to flee each turn; repeats save at end of each turn. Success: no effect.",
+      "classes": [
+        "illusionist"
+      ],
+      "_file": "tricks/stage-fright.json"
+    },
+    {
+      "id": "steal-their-luck",
+      "name": "Steal Their Luck",
+      "source": "Circus of Chaos",
+      "flavor": "\"Watch this,\" you mutter, and hand your own good fortune across the ring like a stolen pocket watch.",
+      "tier": "turn",
+      "discipline": "Fortune",
+      "minLevel": 2,
+      "cooldown": 2,
+      "castingTime": "1 reaction, which you take when an ally you can see within range is about to make an attack roll, ability check, or saving throw",
+      "range": "30 feet",
+      "components": [
+        "Patter",
+        "Flourish"
+      ],
+      "duration": "Instantaneous",
+      "description": "You call out the number before the dice even settle. When an ally you can see within range is about to make an attack roll, ability check, or saving throw, you can roll a d20 and have the ally use your result in place of its own (the ally still adds any modifiers it would normally apply). You must commit to using this trick before the ally's roll is revealed, and once you do, the ally must use your roll instead of its own, for better or worse.",
+      "sheetSummary": "Reaction, 30 ft, cooldown 2. Before an ally's attack roll, check, or save is revealed, roll a d20; the ally uses your d20 result (plus its own modifiers) instead of its own die.",
+      "classes": [
+        "jester"
+      ],
+      "_file": "tricks/steal-their-luck.json"
+    },
+    {
+      "id": "the-grand-illusion",
+      "name": "The Grand Illusion",
+      "source": "Circus of Chaos",
+      "flavor": "Every eye in the tent turns to you at once. What they see next, they will never fully stop seeing.",
+      "tier": "prestige",
+      "discipline": "Mesmerism",
+      "minLevel": 5,
+      "engineCost": 4,
+      "castingTime": "1 action",
+      "range": "90 feet",
+      "components": [
+        "Patter",
+        "Flourish",
+        "Prop (a folding fan or opera mask)"
+      ],
+      "duration": "Concentration, up to 1 minute",
+      "save": "Wisdom",
+      "description": "You spend a surge of banked Phantasm to seize the minds of every creature you choose within a 30-foot-radius sphere centred on a point within range, showing each of them their own private, tailored nightmare all at once. Each target must make a Wisdom saving throw against your {{trick save DC|8 + proficiency bonus + your trick ability modifier}}. On a failure, a target takes [[5d6]] psychic damage and is frightened of you for the duration; on a success, it takes half as much damage and is not frightened. A frightened target can repeat the saving throw at the end of each of its turns, ending the frightened condition on itself on a success. This trick requires you to have at least 4 Phantasm banked, which are spent whether or not any target fails its save.",
+      "sheetSummary": "Once per combat. Action, 90 ft, 30-ft-radius sphere, costs 4 Phantasm, concentration up to 1 min. Wisdom save vs trick save DC per target. Fail: [[5d6]] psychic damage, frightened for duration (repeat save at end of each turn). Success: half damage, no condition.",
+      "classes": [
+        "illusionist"
+      ],
+      "_file": "tricks/the-grand-illusion.json"
+    },
+    {
+      "id": "the-impossible-show",
+      "name": "The Impossible Show",
+      "source": "Circus of Chaos",
+      "flavor": "The whole tent disappears. In its place: whatever you need everyone to believe is standing here instead - a burning building, a bottomless pit, an army that was never hired.",
+      "tier": "prestige",
+      "discipline": "Illusion",
+      "minLevel": 5,
+      "engineCost": 5,
+      "castingTime": "1 action",
+      "range": "120 feet",
+      "components": [
+        "Patter",
+        "Flourish",
+        "Prop (a miniature stage set)"
+      ],
+      "duration": "Up to 10 minutes",
+      "save": "Wisdom",
+      "description": "You spend nearly your entire banked Phantasm to remake reality itself, filling a 60-foot cube within range with a fully realised illusory environment - sight, sound, temperature, even scent, all convincingly wrong. You can make it appear as anything you can imagine: a collapsed tunnel, a roaring inferno, a cheering crowd of a hundred phantom performers, a chasm where the floor used to be. The illusion requires no concentration and persists for the duration even while you do other things. Objects and creatures placed by the trick have no substance and deal no damage on their own, but any creature that interacts with the illusion (touches it, walks into it, tries to use it as cover) can attempt to discern it is false with an Intelligence (Investigation) check against your {{trick save DC|8 + proficiency bonus + your trick ability modifier}}; a creature that fails wholly believes what it perceives and acts accordingly (a creature that believes it sees a chasm won't walk into it; a creature that believes a wall of fire is real won't push through it) until it succeeds on a later check or physically passes through the illusion. Once during the duration, as a bonus action, you can make the entire illusion enact a single dramatic moment of your choice - the phantom army charges, the fire roars up, the floor gives way. Every creature that still believes the illusion and is positioned within it must succeed on a Wisdom saving throw against your {{trick save DC|8 + proficiency bonus + your trick ability modifier}} or become frightened of the source of the illusion and, if it has a reaction available, use it to flee or recoil from that source. This trick requires you to have at least 5 Phantasm banked, which are spent whether or not the illusion fools anyone.",
+      "sheetSummary": "Once per combat. Action, 120 ft, up to a 60-ft cube, costs 5 Phantasm, up to 10 min, no concentration. Full-sense illusory environment; no inherent damage. Investigation check vs trick save DC to disbelieve on interaction; believers act as if it's real. Once per casting (bonus action): dramatic beat - believing creatures in the area make a Wisdom save vs trick save DC or become frightened and spend their reaction fleeing/recoiling.",
+      "classes": [
+        "illusionist"
+      ],
+      "_file": "tricks/the-impossible-show.json"
+    },
+    {
+      "id": "the-prestige",
+      "name": "The Prestige",
+      "source": "Circus of Chaos",
+      "flavor": "Every great trick has three parts. This is the third: the part where the man who died walks back out, and the crowd never forgives you for it.",
+      "tier": "prestige",
+      "discipline": "Illusion",
+      "minLevel": 5,
+      "engineCost": 2,
+      "castingTime": "1 reaction, which you take when you are reduced to 0 hit points",
+      "range": "Self",
+      "components": [
+        "Flourish"
+      ],
+      "duration": "Instantaneous",
+      "description": "The blow lands. You drop. The crowd screams — and then you walk back out from somewhere else in the room, unmarked, while the thing on the floor turns out to have been a Clone all along. When you would be reduced to 0 hit points, you instead drop to 1 hit point and spend 2 Clones: the first collapses in your space wearing your wounds, and the second is the one that walks away. You teleport to an unoccupied space you can see within 30 feet, and until the end of your next turn every creature that watched you fall has disadvantage on attack rolls against you — they are still looking at the body. Both Clones are spent whether or not anyone is fooled.",
+      "sheetSummary": "Once per combat. Reaction when reduced to 0 HP. Costs 2 Clones. Drop to 1 HP instead; a Clone collapses in your space wearing your wounds; teleport up to 30 ft. Creatures that saw you fall have disadvantage on attacks against you until end of your next turn.",
+      "classes": [
+        "doppelganger"
+      ],
+      "_file": "tricks/the-prestige.json"
+    },
+    {
+      "id": "the-quick-change",
+      "name": "The Quick Change",
+      "source": "Circus of Chaos",
+      "flavor": "A different coat, a different walk, a different name if anyone asks. The performer underneath never changes.",
+      "tier": "turn",
+      "discipline": "Legerdemain",
+      "minLevel": 1,
+      "cooldown": 1,
+      "castingTime": "1 action",
+      "range": "Self",
+      "components": [
+        "Flourish",
+        "Prop (a costume piece or scrap of makeup)"
+      ],
+      "duration": "Up to 1 hour",
+      "description": "You alter your appearance - your face, your clothing, your height and build within a modest range, even your voice - for the duration. You decide the specifics, including whether you resemble a generic member of some race or a specific individual you have seen. A creature that interacts with you can determine you are disguised with a successful Intelligence (Investigation) check against your {{trick save DC|8 + proficiency bonus + your trick ability modifier}}; the disguise otherwise fools sight and casual hearing. The disguise doesn't change any of your game statistics, ends early if you dismiss it (no action required), and ends immediately if you make an attack roll or force a saving throw.",
+      "sheetSummary": "Action, self, cooldown 1, up to 1 hour. Changes appearance/voice within modest limits; no stat changes. Investigation check vs trick save DC to see through on close interaction. Ends on attack or forcing a save, or if dismissed.",
+      "classes": [
+        "illusionist"
+      ],
+      "_file": "tricks/the-quick-change.json"
+    },
+    {
+      "id": "the-whole-audience-laughs",
+      "name": "The Whole Audience Laughs",
+      "source": "Circus of Chaos",
+      "flavor": "You deliver the biggest punchline of the show, and it lands on everyone at once. Nobody in the audience gets to not laugh.",
+      "tier": "prestige",
+      "discipline": "Mesmerism",
+      "minLevel": 5,
+      "engineCost": 5,
+      "castingTime": "1 action",
+      "range": "60 feet",
+      "components": [
+        "Patter",
+        "Flourish"
+      ],
+      "duration": "Up to 1 minute (concentration)",
+      "save": "Wisdom",
+      "description": "You choose any number of creatures you can see within range — you may freely exclude your allies from the effect, so your own company never has to make this save. Each remaining target must make a Wisdom saving throw against your {{trick save DC|8 + proficiency bonus + your trick ability modifier}}. On a failure, a target falls prone and is incapacitated with helpless laughter for the duration. At the end of each of its turns, and whenever it takes damage, an affected target can make another Wisdom saving throw, ending the effect on itself on a success. A creature immune to being charmed automatically succeeds on its save.",
+      "sheetSummary": "Once per combat. Action, 60 ft, costs 5 Mirth, concentration up to 1 minute. Choose any number of visible creatures (allies may be excluded). Wis save vs trick save DC or fall prone + incapacitated (helpless laughter). Each affected target saves again at end of each of its turns or when damaged, ending the effect on a success. Charm-immune creatures auto-succeed.",
+      "classes": [
+        "jester"
+      ],
+      "_file": "tricks/the-whole-audience-laughs.json"
+    },
+    {
+      "id": "vicious-jibe",
+      "name": "Vicious Jibe",
+      "source": "Circus of Chaos",
+      "flavor": "You find the one thing they hate about themselves and say it louder than they can think.",
+      "tier": "pledge",
+      "discipline": "Mesmerism",
+      "minLevel": 1,
+      "castingTime": "1 action",
+      "range": "60 feet",
+      "components": [
+        "Patter"
+      ],
+      "duration": "Instantaneous",
+      "save": "Wisdom",
+      "description": "You unleash a string of insults laced with subtle magic at a creature you can see within range that can hear you (the trick has no effect on a target that is deaf). The target must succeed on a Wisdom saving throw against your {{trick save DC|8 + proficiency bonus + your trick ability modifier}} or take [[1d4]] psychic damage and have disadvantage on the next attack roll it makes before the end of its next turn, too busy stewing over what you said to focus.",
+      "sheetSummary": "Action, 60 ft. Wis save vs trick save DC. Fail: [[1d4]] psychic damage, disadvantage on target's next attack roll before end of its next turn. No effect on a deaf target.",
+      "classes": [
+        "jester"
+      ],
+      "_file": "tricks/vicious-jibe.json"
+    },
+    {
+      "id": "waking-nightmare",
+      "name": "Waking Nightmare",
+      "source": "Circus of Chaos",
+      "flavor": "You don't show them anything real. You just remind their nerves what pain used to feel like, and let the memory do the rest.",
+      "tier": "turn",
+      "discipline": "Illusion",
+      "minLevel": 3,
+      "cooldown": 2,
+      "castingTime": "1 action",
+      "range": "60 feet",
+      "components": [
+        "Patter",
+        "Prop (a small mirror)"
+      ],
+      "duration": "Instantaneous",
+      "save": "Intelligence",
+      "description": "You reach into a creature's mind within range and make it briefly, completely certain that it is being torn apart. The target must make an Intelligence saving throw against your {{trick save DC|8 + proficiency bonus + your trick ability modifier}}, taking [[3d8]] psychic damage on a failure, or half as much damage on a success. A creature immune to being frightened has advantage on this saving throw, since the illusion has nothing to take hold of.",
+      "sheetSummary": "Action, 60 ft, cooldown 2. Intelligence save vs trick save DC. Fail: [[3d8]] psychic damage. Success: half. Fear-immune creatures have advantage on the save.",
+      "classes": [
+        "illusionist"
+      ],
+      "_file": "tricks/waking-nightmare.json"
+    },
+    {
+      "id": "word-of-encouragement",
+      "name": "Word of Encouragement",
+      "source": "Circus of Chaos",
+      "flavor": "A quick, warm aside from the wings: \"You've got this, kid.\" Somehow, they always do.",
+      "tier": "pledge",
+      "discipline": "Fortune",
+      "minLevel": 1,
+      "castingTime": "1 action",
+      "range": "30 feet",
+      "components": [
+        "Patter"
+      ],
+      "duration": "1 round",
+      "description": "You call out a quick word of encouragement to one creature you can see within range. The next time that creature makes an ability check, attack roll, or saving throw before the start of your next turn, it can add 1d4 to the roll. The creature can wait to see the roll before deciding whether to add the bonus.",
+      "sheetSummary": "Action, 30 ft, no save. Target may add 1d4 to its next ability check, attack roll, or save before the start of your next turn (decided after rolling).",
+      "classes": [
+        "jester"
+      ],
+      "_file": "tricks/word-of-encouragement.json"
     }
   ],
   "skills": [

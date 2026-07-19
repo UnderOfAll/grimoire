@@ -21,7 +21,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 # category folder -> schema file stem
 SCHEMA = {
-    "classes": "class", "subclasses": "subclass", "spells": "spell",
+    "classes": "class", "subclasses": "subclass", "tricks": "trick",
     "skills": "skill", "passives": "passive", "weapons": "weapon",
     "armor": "armor", "rules": "rule",
 }

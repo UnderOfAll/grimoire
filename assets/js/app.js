@@ -9,7 +9,7 @@ const CATEGORIES = [
   { key: "rules",      label: "Rules",       render: renderRule },
   { key: "classes",    label: "Classes",    render: renderClass },
   { key: "subclasses", label: "Subclasses", render: renderSubclass },
-  { key: "spells",     label: "Spells",     render: renderSpell },
+  { key: "tricks",     label: "Tricks",     render: renderTrick },
   { key: "skills",     label: "Skills",     render: renderSkill },
   { key: "passives",   label: "Passives",   render: renderPassive },
   { key: "weapons",    label: "Weapons",    render: renderWeapon },
@@ -19,6 +19,7 @@ const CATEGORIES = [
 const store = {};        // key -> array of entries
 let current = "classes"; // active category
 let manifest = {};
+const listScroll = {};   // key -> remembered list scroll position, restored on Back
 
 // Canonical 5e ability order — used to group/sort skills by the stat they scale with.
 const ABILITY_ORDER = ["Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma"];
@@ -97,7 +98,7 @@ function buildSidebar() {
     const btn = el("button", "nav-btn");
     btn.dataset.key = cat.key;
     btn.innerHTML = `<span>${cat.label}</span><span class="count">${store[cat.key].length}</span>`;
-    btn.addEventListener("click", () => { $("#search").value = ""; selectCategory(cat.key); });
+    btn.addEventListener("click", () => { $("#search").value = ""; listScroll[cat.key] = 0; selectCategory(cat.key); });
     nav.appendChild(btn);
   }
 }
@@ -112,6 +113,13 @@ function wireEvents() {
   $("#legend-btn").addEventListener("click", () => $("#legend-panel").classList.toggle("hidden"));
   $("#legend-panel").addEventListener("click", (e) => {
     if (e.target.id === "legend-close") $("#legend-panel").classList.add("hidden");
+  });
+  // Tricks tab: the Tier / Class / Level grouping toggle.
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-trick-group]");
+    if (!btn) return;
+    trickGrouping = btn.dataset.trickGroup;
+    renderList("tricks");
   });
   // Tap-to-toggle tooltips: touchscreens can't hover, so a tap opens the formula /
   // scaling-die box; tapping the same term again or anywhere else closes it.
@@ -160,6 +168,8 @@ function selectCategory(key) {
   $("#list-title").textContent = CATEGORIES.find((c) => c.key === key).label;
   renderList(key);
   if (location.hash !== "#/" + key) history.replaceState(null, "", "#/" + key);
+  const content = $(".content");
+  if (content) content.scrollTop = listScroll[key] || 0;
 }
 
 function renderList(key) {
@@ -178,6 +188,8 @@ function renderList(key) {
   if (key === "subclasses") return renderGroupedList(list, key, items, groupBySubclassParent);
   // Armor: split into Starter (owned at creation) vs Bought (premium upgrades).
   if (key === "armor")      return renderGroupedList(list, key, items, groupByAvailability);
+  // Tricks: three ways to slice the same list — by tier, by class, or by unlock level.
+  if (key === "tricks")     return renderTrickList(list, items);
   for (const it of items) list.appendChild(makeCard(key, it));
 }
 
@@ -326,6 +338,100 @@ function groupByAvailability(items) {
     .map((k) => [AVAILABILITY_LABELS[k], groups.get(k)]);
 }
 
+/* Tricks group by tier, in play order (at-will -> cooldown -> engine-gated) rather than
+   alphabetically: the tier is the first thing a player needs to know about a trick. */
+const TIER_LABELS = {
+  pledge: "Pledges — at-will",
+  turn: "Turns — cooldown, no engine cost",
+  prestige: "Prestiges — spend your engine",
+};
+function groupByTier(items) {
+  const order = ["pledge", "turn", "prestige"];
+  const groups = new Map(order.map((k) => [k, []]));
+  for (const it of items) if (groups.has(it.tier)) groups.get(it.tier).push(it);
+  return order.filter((k) => groups.get(k).length).map((k) => [TIER_LABELS[k], groups.get(k)]);
+}
+
+/* The two casting grades (MECHANICS §4.9a). A shared trick ability does NOT mean a shared list:
+   the Jester and Joker are both Charisma and overlap by exactly one trick. The CLASS owns the
+   list, which is why tricks group by class and never by ability. */
+const CASTER_GRADE = {
+  illusionist:  { grade: "Full caster",  startsAt: 1 },
+  jester:       { grade: "Full caster",  startsAt: 1 },
+  puppeteer:    { grade: "Half-caster",  startsAt: 2 },
+  doppelganger: { grade: "Half-caster",  startsAt: 2 },
+  joker:        { grade: "Half-caster",  startsAt: 2 },
+};
+const TRICK_CLASS_ORDER = ["illusionist", "jester", "puppeteer", "doppelganger", "joker"];
+
+const TIER_ORDER = { pledge: 0, turn: 1, prestige: 2 };
+let trickGrouping = "tier";
+
+/* Tricks tab: two ways to slice the same list — by tier, or by class (with each class's own
+   level ladder nested inside it).
+
+   There is deliberately NO global "Level" grouping. An unlock level only means something
+   INSIDE a class: the same trick lands on different levels for different classes, because two
+   gates decide when you get it and the later one wins (MECHANICS §4.9b). Sleight is minLevel 1,
+   but a Joker is a half-caster who casts nothing at level 1, so his Sleight is level 2. A
+   roster-wide "Level 1" shelf would therefore be a lie for three of the five classes — so level
+   lives inside the class ladder, where it's unambiguous, and is computed for the player. */
+function renderTrickList(list, items) {
+  list.className = "trick-list";
+  const bar = el("div", "group-toggle");
+  for (const [mode, label] of [["tier", "Tier"], ["class", "Class"]]) {
+    const b = el("button", "toggle-btn" + (trickGrouping === mode ? " active" : ""), esc(label));
+    b.dataset.trickGroup = mode;
+    bar.appendChild(b);
+  }
+  list.appendChild(bar);
+  const groups = el("div", "grouped");
+  if (trickGrouping === "class") renderTricksByClass(groups, items);
+  else {
+    for (const [label, arr] of groupByTier(items)) {
+      const section = el("section", "group");
+      section.appendChild(el("h2", "group-title", esc(label)));
+      const grid = el("div", "cards");
+      for (const it of arr) grid.appendChild(makeCard("tricks", it));
+      section.appendChild(grid);
+      groups.appendChild(section);
+    }
+  }
+  list.appendChild(groups);
+}
+
+/* One section per class = that class's whole repertoire as a level ladder, which is how a player
+   actually reads it ("what do I get at level 3?"). A trick on several lists (only Sleight today)
+   appears under each class, at that class's own level for it. */
+function renderTricksByClass(container, items) {
+  for (const cid of TRICK_CLASS_ORDER) {
+    const mine = items.filter((t) => (t.classes || []).includes(cid));
+    if (!mine.length) continue;
+    const g = CASTER_GRADE[cid];
+    const section = el("section", "group");
+    section.appendChild(el("h2", "group-title", esc(`${className(cid)} — ${g.grade}`)));
+
+    // Resolve the two gates: the trick's own minLevel vs this class's casting start level.
+    const byLevel = new Map();
+    for (const t of mine) {
+      const lv = Math.max(t.minLevel || 1, g.startsAt);
+      if (!byLevel.has(lv)) byLevel.set(lv, []);
+      byLevel.get(lv).push(t);
+    }
+    for (const lv of [...byLevel.keys()].sort((a, b) => a - b)) {
+      const block = el("div", "level-block");
+      block.appendChild(el("h3", "level-title", esc("Level " + lv)));
+      const grid = el("div", "cards");
+      const arr = byLevel.get(lv).sort((a, b) =>
+        TIER_ORDER[a.tier] - TIER_ORDER[b.tier] || a.name.localeCompare(b.name));
+      for (const t of arr) grid.appendChild(makeCard("tricks", t));
+      block.appendChild(grid);
+      section.appendChild(block);
+    }
+    container.appendChild(section);
+  }
+}
+
 // Display name for a class id (e.g. "the-sandow" -> "The Sandow").
 function className(id) {
   const c = (store.classes || []).find((x) => (x.id || slug(x)) === id);
@@ -337,7 +443,9 @@ function cardMeta(key, it) {
     case "rules":      return it.summary || "";
     case "classes":    return `HP ${it.hitDie || "?"} · ${it.primaryAbility || ""}`;
     case "subclasses": return `${className(it.parentClass) || "?"} subclass`;
-    case "spells":     return `${it.level ? "Level " + it.level : "Cantrip"} · ${it.school || ""}`;
+    // No level here: it's a heading in the Class view, and a raw minLevel would contradict it
+    // (Sleight is minLevel 1 but sits at Level 2 for a half-caster).
+    case "tricks":     return `${cap(it.tier || "")} · ${it.discipline || ""}`;
     case "skills":     return `${it.ability || ""}`;
     case "passives":   return `${it.type || "Feature"}`;
     case "weapons":    return `${it.category ? cap(it.category) : ""} · ${it.damage && it.damage.type ? it.damage.type : ""}`;
@@ -349,11 +457,15 @@ function cardMeta(key, it) {
 function showDetail(key, id) {
   const it = store[key].find((x) => slug(x) === id);
   if (!it) { selectCategory(key); return; }
+  const content = $(".content");
+  // Remember where the list was scrolled so Back can return to that spot.
+  if (content && !$("#list-view").classList.contains("hidden")) listScroll[current] = content.scrollTop;
   current = key;
   $("#list-view").classList.add("hidden");
   $("#detail-view").classList.remove("hidden");
   const renderer = CATEGORIES.find((c) => c.key === key).render;
   $("#detail").innerHTML = renderer(it);
+  if (content) content.scrollTop = 0;
 }
 
 /* ---------- renderers (one per category) ---------- */
@@ -689,18 +801,79 @@ function renderSubclass(s) {
     `<div class="detail-body">${s.flavor ? `<p>${esc(s.flavor)}</p>` : ""}${features(s.features)}</div>`;
 }
 
-function renderSpell(s) {
-  return head(s.name, `${s.level ? "Level " + s.level : "Cantrip"} ${s.school || ""}`) +
+/* What each Trick tier means, shown as a hover/tap tooltip on the tier badge so a reader never
+   has to leave the trick to remember how the casting system works (MECHANICS.md §4). */
+const TIERS = {
+  pledge: "At-will. No cost and no cooldown — the basic trick a performer can always do.",
+  turn: "The workhorse. Costs no engine, but once cast the crowd has Seen it: you can't cast it again for its cooldown in rounds.",
+  prestige: "The showstopper. Spends your class engine, so you must build the meter with Turns first — OP but occasional by design.",
+};
+
+/* The Patter/Flourish/Prop reskin of V/S/M. The mechanical hooks are unchanged, so the
+   tooltip states what denies each one. */
+const COMPONENTS = {
+  Patter: "The performer's voice — the line, the count, the misdirecting joke. Denied while gagged, silenced, or mute.",
+  Flourish: "The hands — the pass, the gesture, the reveal. Denied while bound, grappled, or without a free hand.",
+  Prop: "A physical object — cards, silks, powder, a coin. Denied if the prop is lost, stolen, or destroyed.",
+};
+
+/* Components render as hover-terms so "Flourish" explains itself; a Prop's parenthetical
+   (e.g. "Prop (a deck of cards)") is kept visible outside the term. */
+function componentsHTML(list) {
+  if (!Array.isArray(list) || !list.length) return "—";
+  return list.map((c) => {
+    const kind = String(c).split(" (")[0];
+    const rest = String(c).slice(kind.length);
+    return COMPONENTS[kind] ? tipTermHTML(kind, COMPONENTS[kind]) + esc(rest) : esc(c);
+  }).join(", ");
+}
+
+/* A trick's limiter is the one number that balances it: a Turn's cooldown or a Prestige's
+   engine cost. Pledges have neither by design. */
+function limiterHTML(t) {
+  if (t.tier === "turn" && t.cooldown) {
+    return statHTML("Cooldown", tipTermHTML(`${t.cooldown} round${t.cooldown > 1 ? "s" : ""}`,
+      `After casting, this trick is Seen: you can't cast it again for ${t.cooldown} of your turns. Reduce the counter by 1 at the start of each of your turns. Out of combat, it's ready again after about a minute.`));
+  }
+  if (t.tier === "prestige" && t.engineCost) {
+    return statHTML("Engine Cost", tipTermHTML(`${t.engineCost}`,
+      `Spends ${t.engineCost} of your class engine (Phantasm, Mirth, Strings, Clones, or Mayhem). Build the meter with Turns before you can pay for this.`));
+  }
+  return stat("Limiter", "At-will");
+}
+
+/* Every Prestige is once per combat — a tier-wide rule (MECHANICS §4.5), not a per-trick field,
+   so it renders from the tier and a newly authored Prestige inherits it with nothing to set. */
+function prestigeUsesHTML(t) {
+  if (t.tier !== "prestige") return "";
+  return statHTML("Uses", tipTermHTML("1 per combat",
+    "Every Prestige is limited to one use per combat, on top of its engine cost. It resets when the fight ends. This is what allows the tier to be as strong as it is."));
+}
+
+function renderTrick(t) {
+  const tier = t.tier || "";
+  const badge = TIERS[tier]
+    ? `<span class="tier-badge tier-${esc(tier)}">${tipTermHTML(cap(tier), TIERS[tier])}</span>`
+    : "";
+  return head(t.name, `${t.discipline || ""} trick`) +
+    (badge ? `<div class="tier-row">${badge}</div>` : "") +
+    (t.flavor ? `<p class="detail-flavor">${esc(t.flavor)}</p>` : "") +
     `<div class="detail-grid">
-      ${stat("Casting Time", s.castingTime || "—")}
-      ${stat("Range", s.range || "—")}
-      ${stat("Components", (s.components || []).join(", ") || "—")}
-      ${stat("Duration", s.duration || "—")}
+      ${stat("Casting Time", t.castingTime || "—")}
+      ${stat("Range", t.range || "—")}
+      ${statHTML("Components", componentsHTML(t.components))}
+      ${stat("Duration", t.duration || "—")}
+      ${limiterHTML(t)}
+      ${prestigeUsesHTML(t)}
+      ${t.save ? stat("Save", t.save + " saving throw") : ""}
+      ${statHTML("Unlocks At", tipTermHTML("Level " + (t.minLevel || 1),
+        "This is the trick's own level gate. A half-caster (Puppeteer, Doppelganger, Joker) casts nothing before level 2, so for them the later of the two applies — see the Class view for your class's actual level."))}
     </div>
     <div class="detail-body">
-      <p>${esc(s.description || "")}</p>
-      ${s.higherLevels ? `<h2>At Higher Levels</h2><p>${esc(s.higherLevels)}</p>` : ""}
-      ${Array.isArray(s.classes) ? `<p class="muted">Classes: ${esc(s.classes.join(", "))}</p>` : ""}
+      ${renderFeatureDesc(t.description || "")}
+      ${Array.isArray(t.options) && t.options.length ? optionTable(t.options) : ""}
+      ${Array.isArray(t.classes) && t.classes.length
+        ? `<p class="muted">Classes: ${esc(t.classes.map(className).join(", "))}</p>` : ""}
     </div>`;
 }
 

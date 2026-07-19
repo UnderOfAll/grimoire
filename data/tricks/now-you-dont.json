@@ -1,0 +1,22 @@
+{
+  "id": "now-you-dont",
+  "name": "Now You Don't",
+  "source": "Circus of Chaos",
+  "flavor": "The curtain drops for exactly one second. When it rises, you're not where the audience is looking anymore.",
+  "tier": "turn",
+  "discipline": "Legerdemain",
+  "minLevel": 3,
+  "cooldown": 3,
+  "castingTime": "1 bonus action",
+  "range": "Self",
+  "components": [
+    "Flourish",
+    "Prop (a length of black silk)"
+  ],
+  "duration": "1 round",
+  "description": "You vanish behind a snap of silk and misdirection, becoming invisible until the start of your next turn or until you make an attack roll, force a saving throw, or force an ability check, whichever comes first. As part of casting this, you may also move up to 10 feet without provoking opportunity attacks - the last thing anyone saw of you was already the wrong direction.",
+  "sheetSummary": "Bonus action, self, cooldown 3. Invisible until start of your next turn or until you attack/force a save or check; may move 10 ft without provoking opportunity attacks as part of the trick.",
+  "classes": [
+    "illusionist"
+  ]
+}

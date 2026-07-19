@@ -1,0 +1,21 @@
+{
+  "id": "the-prestige",
+  "name": "The Prestige",
+  "source": "Circus of Chaos",
+  "flavor": "Every great trick has three parts. This is the third: the part where the man who died walks back out, and the crowd never forgives you for it.",
+  "tier": "prestige",
+  "discipline": "Illusion",
+  "minLevel": 5,
+  "engineCost": 2,
+  "castingTime": "1 reaction, which you take when you are reduced to 0 hit points",
+  "range": "Self",
+  "components": [
+    "Flourish"
+  ],
+  "duration": "Instantaneous",
+  "description": "The blow lands. You drop. The crowd screams — and then you walk back out from somewhere else in the room, unmarked, while the thing on the floor turns out to have been a Clone all along. When you would be reduced to 0 hit points, you instead drop to 1 hit point and spend 2 Clones: the first collapses in your space wearing your wounds, and the second is the one that walks away. You teleport to an unoccupied space you can see within 30 feet, and until the end of your next turn every creature that watched you fall has disadvantage on attack rolls against you — they are still looking at the body. Both Clones are spent whether or not anyone is fooled.",
+  "sheetSummary": "Once per combat. Reaction when reduced to 0 HP. Costs 2 Clones. Drop to 1 HP instead; a Clone collapses in your space wearing your wounds; teleport up to 30 ft. Creatures that saw you fall have disadvantage on attacks against you until end of your next turn.",
+  "classes": [
+    "doppelganger"
+  ]
+}
